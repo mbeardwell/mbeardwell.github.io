@@ -20,17 +20,11 @@ jobs:
         env:
           CV_PDF_URL: ${{ secrets.CV_PDF_URL }}
 
-      - name: Build site
-        run: |
-          npm install
-          npm run build
-
-      - name: Commit updated CV
-        run: cp public/cv.pdf dist/cv.pdf
-
-      - name: Deploy to GitHub Pages
+      - name: Deploy CV
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
-
+          publish_dir: .
+          publish_branch: gh-pages
+          destination_dir: .
+          keep_files: true
