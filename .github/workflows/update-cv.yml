@@ -1,6 +1,7 @@
 name: Update CV PDF from Google Docs
 permissions:
   contents: write
+  pages: write
   
 on:
   workflow_dispatch:
@@ -8,7 +9,7 @@ on:
     - cron: "0 0 * * *" # Every midnight UTC
 
 jobs:
-  download:
+  download-and-deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -19,10 +20,17 @@ jobs:
         env:
           CV_PDF_URL: ${{ secrets.CV_PDF_URL }}
 
-      - name: Commit updated CV
+      - name: Build site
         run: |
-          git config user.name "cv-bot"
-          git config user.email "cv-bot@users.noreply.github.com"
-          git add public/cv.pdf
-          git commit -m "Update CV from Google Docs" || echo "No changes"
-          git push
+          npm install
+          npm run build
+
+      - name: Commit updated CV
+        run: cp public/cv.pdf dist/cv.pdf
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+
