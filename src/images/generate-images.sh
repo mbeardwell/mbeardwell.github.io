@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
 set -euo pipefail
 cd "$(dirname "$0")"
+if ! command -v convert &> /dev/null; then sudo apt install imagemagick; fi
 
+# User-defined Constants
 ROOT_DIR="../.."
 COLORS="${ROOT_DIR}/src/styles/colors.json"
 OUT_DIR_PROFILE="${ROOT_DIR}/public/images/profile"
@@ -10,6 +12,7 @@ SIZES=(128 256 512)
 
 SURFACE=$(jq -r ".surface" "${COLORS}")
 ACCENT=$(jq -r ".accent" "${COLORS}")
+
 mkdir -p "${OUT_DIR_PROFILE}"
 mkdir -p "${OUT_DIR_BG}"
 
