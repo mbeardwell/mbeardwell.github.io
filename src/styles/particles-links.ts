@@ -10,16 +10,16 @@ export const particlesLinks = {
   background: { color: { value: "transparent" }, opacity: 0 },
   particles: {
     number: {
-      value: 200,
-      density: { enable: false, width: 1366, height: 768 },
-      limit: { mode: "delete", value: 200 },
+      value: 100,
+      density: { enable: true, width: 1366, height: 768 },
+      limit: { mode: "delete", value: 100 },
     },
     color: { value: typedColours[COLOUR] },
     opacity: { value: 0.5 },
     size: { value: 3 },
     links: {
       enable: true,
-      distance: 125,
+      distance: 200,
       color: typedColours[COLOUR],
       opacity: 0.35,
       width: 1,
@@ -30,14 +30,6 @@ export const particlesLinks = {
       direction: "none",
       random: false,
       straight: false,
-      attract: {
-        enable: false,
-        distance: 0,
-        rotate: {
-          x: 0,
-          y: 0,
-        },
-      },
       outModes: { default: "bounce" },
     },
     bounce: {

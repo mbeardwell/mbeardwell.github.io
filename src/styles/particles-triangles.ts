@@ -8,11 +8,17 @@ const COLOUR: keyof Colours = "accent";
 
 export const particlesTris: IOptions = structuredClone(particlesLinks);
 
-particlesTris.particles.links ??= {};
-(particlesTris.particles.links as any).triangles = {
-  color: typedColours[COLOUR],
+particlesTris.particles.links = {
   enable: true,
-  frequency: 1,
+  distance: 150,
+  color: typedColours[COLOUR],
+  opacity: 0.35,
+  width: 1,
+  triangles: {
+    color: typedColours[COLOUR],
+    enable: true,
+    frequency: 1,
+  },
 };
 
-(particlesTris.particles.number as any) = { value: 60 };
+particlesTris.particles.number.value = (particlesTris.particles.number.value as any) / 2;
