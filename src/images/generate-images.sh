@@ -33,3 +33,10 @@ for size in "${SIZES[@]}"; do
             "${OUT_DIR_PROFILE}/${base_name}-profile.png"
     done
 done
+
+# Create LinkedIn banner
+[ ! -d "venv" ] && python3 -m venv venv
+source venv/bin/activate
+pip install pillow cairosvg matplotlib
+python3 linkedin-banner.py
+deactivate

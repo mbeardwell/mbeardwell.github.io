@@ -9,9 +9,11 @@ export default function Section({ id, children }: SectionProps): JSX.Element {
     return (
         <section
             id={id}
-            className="w-full py-16 text-center flex flex-row justify-center items-center"
+            className="w-full flex flex-row justify-center items-center text-center"
         >
-            {children}
+            <div className="w-full max-w-7xl max-xl:px-6 py-16 mx-auto bg-surface/85 min-w-0">
+                {children}
+            </div>
         </section>
     );
 }

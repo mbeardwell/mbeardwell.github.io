@@ -42,7 +42,7 @@ function Buttons(): JSX.Element {
             {/* CV button*/}
             <Button
                 href="/cv.pdf"
-                text="CV (PDF)"
+                text="CV"
                 Icon={IconFile}
                 iconClassName="stroke-content"
             />
@@ -56,7 +56,7 @@ function Buttons(): JSX.Element {
             <Button
                 href="https://github.com/mbeardwell"
                 Icon={IconGitHub}
-                iconClassName="stroke-content fill-content text-content fill-content"
+                iconClassName="stroke-content fill-content text-content"
             />
             {/* TryHackMe button*/}
             <Button
@@ -71,7 +71,7 @@ function Buttons(): JSX.Element {
 function TextBlock({ topPercentageRef }: { topPercentageRef: React.RefObject<HTMLSpanElement | null> }): JSX.Element {
     return (
         <div className="md:max-w-[40vw] flex flex-col gap-3">
-            <h1 className="text-content text-4xl font-bold">Matthew Beardwell</h1>
+            <h1 className="text-accent text-4xl font-bold">Matthew Beardwell</h1>
             <h2 className="text-content text-2xl">Aspiring SOC Analyst</h2>
             <div className="text-content text-lg italic flex flex-col justify-start items-center gap-1">
                 <span>BSc Computer Science</span>
@@ -106,7 +106,7 @@ export default function Hero(): JSX.Element {
             >
                 <TextBlock topPercentageRef={topPercentageRef}/>
                 {/* Vertical Divider */}
-                <div className="bg-accent hidden md:block md:w-px md:self-stretch" />
+                {/* <div className="bg-accent hidden md:block md:w-px md:self-stretch" /> */}
                 <ImageBlock />
             </div>
         </Section >

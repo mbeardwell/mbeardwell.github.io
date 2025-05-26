@@ -8,8 +8,8 @@ function Buttons(): JSX.Element {
     return (
         <div className="flex flex-col items-center gap-3">
             <Button
-                href="mailto:matthewbeardwell@gmail.com"
-                text="matthewbeardwell@gmail.com"
+                href="mailto:contact@mbeardwell.com"
+                text="contact@mbeardwell.com"
                 Icon={IconMail}
                 iconClassName="stroke-content"
             />
@@ -27,7 +27,7 @@ export default function Contact(): JSX.Element {
     return (
         <Section id="contact">
             <div className="flex flex-col">
-                <h2 className="text-4xl font-bold text-content">
+                <h2 className="text-4xl font-bold text-accent">
                     Contact
                 </h2>
                 <div className="flex flex-col flex-nowrap gap-3">

@@ -6,8 +6,10 @@
   a {
     @apply font-bold text-content hover:text-content visited:text-content;
   }
+
   :root {
     --button-ease: cubic-bezier(0.08, 0.59, 0.29, 0.99);
     @apply scroll-smooth;
   }
+
 }
