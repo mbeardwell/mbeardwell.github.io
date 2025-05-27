@@ -4,8 +4,8 @@ import IconLinkedIn from "@icons/brand-linkedin.svg?react";
 import IconTHM from "@icons/brand-tryhackme.svg?react";
 import IconFile from "@icons/file-text.svg?react";
 import { JSX, useEffect, useRef } from "react";
-import { getStats } from "stats";
-import Section from "../Section";
+import { getStats } from "src/stats";
+import Section from "@components/Section";
 
 const PROFILE_HEIGHT: number = 200;
 const PROFILE_WIDTH: number = 200;

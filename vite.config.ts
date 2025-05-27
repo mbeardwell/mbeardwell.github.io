@@ -9,7 +9,7 @@ export default defineConfig({
     alias: {
       "@components": "/src/components",
       "@styles": "/src/styles",
-      "@icons": "/src/icons",
+      "@icons": "/public/images/icons",
     },
   },
 });

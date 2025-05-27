@@ -4,17 +4,17 @@
     "module": "ESNext",
     "moduleResolution": "Node",
     "target": "ES2021",
-    "baseUrl": "./src",
+    "baseUrl": "./",
     "paths": {
       "@components/*": [
-        "components/*"
+        "src/components/*"
       ],
       "@styles/*": [
-        "styles/*"
+        "src/styles/*"
       ],
       "@icons/*": [
-        "icons/*"
-      ]
+        "public/images/icons/*"
+      ],
     },
     "resolveJsonModule": true,
     "esModuleInterop": true,
