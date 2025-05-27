@@ -1,17 +1,21 @@
+import json
+from pathlib import Path
+
 import matplotlib.font_manager as fm
 from PIL import Image, ImageDraw, ImageFont
-from utils import read_svg_as_Image, read_png_as_Image
 
 W, H = 1584, 396
 PADDING = 80
 
-FONT = "Source Sans Pro"
+FONT = "DejaVu Sans"
 FONT_LARGE = 48
 FONT_MEDIUM = 32
 
-import json
+ROOT = Path("../..")
+OUTDIR = ROOT / "public" / "images"
+COLORS_FILE = Path("..") / "styles" / "colors.json"
 
-with open("../styles/colors.json") as f:
+with open(COLORS_FILE) as f:
     colours = json.load(f)
 
 font_path = fm.findfont(fm.FontProperties(family=FONT))
@@ -25,13 +29,7 @@ lines = [
 ]
 
 # Apply background texture
-bg_pattern = (
-    Image.open("cybersecurity-bg.png")
-    .convert("RGBA")
-    .resize((W, H), resample=Image.LANCZOS)
-)
-bg_colour = Image.new("RGBA", (W, H), color=colours["surface"])
-img = Image.blend(bg_colour, bg_pattern, 0.35)
+img = Image.new("RGBA", (W, H), color=colours["surface"])
 draw = ImageDraw.Draw(img)
 
 for text, font, fill, y in lines:
@@ -39,5 +37,6 @@ for text, font, fill, y in lines:
     draw.text((x, y), text, font=font, fill=fill)
 
 # Output the banner
-output = "linkedin_banner.png"
+
+output = OUTDIR / "linkedin_banner.png"
 img.save(output)
