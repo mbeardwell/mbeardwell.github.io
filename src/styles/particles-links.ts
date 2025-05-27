@@ -10,9 +10,9 @@ export const particlesLinks = {
   background: { color: { value: "transparent" }, opacity: 0 },
   particles: {
     number: {
-      value: 100,
+      value: 60,
       density: { enable: true, width: 1366, height: 768 },
-      limit: { mode: "delete", value: 100 },
+      limit: { mode: "delete", value: 60 },
     },
     color: { value: typedColours[COLOUR] },
     opacity: { value: 0.5 },

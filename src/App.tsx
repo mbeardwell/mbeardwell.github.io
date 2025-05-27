@@ -9,14 +9,13 @@ export default function App() {
         <div id="home" className="min-h-screen w-screen relative flex flex-col">
             <Background />
             <Header />
-            <main className="z-10 flex flex-col items-center space-y-8 mt-8 w-full">
+            <main className="z-10 flex-1 flex-col items-center space-y-8 mt-8 w-full">
                 {/* <Construction /> */}
                 <Hero />
                 <Contact />
                 {/* <Projects /> */}
-                <Footer />
             </main>
-
+            <Footer />
         </div>
     );
 }

@@ -73,11 +73,12 @@ function TextBlock({ topPercentageRef }: { topPercentageRef: React.RefObject<HTM
         <div className="md:max-w-[40vw] flex flex-col gap-3">
             <h1 className="text-accent text-4xl font-bold">Matthew Beardwell</h1>
             <h2 className="text-content text-2xl">Aspiring SOC Analyst</h2>
-            <div className="text-content text-lg italic flex flex-col justify-start items-center gap-1">
-                <span>BSc Computer Science</span>
-                <span ref={topPercentageRef}>Top-ranked on TryHackMe</span>
-                <span>Security+ in progress</span>
-            </div>
+            <span
+                ref={topPercentageRef}
+                className="text-content text-lg italic flex flex-col justify-start items-center gap-1"
+            >
+                BSc Computer Science &middot; Top-ranked on TryHackMe &middot; Security+ in progress
+            </span>
             <Buttons />
         </div>
     );
@@ -91,7 +92,7 @@ export default function Hero(): JSX.Element {
             const stats = await getStats();
             const interval = setInterval(() => {
                 if (topPercentageRef.current) {
-                    topPercentageRef.current.innerHTML = `Top ${stats["topPercentage"]}% on TryHackMe`;
+                    topPercentageRef.current.innerHTML = `BSc Computer Science &middot; Top ${stats["topPercentage"]}% on TryHackMe &middot; Security+ in progress`;
                     clearInterval(interval);
                 }
             }, 100);
@@ -104,7 +105,7 @@ export default function Hero(): JSX.Element {
             <div
                 className="w-full flex flex-col-reverse md:flex-row flex-wrap justify-center items-center gap-[8vw] box-border"
             >
-                <TextBlock topPercentageRef={topPercentageRef}/>
+                <TextBlock topPercentageRef={topPercentageRef} />
                 {/* Vertical Divider */}
                 {/* <div className="bg-accent hidden md:block md:w-px md:self-stretch" /> */}
                 <ImageBlock />
