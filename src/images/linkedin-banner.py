@@ -14,6 +14,7 @@ FONT_MEDIUM = 32
 ROOT = Path("../..")
 OUTDIR = ROOT / "public" / "images"
 COLORS_FILE = Path("..") / "styles" / "colors.json"
+BG_FILE = ROOT / "public" / "images" / "banner-bg.png"
 
 with open(COLORS_FILE) as f:
     colours = json.load(f)
@@ -29,7 +30,13 @@ lines = [
 ]
 
 # Apply background texture
-img = Image.new("RGBA", (W, H), color=colours["surface"])
+bg_pattern = (
+    Image.open(BG_FILE)
+    .convert("RGBA")
+    .resize((W, H), resample=Image.LANCZOS)
+)
+bg_colour = Image.new("RGBA", (W, H), color=colours["surface"])
+img = Image.blend(bg_colour, bg_pattern, 0.20)
 draw = ImageDraw.Draw(img)
 
 for text, font, fill, y in lines:
