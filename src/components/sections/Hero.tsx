@@ -72,7 +72,7 @@ function TextBlock({ topPercentageRef }: { topPercentageRef: React.RefObject<HTM
     return (
         <div className="md:max-w-[40vw] flex flex-col gap-3">
             <h1 className="text-accent text-4xl font-bold">Matthew Beardwell</h1>
-            <h2 className="text-content text-2xl">Aspiring SOC Analyst</h2>
+            <h2 className="text-content text-2xl">SOC Analyst Trainee</h2>
             <span
                 ref={topPercentageRef}
                 className="text-content text-lg italic flex flex-col justify-start items-center gap-1"

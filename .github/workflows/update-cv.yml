@@ -2,8 +2,12 @@ name: Update CV PDF from Google Docs
 permissions:
   contents: write
   pages: write
-  
+
 on:
+  push:
+    branches:
+      - main
+      - gh-pages
   workflow_dispatch:
   schedule:
     - cron: "0 0 * * *" # Every midnight UTC
