@@ -10,6 +10,7 @@
 \usepackage{tcolorbox}
 \usepackage{array}
 \usepackage{tabularx}
+\usepackage[normalem]{ulem}
 
 % Colour constants
 \definecolor{surface}{HTML}{013964}
@@ -18,9 +19,9 @@
 % Spacing constants
 \newcommand{\marginx}{1.27cm}
 \newcommand{\marginy}{1.27cm}
-\newcommand{\linespacing}{1.05}
-\newcommand{\sectionheaderspacing}{0.25em}
-\newcommand{\interentryspacing}{0.3em}
+\newcommand{\linespacing}{1.00}
+\newcommand{\paragap}{0.2em}
+\newcommand{\bigparagap}{0.4em}
 
 % Margins
 \usepackage[top=\marginy, bottom=\marginy, left=\marginx, right=\marginx]{geometry}
@@ -58,9 +59,9 @@
   urlcolor=surface,
   citecolor=surface
 }
-\let\oldhref\href
-\renewcommand{\href}[2]{\oldhref{#1}{\underline{\textbf{\textcolor{surface}{#2}}}}}
-\newcommand{\metadatafmt}[1]{{\small\textcolor{gray!70}{#1}}}
+\newcommand{\cvlink}[2]{\uline{\href{#1}{\textcolor{surface}{\textbf{#2}}}}}
+
+\newcommand{\metadatafmt}[1]{{\small\textcolor{gray}{#1}}}
 
 % CV Sections
 \newenvironment{cvsection}[1]{
@@ -77,15 +78,15 @@
   ]
     \textcolorbf{#1}
   \end{tcolorbox}
-  \vspace{\sectionheaderspacing}
+  \vspace{\paragap}
 }
-{\vspace{\sectionheaderspacing}}
+{\vspace{\paragap}}
 
 % Table entries
 \newcommand{\entry}[3]{
+  \par\vspace{\paragap}
   #1 \hfill \metadatafmt{\textit{#2}} \\
   #3
-  \vspace{\interentryspacing}
 }
 
 %%%%%%%%%%%%%%%%
@@ -93,70 +94,76 @@
 
 \begin{center}
   {\setfontsize{26pt}{\textcolorbf{MATTHEW BEARDWELL}}} \\
-  [1.5em]
+  [1.2em]
   Watford, Hertfordshire · \
-  \href{https://mbeardwell.com}{mbeardwell.com} · \
-  \href{mailto:contact@mbeardwell.com}{contact@mbeardwell.com} \\
-  [1.5em]
+  \cvlink{https://mbeardwell.com}{mbeardwell.com} · \
+  \cvlink{mailto:contact@mbeardwell.com}{contact@mbeardwell.com} \\
+  \cvlink{https://linkedin.com/in/mbeardwell}{LinkedIn} · \
+  \cvlink{https://github.com/mbeardwell}{GitHub} · \
+  \cvlink{https://tryhackme.com/p/mbeardwell}{TryHackMe} \\[1.2em]
 \end{center}
 
 \begin{cvsection}{Professional Summary}
-SOC Analyst Trainee with hands-on cybersecurity experience and a First-Class BSc in Computer Science. 
-Strong in SIEM, OSINT, and security automation, applying advanced threat detection techniques in real-world lab scenarios. 
-Ranked in the top __PERCENTAGE__\% globally on TryHackMe (__ROOMS__ completed rooms, __BADGES__ badges). \\
-Currently preparing for CompTIA Security+ to strengthen expertise in SOC workflows and incident response.
+  SOC Analyst Trainee with hands-on cybersecurity experience and a First-Class BSc in Computer Science. 
+  Strong in SIEM, OSINT, and security automation, applying advanced threat detection techniques in real-world lab scenarios. 
+  Ranked in the top __PERCENTAGE__\% globally on TryHackMe (__ROOMS__ completed rooms, __BADGES__ badges). \\
+  Currently preparing for CompTIA Security+ to strengthen expertise in SOC workflows and incident response.
 \end{cvsection}
 
 \begin{cvsection}{Technical Skills}
-\begin{itemize}[leftmargin=*]
-  \item \textcolorbf{Security and Threat Detection}: SIEM (Splunk), Windows Event Logs, Sysmon, OSINT
-  \item \textcolorbf{Programming and Scripting}: Python, Bash, PowerShell, C, ARM Assembly
-  \item \textcolorbf{Systems and Administration}: Windows (Group Policy, Sysmon), Linux (Security Hardening), Virtualisation
-  \item \textcolorbf{Incident Response and Monitoring}: Wireshark, TCP/IP, Firewalls, Linux Hardening
-\end{itemize}
+  \begin{itemize}[leftmargin=*]
+    \item \textcolorbf{Security and Threat Detection}: SIEM (Splunk), Sysmon, Windows Logs, OSINT
+    \item \textcolorbf{Scripting and Programming}: Python, Bash, PowerShell, C, ARM ASM
+    \item \textcolorbf{Systems Admin}: Group Policy, Linux Hardening, Virtualisation
+    \item \textcolorbf{Incident Response}: Wireshark, TCP/IP, Firewalls
+  \end{itemize}
 \end{cvsection}
 
 \begin{cvsection}{Cybersecurity Projects}
-\entry{\textcolorbf{TCP Port Scanner}}{Feb 2025 -- Mar 2025}{
-  Developed a high-performance Python-based network scanner with multithreading, 
-  improving efficiency in identifying live hosts for security assessments and penetration testing. 
-  Demonstrates strong skills in automation, network scanning, and multithreaded programming. \\[0.25em]
-  \metadatafmt{Technologies: Python, Multithreading, Network Scanning} \\ 
-  \href{https://github.com/mbeardwell/simple-port-scanner}{github.com/mbeardwell/simple-port-scanner}
-}
+  \entry{\textcolorbf{`ActiveReconLite'}}{Feb 2025 -- Mar 2025}{
+    Developed a high-performance Python-based network scanner with multithreading, 
+    achieving a \~98\% speed improvement vs `nmap' on localhost full-port scans (5s vs 304s, 65,535 ports); 
+    validated with `time' benchmarks assisting in identifying live hosts for security assessments and penetration testing.
+    Demonstrates strong skills in automation, network scanning, and multithreaded programming. \\
+    \cvlink{https://github.com/mbeardwell/active-recon-lite}{github.com/mbeardwell/active-recon-lite} \\
+    \metadatafmt{Technologies: Python, Multithreading, Network Scanning}
+  }
 
-\entry{\textcolorbf{ARM Floating Point Emulation} · \textit{Bachelor's Thesis}}{Oct 2022 -- May 2023}{
-  Designed and implemented a dynamic code modification technique that intercepts processor
-  instructions at runtime, demonstrating low-level reverse engineering and malware analysis
-  applications. \\[0.25em]
-  \metadatafmt{Technologies: C, ARM Assembly, Dynamic Binary Instrumentation} \\ 
-  \href{https://github.com/mbeardwell/arm-fp-emu}{github.com/mbeardwell/arm-fp-emu}
-}
+  \entry{\textcolorbf{`Faster Dynamically Instrumented Programs'} · \textit{Bachelor's Thesis}}{Oct 2022 -- May 2023}{
+    Designed and implemented a dynamic code modification technique that intercepts processor
+    instructions at runtime, demonstrating low-level reverse engineering and malware analysis
+    applications. \\
+    \cvlink{https://github.com/mbeardwell/arm-fp-emu}{github.com/mbeardwell/arm-fp-emu} \\
+    \metadatafmt{Technologies: C, ARM Assembly, Dynamic Binary Instrumentation}
+  }
 \end{cvsection}
 
 \begin{cvsection}{Professional Experience}
-\entry{\textcolorbf{SOC Training and Labs} · \textit{TryHackMe (Self-Led Learning)}}{Feb 2022 -- Present}{Developed hands-on expertise in SIEM, threat hunting, and security automation through __ROOMS__ cybersecurity labs (Top __PERCENTAGE__\% globally). Applied log analysis, threat detection, and SOC tools in simulated security operations, mirroring real-world threat-hunting scenarios.}
+  \metadatafmt{Currently on an extended health-related pause; actively preparing for near-term return to cybersecurity.}
 
-\entry{\textcolorbf{Retail Assistant} · \textit{Max Spielmann (Prince's Trust Work Placement)}}{Feb 2024 -- Mar 2024}{Processed transactions, assisted customers with self-service kiosks and mobile integration, and ensured secure deletion of processed passport photos.}
+  \entry{\textcolorbf{SOC Training and Labs} · \textit{TryHackMe (Self-Led Learning)}}{Feb 2022 -- Present}{Developed hands-on expertise in SIEM, threat hunting, and security automation through __ROOMS__ cybersecurity labs (Top __PERCENTAGE__\% globally). Applied log analysis, threat detection, and SOC tools in simulated security operations, mirroring real-world threat-hunting scenarios.}
 
-\entry{\textcolorbf{Private Maths Tutor} · \textit{Freelance}}{Sep 2016 -- Nov 2019}{Delivered structured problem-solving sessions, strengthening logical thinking, and adapted teaching methods to improve communication skills.}
+  \entry{\textcolorbf{Retail Assistant} · \textit{Max Spielmann (Prince's Trust Work Placement)}}{Feb 2024 -- Mar 2024}{Processed transactions, assisted customers with self-service kiosks and mobile integration, and ensured secure deletion of processed passport photos.}
 
-\entry{\textcolorbf{Research and Documentation Intern} · \textit{Indo UK Institute of Health}}{Jun 2017 -- Aug 2017}{Conducted market research on employee benefits and strategic partnerships, providing executives with key insights. Edited and reformatted high-level strategic documents that shaped discussions on a billion-pound healthcare initiative.}
+  \entry{\textcolorbf{Private Maths Tutor} · \textit{Freelance}}{Sep 2016 -- Nov 2019}{Delivered structured problem-solving sessions, strengthening logical thinking, and adapted teaching methods to improve communication skills.}
+
+  \entry{\textcolorbf{Research and Documentation Intern} · \textit{Indo UK Institute of Health}}{Jun 2017 -- Aug 2017}{Conducted market research on employee benefits and strategic partnerships, providing executives with key insights. Edited and reformatted high-level strategic documents that shaped discussions on a billion-pound healthcare initiative.}
 \end{cvsection}
 
 \begin{cvsection}{Education and Certifications}
-\begin{tabular*}{\textwidth}{@{}p{4cm} @{\extracolsep{\fill}} p{10cm} p{3.5cm}@{}}
-\textcolorbf{BSc Computer Science} & King's College London (1st Class Honours) & \metadatafmt{Sep 2018 -- Jun 2023} \\
-\textcolorbf{A-Levels} & King's College London Mathematics School (4 A*s) & \metadatafmt{Sep 2016 -- Jun 2018} \\
-\textcolorbf{GCSE and IGCSEs} & 9 A*s, 1 B (including A* in Computing, Maths, and the Sciences) & \metadatafmt{Sep 2014 -- Jun 2016} \\
-\end{tabular*}
-\\[0.6em]
-\begin{tabular*}{\textwidth}{@{}p{4cm} @{\extracolsep{\fill}} p{10cm} p{3.5cm}@{}}
-\textcolorbf{Certifications} & CompTIA Security+ & \metadatafmt{(In Progress)} \\
-~ & TryHackMe `Introduction to Cyber Security' & \metadatafmt{Feb 2024} \\
-~ & TryHackMe `Pre Security' & \metadatafmt{Apr 2022} \\
-~ & Prince's Trust Level 2 (12-week employability program) & \metadatafmt{Jan 2024 -- Apr 2024} \\
-\end{tabular*}
+  \begin{tabular*}{\textwidth}{@{}p{4cm} @{\extracolsep{\fill}} p{10cm} p{3.5cm}@{}}
+    \textcolorbf{BSc Computer Science} & King's College London (1st Class Honours) & \metadatafmt{Sep 2018 -- Jun 2023} \\
+    \textcolorbf{A-Levels} & King's College London Mathematics School (4 A*s) & \metadatafmt{Sep 2016 -- Jun 2018} \\
+    \textcolorbf{GCSE and IGCSEs} & 9 A*s, 1 B (incl. A* in Computing, Maths, Sciences) & \metadatafmt{Sep 2014 -- Jun 2016} \\
+  \end{tabular*}
+  \\[\bigparagap]
+  \textcolorbf{Certifications}\\[\paragap]
+  \begin{tabular*}{\textwidth}{@{}p{10cm} @{\extracolsep{\fill}} p{3.5cm}@{}}
+    CompTIA Security+ & \metadatafmt{(In Progress)} \\
+    TryHackMe `Introduction to Cyber Security' & \metadatafmt{Feb 2024} \\
+    TryHackMe `Pre Security' & \metadatafmt{Apr 2022} \\
+    Prince's Trust Level 2 (12-week employability program) & \metadatafmt{Jan 2024 -- Apr 2024} \\
+  \end{tabular*}
 \end{cvsection}
 
 \end{document}

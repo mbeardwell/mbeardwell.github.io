@@ -12,18 +12,22 @@ COLORS_FILE="${ROOT_DIR}/src/styles/colors.json"
 
 # Install dependencies
 if ! command -v xelatex &>/dev/null; then
-  sudo apt install -y texlive-xetex
+    sudo apt install -y texlive-xetex
+fi
+
+if ! command -v convert &>/dev/null; then
+    sudo apt install -y imagemagick
 fi
 
 # Post-run cleanup
 cleanup() {
     rm -f \
-    ./*.aux \
-    ./*.log \
-    ./*.out \
-    ./*.fdb_latexmk \
-    ./*.fls \
-    "${OUTPUT_TEX_FILE}"
+        ./*.aux \
+        ./*.log \
+        ./*.out \
+        ./*.fdb_latexmk \
+        ./*.fls \
+        "${OUTPUT_TEX_FILE}"
 
     rm "${OUTPUT_TEX_FILE%.*}.pdf" 2>/dev/null
 }
@@ -55,5 +59,6 @@ sed -e "s|__PERCENTAGE__|${percentage}|" \
     echo "Error: xelatex failed to compile LaTeX"
     exit 1
 }
+convert -density 300 "${PDF_FILE}" -background white -alpha remove -alpha off "${PDF_FILE%.*}.png"
 
 mv "${OUTPUT_TEX_FILE%.*}.pdf" "${PDF_FILE}"
