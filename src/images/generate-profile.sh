@@ -15,10 +15,3 @@ for size in "${SIZES[@]}"; do
     outname="${OUTDIR_PROFILE}/profile--${size}.png"
     convert "${PROFILE}" -resize "${size}x${size}" "${outname}"
 done
-
-# Create LinkedIn banner
-[ ! -d "venv" ] && python3 -m venv venv
-source venv/bin/activate
-pip install pillow cairosvg matplotlib
-python3 linkedin-banner.py
-deactivate
