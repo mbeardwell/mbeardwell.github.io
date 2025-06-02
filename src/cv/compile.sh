@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 set -uo pipefail
-cd "$(dirname "$0")" || exit
+cd "$(dirname "$0")" || exit 1
 
 # Constants
 ROOT_DIR="../.."
