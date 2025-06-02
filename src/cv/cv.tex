@@ -60,7 +60,7 @@
 }
 \let\oldhref\href
 \renewcommand{\href}[2]{\oldhref{#1}{\underline{\textbf{\textcolor{surface}{#2}}}}}
-\newcommand{\metadatafmt}[1]{\small\textcolor{gray!70}{#1}}
+\newcommand{\metadatafmt}[1]{{\small\textcolor{gray!70}{#1}}}
 
 % CV Sections
 \newenvironment{cvsection}[1]{
@@ -117,7 +117,7 @@ Currently preparing for CompTIA Security+ to strengthen expertise in SOC workflo
 \end{cvsection}
 
 \begin{cvsection}{Cybersecurity Projects}
-\entry{\textcolorbf{TCP Port Scanner}}{2025}{
+\entry{\textcolorbf{TCP Port Scanner}}{Feb 2025 -- Mar 2025}{
   Developed a high-performance Python-based network scanner with multithreading, 
   improving efficiency in identifying live hosts for security assessments and penetration testing. 
   Demonstrates strong skills in automation, network scanning, and multithreaded programming. \\[0.25em]
@@ -125,7 +125,7 @@ Currently preparing for CompTIA Security+ to strengthen expertise in SOC workflo
   \href{https://github.com/mbeardwell/simple-port-scanner}{github.com/mbeardwell/simple-port-scanner}
 }
 
-\entry{\textcolorbf{ARM Floating Point Emulation} · \textit{Bachelor's Thesis}}{2023}{
+\entry{\textcolorbf{ARM Floating Point Emulation} · \textit{Bachelor's Thesis}}{Oct 2022 -- May 2023}{
   Designed and implemented a dynamic code modification technique that intercepts processor
   instructions at runtime, demonstrating low-level reverse engineering and malware analysis
   applications. \\[0.25em]
@@ -149,6 +149,9 @@ Currently preparing for CompTIA Security+ to strengthen expertise in SOC workflo
 \textcolorbf{BSc Computer Science} & King's College London (1st Class Honours) & \metadatafmt{Sep 2018 -- Jun 2023} \\
 \textcolorbf{A-Levels} & King's College London Mathematics School (4 A*s) & \metadatafmt{Sep 2016 -- Jun 2018} \\
 \textcolorbf{GCSE and IGCSEs} & 9 A*s, 1 B (including A* in Computing, Maths, and the Sciences) & \metadatafmt{Sep 2014 -- Jun 2016} \\
+\end{tabular*}
+\\[0.6em]
+\begin{tabular*}{\textwidth}{@{}p{4cm} @{\extracolsep{\fill}} p{10cm} p{3.5cm}@{}}
 \textcolorbf{Certifications} & CompTIA Security+ & \metadatafmt{(In Progress)} \\
 ~ & TryHackMe `Introduction to Cyber Security' & \metadatafmt{Feb 2024} \\
 ~ & TryHackMe `Pre Security' & \metadatafmt{Apr 2022} \\
