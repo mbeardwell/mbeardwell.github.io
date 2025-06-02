@@ -1,4 +1,4 @@
-name: Update CV PDF from Google Docs
+name: Update CV
 permissions:
   contents: write
   pages: write
@@ -7,7 +7,6 @@ on:
   push:
     branches:
       - main
-      - gh-pages
   workflow_dispatch:
   schedule:
     - cron: "0 0 * * *" # Every midnight UTC
@@ -19,15 +18,17 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Download latest CV
-        run: curl -L "$CV_PDF_URL" -o public/cv.pdf
-        env:
-          CV_PDF_URL: ${{ secrets.CV_PDF_URL }}
-
       - name: Build
         run: |
           npm install
           npm run build
+          git diff --quiet && echo "No changes to commit" || (
+            git config user.email cv-bot@users.noreply.github.com
+            git config user.name cv-bot
+            git add --all
+            git commit -m "CV-Bot — Updated CV"
+            git push
+          )
 
       - name: Deploy CV
         uses: peaceiris/actions-gh-pages@v3

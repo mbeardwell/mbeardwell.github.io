@@ -23,7 +23,7 @@ cleanup() {
     rm "${OUTPUT_TEX_FILE%.*}.pdf" 2>/dev/null
 }
 
-# trap cleanup EXIT
+trap cleanup EXIT
 
 # Fetch stats
 stats_json=$(curl -s "${ENDPOINT}")

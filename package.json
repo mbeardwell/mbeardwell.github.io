@@ -4,11 +4,12 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "vite",
-    "build": "vite build && npm run generate-images",
+    "build": "vite build && npm run generate-images && npm run generate-cv",
     "preview": "vite preview",
     "clean-install": "rm -rf node_modules/ dist/ package-lock.json && npm install",
     "deploy": "npm run build && gh-pages -d dist",
-    "generate-images": "./src/images/generate-images.sh"
+    "generate-images": "./src/images/generate-images.sh",
+    "generate-cv": "./src/cv/compile.sh"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.5",
