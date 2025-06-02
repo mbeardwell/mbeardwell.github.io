@@ -10,6 +10,11 @@ PDF_FILE="${ROOT_DIR}/public/cv.pdf"
 ENDPOINT="https://tryhackme.com/api/v2/public-profile?username=mbeardwell"
 COLORS_FILE="${ROOT_DIR}/src/styles/colors.json"
 
+# Install dependencies
+if ! command -v xelatex &>/dev/null; then
+  sudo apt install xelatex
+fi
+
 # Post-run cleanup
 cleanup() {
     rm -f \
