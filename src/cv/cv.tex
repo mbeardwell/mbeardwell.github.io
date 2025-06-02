@@ -43,8 +43,17 @@
   BoldItalicFont  = *-Medium       % or bold italic
 ]
 \newcommand{\setfontsize}[2]{\fontsize{#1}{#1}\selectfont{}#2}
-\renewcommand{\UrlFont}{\color{surface}\normalfont\bfseries}
 \newcommand{\textcolorbf}[1]{\textbf{\textcolor{surface}{#1}}}
+\usepackage{hyperref}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=surface,
+  urlcolor=surface,
+  citecolor=surface
+}
+
+\let\oldhref\href
+\renewcommand{\href}[2]{\oldhref{#1}{\textbf{\textcolor{surface}{#2}}}}
 
 % CV Sections
 \newenvironment{cvsection}[1]{
@@ -76,11 +85,11 @@
 \begin{document}
 
 \begin{center}
-  {\setfontsize{28pt}{\textcolorbf{MATTHEW BEARDWELL}}} \\
+  {\setfontsize{26pt}{\textcolorbf{MATTHEW BEARDWELL}}} \\
   [1.5em]
   Watford, Hertfordshire · \
-  \textcolorbf{\href{https://mbeardwell.com}{mbeardwell.com}} · \
-  \textcolorbf{\href{mailto:contact@mbeardwell.com}{contact@mbeardwell.com}} \\
+  \href{https://mbeardwell.com}{mbeardwell.com} · \
+  \href{mailto:contact@mbeardwell.com}{contact@mbeardwell.com} \\
   [1.5em]
 \end{center}
 
@@ -106,7 +115,7 @@ Currently preparing for CompTIA Security+ to strengthen expertise in SOC workflo
   improving efficiency in identifying live hosts for security assessments and penetration testing. 
   Demonstrates strong skills in automation, network scanning, and multithreaded programming. \\ 
   \textit{Technologies:} Python, Multithreading, Network Scanning \\ 
-  \textit{Project Link:} \url{https://github.com/mbeardwell/simple-port-scanner}
+  \textit{Project Link:} \href{github.com/mbeardwell/simple-port-scanner}{https://github.com/mbeardwell/simple-port-scanner}
 }
 
 \entry{\textcolorbf{ARM Floating Point Emulation} · Bachelor's Thesis}{2023}{
@@ -114,7 +123,7 @@ Currently preparing for CompTIA Security+ to strengthen expertise in SOC workflo
   instructions at runtime, demonstrating low-level reverse engineering and malware analysis
   applications. \\ 
   \textit{Technologies:} C, ARM Assembly, Dynamic Binary Instrumentation \\ 
-  \textit{Project Link:} \url{https://github.com/mbeardwell/arm-fp-emu}
+  \textit{Project Link:} \href{github.com/mbeardwell/arm-fp-emu}{https://github.com/mbeardwell/arm-fp-emu}
 }
 \end{cvsection}
 
