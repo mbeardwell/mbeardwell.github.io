@@ -12,7 +12,7 @@ COLORS_FILE="${ROOT_DIR}/src/styles/colors.json"
 
 # Install dependencies
 if ! command -v xelatex &>/dev/null; then
-  sudo apt install xelatex
+  sudo apt install texlive-xetex
 fi
 
 # Post-run cleanup
