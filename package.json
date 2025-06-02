@@ -8,7 +8,7 @@
     "preview": "vite preview",
     "clean-install": "rm -rf node_modules/ dist/ package-lock.json && npm install",
     "deploy": "npm run build && gh-pages -d dist",
-    "generate-images": "./src/images/generate-images.sh",
+    "generate-images": "./src/images/generate-profile.sh && ./src/images/generate-banner.sh",
     "generate-cv": "./src/cv/compile.sh"
   },
   "dependencies": {
