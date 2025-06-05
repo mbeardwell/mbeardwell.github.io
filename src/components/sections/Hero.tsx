@@ -82,7 +82,7 @@ function TextBlock({ topPercentageRef }: { topPercentageRef: React.RefObject<HTM
             <span
                 className="text-content text-lg"
             >
-                Focusing on CompTIA Security+ revision during health recovery. Not job-seeking at present. Site and CV are for long-term professional visibility only.
+                Not job-seeking at present — focusing on CompTIA Security+ revision during an extended health recovery.
             </span>
             <Buttons />
         </div>
