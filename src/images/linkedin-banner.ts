@@ -14,7 +14,7 @@ const CSS_PATH: string = path.join(process.cwd(), `${ROOT_DIR}/dist/temp.css`);
 // Background
 const bgImage: Buffer<ArrayBufferLike> = await sharp(BG_PATH)
   .resize(W, H)
-  .blur(10)
+  .blur(6)
   .toBuffer();
 
 const bgSurface: Buffer<ArrayBufferLike> = await sharp({
@@ -22,7 +22,7 @@ const bgSurface: Buffer<ArrayBufferLike> = await sharp({
     width: W,
     height: H,
     channels: 4,
-    background: colors["surface"] + "CC",
+    background: colors["surface"] + "BB",
   },
 })
   .png()

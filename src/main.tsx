@@ -1,6 +1,6 @@
+import "@styles/main.css";
 import { createRoot } from "react-dom/client";
 import App from "src/App";
-import "@styles/main.css";
 
 const root = createRoot(document.getElementById("root") as HTMLElement);
 root.render(<App />);

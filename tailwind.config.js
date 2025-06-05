@@ -10,7 +10,7 @@ module.exports = {
     theme: {
         extend: {
             fontFamily: {
-                sans: ["IBM Plex Sans", "sans-serif"],
+                sans: ["Geist", "sans-serif"],
             },
             colors,
             backgroundImage: {

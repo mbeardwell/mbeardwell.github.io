@@ -79,6 +79,11 @@ function TextBlock({ topPercentageRef }: { topPercentageRef: React.RefObject<HTM
             >
                 BSc Computer Science &middot; Top-ranked on TryHackMe &middot; Security+ in progress
             </span>
+            <span
+                className="text-content text-lg"
+            >
+                Focusing on CompTIA Security+ revision during health recovery. Not job-seeking at present. Site and CV are for long-term professional visibility only.
+            </span>
             <Buttons />
         </div>
     );
