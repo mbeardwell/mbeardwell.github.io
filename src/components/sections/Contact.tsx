@@ -10,14 +10,14 @@ function Buttons(): JSX.Element {
             <Button
                 href="mailto:contact@mbeardwell.com"
                 text="contact@mbeardwell.com"
-                Icon={IconMail}
-                iconClassName="stroke-content"
+                Svg={IconMail}
+                paintClass="stroke-content"
             />
             <Button
                 href="https://discord.gg/2HUhFy6QrB"
                 text="mbeardwell"
-                iconClassName="fill-content"
-                Icon={IconDiscord}
+                Svg={IconDiscord}
+                paintClass="fill-content"
             />
         </div>
     );
@@ -26,7 +26,7 @@ function Buttons(): JSX.Element {
 export default function Contact(): JSX.Element {
     return (
         <Section id="contact">
-            <div className="flex flex-col">
+            <div className="flex flex-col gap-6">
                 <h2 className="text-4xl font-bold text-accent">
                     Contact
                 </h2>

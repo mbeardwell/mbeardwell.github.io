@@ -18,7 +18,7 @@ function ImageBlock(): JSX.Element {
         >
             {/* Profile image */}
             <img
-                className="absolute inset-0 w-full h-full object-cover hover:scale-95 transition duration-250 ease-(--button-ease)"
+                className="absolute inset-0 w-full h-full object-cover hover:scale-105 transition duration-250 ease-(--button-ease)"
                 src="/images/profile/profile--512.png"
                 srcSet={`
                     /images/profile/profile--128.png 128w,
@@ -43,26 +43,26 @@ function Buttons(): JSX.Element {
             <Button
                 href="/cv.pdf"
                 text="CV"
-                Icon={IconFile}
-                iconClassName="stroke-content"
+                Svg={IconFile}
+                paintClass="stroke-content"
             />
             {/* LinkedIn button*/}
             <Button
                 href="https://linkedin.com/in/mbeardwell/"
-                Icon={IconLinkedIn}
-                iconClassName="stroke-content fill-content"
+                Svg={IconLinkedIn}
+                paintClass="stroke-content fill-content"
             />
             {/* GitHub button*/}
             <Button
                 href="https://github.com/mbeardwell"
-                Icon={IconGitHub}
-                iconClassName="stroke-content fill-content text-content"
+                Svg={IconGitHub}
+                paintClass="stroke-content fill-content text-content"
             />
             {/* TryHackMe button*/}
             <Button
                 href="https://tryhackme.com/p/mbeardwell"
-                Icon={IconTHM}
-                iconClassName="fill-content"
+                Svg={IconTHM}
+                paintClass="fill-content"
             />
         </div>
     );
@@ -78,11 +78,6 @@ function TextBlock({ topPercentageRef }: { topPercentageRef: React.RefObject<HTM
                 className="text-content text-lg italic flex flex-col justify-start items-center gap-1"
             >
                 BSc Computer Science &middot; Top-ranked on TryHackMe &middot; Security+ in progress
-            </span>
-            <span
-                className="text-content text-lg"
-            >
-                Not job-seeking at present — focusing on CompTIA Security+ revision during an extended health recovery.
             </span>
             <Buttons />
         </div>
