@@ -35,7 +35,10 @@ cleanup() {
 trap cleanup EXIT
 
 # Fetch stats
-stats_json=$(curl -s "${ENDPOINT}")
+if ! stats_json=$(curl -sf "${ENDPOINT}"); then
+    echo "Error: failed to fetch TryHackMe stats"
+    exit 1
+fi
 percentage=$(echo "${stats_json}" | jq ".data.topPercentage")
 badges=$(echo "${stats_json}" | jq ".data.badgesNumber")
 rooms=$(echo "${stats_json}" | jq ".data.completedRoomsNumber")
