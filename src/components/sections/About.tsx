@@ -9,8 +9,7 @@ export default function About(): JSX.Element {
                     About
                 </h2>
                 <span className="text-content text-lg">
-                    Not job-seeking at present — focusing on CompTIA Security+ 
-                    revision during an extended health recovery.
+                    Open to volunteering; not seeking paid roles — currently focused on Security+ and health recovery.
                 </span>
             </div>
         </Section>
