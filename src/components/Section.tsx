@@ -11,7 +11,7 @@ export default function Section({ id, children }: SectionProps): JSX.Element {
             id={id}
             className="w-full flex flex-row justify-center items-center text-center"
         >
-            <div className="w-full max-w-7xl max-xl:px-6 py-16 mx-auto bg-surface/85 min-w-0">
+            <div className="w-full max-w-7xl max-xl:px-6 py-16 mx-auto backdrop-blur-sm min-w-0">
                 {children}
             </div>
         </section>
