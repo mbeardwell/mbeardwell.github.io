@@ -10,7 +10,7 @@ export const particlesTris: IOptions = structuredClone(particlesLinks);
 
 particlesTris.particles.links = {
   enable: true,
-  distance: 150,
+  distance: 300,
   color: typedColours[COLOUR],
   opacity: 0.35,
   width: 1,
