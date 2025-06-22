@@ -26,11 +26,11 @@ export default function Background() {
           options={particlesLinks}
           className="absolute inset-0 z-[-3]"
         />
-        <Particles
+        {/*<Particles
           id="layer-2"
           options={particlesLinks}
           className="absolute inset-0 z-[-2]"
-        />
+        />*/}
         <Particles
           id="layer-3"
           options={particlesTris}
