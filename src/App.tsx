@@ -4,8 +4,9 @@ import Contact from "@components/sections/Contact";
 import Footer from "@components/sections/Footer";
 import Header from "@components/sections/Header";
 import Hero from "@components/sections/Hero";
+import { JSX } from "react";
 
-const SECTION_SPACER = <div className="h-12 w-full bg-surface" /> 
+const SECTION_SPACER: JSX.Element = <div className="h-12 w-full bg-surface" /> 
 
 export default function App() {
     return (

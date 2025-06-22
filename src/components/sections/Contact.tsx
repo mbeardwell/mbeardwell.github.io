@@ -1,6 +1,5 @@
 import Button from "@components/Button";
 import Section from "@components/Section";
-import IconDiscord from "@icons/brand-discord.svg?react";
 import IconMail from "@icons/mail.svg?react";
 import { JSX } from "react";
 
@@ -13,12 +12,6 @@ function Buttons(): JSX.Element {
                 Svg={IconMail}
                 paintClass="stroke-content"
             />
-            <Button
-                href="https://discord.gg/2HUhFy6QrB"
-                text="mbeardwell"
-                Svg={IconDiscord}
-                paintClass="fill-content"
-            />
         </div>
     );
 }
@@ -30,9 +23,9 @@ export default function Contact(): JSX.Element {
                 <h2 className="text-3xl font-bold text-accent">
                     Contact
                 </h2>
-                <div className="flex flex-col flex-nowrap gap-3">
+                <div className="flex flex-col flex-nowrap gap-4">
                     <p className="text-lg text-content">
-                        Drop me a message via email or Discord!
+                        Drop me an email!
                     </p>
                     <Buttons />
                 </div>

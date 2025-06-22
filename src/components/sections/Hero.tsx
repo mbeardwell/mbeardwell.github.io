@@ -1,11 +1,12 @@
 import Button from "@components/Button";
+import Section from "@components/Section";
+import IconDiscord from "@icons/brand-discord.svg?react";
 import IconGitHub from "@icons/brand-github.svg?react";
 import IconLinkedIn from "@icons/brand-linkedin.svg?react";
 import IconTHM from "@icons/brand-tryhackme.svg?react";
 import IconFile from "@icons/file-text.svg?react";
 import { JSX, useEffect, useRef } from "react";
 import { getStats } from "src/stats";
-import Section from "@components/Section";
 
 const PROFILE_HEIGHT: number = 200;
 const PROFILE_WIDTH: number = 200;
@@ -48,22 +49,30 @@ function Buttons(): JSX.Element {
                 Svg={IconFile}
                 paintClass="stroke-content"
             />
-            {/* LinkedIn button*/}
-            <Button
-                href="https://linkedin.com/in/mbeardwell/"
-                Svg={IconLinkedIn}
-                paintClass="stroke-content fill-content"
-            />
             {/* GitHub button*/}
             <Button
                 href="https://github.com/mbeardwell"
                 Svg={IconGitHub}
                 paintClass="stroke-content fill-content text-content"
             />
-            {/* TryHackMe button*/}
+            {/* LinkedIn button*/}
             <Button
-                href="https://tryhackme.com/p/mbeardwell"
-                Svg={IconTHM}
+                href="https://linkedin.com/in/mbeardwell"
+                Svg={IconLinkedIn}
+                paintClass="stroke-content fill-content"
+            />
+            {/* TryHackMe button*/}
+            {/*
+                <Button
+                    href="https://tryhackme.com/p/mbeardwell"
+                    Svg={IconTHM}
+                    paintClass="fill-content"
+                />
+            */}
+            {/* Discord button*/}
+            <Button
+                href="https://discord.gg/2HUhFy6QrB"
+                Svg={IconDiscord}
                 paintClass="fill-content"
             />
         </div>
@@ -72,16 +81,18 @@ function Buttons(): JSX.Element {
 
 function TextBlock({ topPercentageRef }: { topPercentageRef: React.RefObject<HTMLSpanElement | null> }): JSX.Element {
     return (
-        <div className="md:max-w-[40vw] flex flex-col gap-3">
+        <div className="md:max-w-[40vw] flex flex-col gap-6">
             <h1 className="text-accent text-4xl font-bold">Matthew Beardwell</h1>
-            <h2 className="text-content text-2xl">SOC Analyst Trainee</h2>
-            <span
-                ref={topPercentageRef}
-                className="text-content text-lg italic flex flex-col justify-start items-center gap-1"
-            >
-                BSc Computer Science &middot; Top-ranked on TryHackMe &middot; Security+ in progress
-            </span>
-            <Buttons />
+            <div className="flex flex-col gap-4">
+                <h2 className="text-content text-2xl">SOC Analyst Trainee</h2>
+                <span
+                    ref={topPercentageRef}
+                    className="text-content text-lg italic flex flex-col justify-start items-center gap-1"
+                >
+                    BSc Computer Science &middot; Top-ranked on TryHackMe &middot; Security+ in progress
+                </span>
+                <Buttons />
+            </div>
         </div>
     );
 }
@@ -105,12 +116,10 @@ export default function Hero(): JSX.Element {
     return (
         <Section id="hero">
             <div
-                className="w-full flex flex-col-reverse md:flex-row flex-wrap justify-center items-center gap-[8vw] box-border"
+                className="w-full flex flex-col md:flex-row flex-wrap justify-center items-center gap-[8vw] box-border"
             >
-                <TextBlock topPercentageRef={topPercentageRef} />
-                {/* Vertical Divider */}
-                {/* <div className="bg-accent hidden md:block md:w-px md:self-stretch" /> */}
                 <ImageBlock />
+                <TextBlock topPercentageRef={topPercentageRef} />
             </div>
         </Section >
     );
