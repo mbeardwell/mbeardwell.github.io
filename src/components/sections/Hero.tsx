@@ -18,15 +18,17 @@ function ImageBlock(): JSX.Element {
         >
             {/* Profile image */}
             <img
-                className="absolute inset-0 w-full h-full object-cover hover:scale-105 transition duration-250 ease-(--button-ease)"
-                src="/images/profile/profile--512.png"
+                className="absolute inset-0 w-full h-full object-cover motion-safe:hover:scale-105 transition duration-250 ease-(--button-ease)"
+                src="/images/profile/profile--128.png"
                 srcSet={`
                     /images/profile/profile--128.png 128w,
                     /images/profile/profile--256.png 256w,
                     /images/profile/profile--512.png 512w
                 `}
-                sizes="(max-width: 512px) 100vw, 512px"
+                sizes="(max-width: 640px) 128px, (max-width: 768px) 160px, (max-width: 1024px) 200px, 256px"
                 alt="Matthew Beardwell profile image"
+                loading="lazy"
+                decoding="async"
             />
             {/* Profile image border */}
             <div
