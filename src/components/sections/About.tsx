@@ -5,7 +5,7 @@ export default function About(): JSX.Element {
     return (
         <Section id="about">
             <div className="flex flex-col gap-6">
-                <h2 className="text-4xl font-bold text-accent">
+                <h2 className="text-3xl font-bold text-accent">
                     About
                 </h2>
                 <div className="flex flex-col gap-3 mx-2">
