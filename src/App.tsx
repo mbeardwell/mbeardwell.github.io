@@ -5,17 +5,19 @@ import Footer from "@components/sections/Footer";
 import Header from "@components/sections/Header";
 import Hero from "@components/sections/Hero";
 
+const SECTION_SPACER = <div className="h-12 w-full bg-surface" /> 
+
 export default function App() {
     return (
         <div id="home" className="min-h-screen w-screen relative flex flex-col">
             <Background />
             <Header />
-            <div className="h-8 w-full bg-surface" />
+            <div className="h-6 w-full bg-surface" /> 
             <main className="z-10 flex-1 flex-col items-center w-full">
                 <Hero />
-                <div className="h-8 w-full bg-surface" />
+                {SECTION_SPACER}
                 <About />
-                <div className="h-8 w-full bg-surface" />
+                {SECTION_SPACER}
                 <Contact />
             </main>
             <Footer />

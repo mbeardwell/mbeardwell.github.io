@@ -26,7 +26,7 @@ export const particlesLinks = {
     },
     move: {
       enable: true,
-      speed: 0.6,
+      speed: 0.15,
       direction: "none",
       random: false,
       straight: false,

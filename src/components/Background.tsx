@@ -25,7 +25,7 @@ export default function Background() {
         options={particlesLinks}
         className="absolute inset-0 z-[-2]"
       />
-      <div className="absolute inset-0 z-[-1] bg-surface/60 backdrop-blur-sm pointer-events-none" />
+      <div className="absolute inset-0 z-[-1] bg-surface/50 backdrop-blur-sm pointer-events-none" />
     </div>
   );
 }
