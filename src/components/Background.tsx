@@ -31,11 +31,11 @@ export default function Background() {
           options={particlesLinks}
           className="absolute inset-0 z-[-2]"
         />*/}
-        <Particles
+        {/*<Particles
           id="layer-3"
           options={particlesTris}
           className="absolute inset-0 z-[-1]"
-        />
+        />*/}
       </div>
       <div className="absolute inset-0 z-0 backdrop-blur-sm pointer-events-none" />
     </div>
