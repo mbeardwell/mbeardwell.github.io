@@ -9,7 +9,7 @@ export default function Section({ id, children }: SectionProps): JSX.Element {
     return (
         <section
             id={id}
-            className="w-full flex flex-row justify-center items-center text-center"
+            className="border-white border-y w-full flex flex-row justify-center items-center text-center"
         >
             <div className="w-full max-w-7xl max-xl:px-6 py-16 mx-auto min-w-0">
                 {children}
