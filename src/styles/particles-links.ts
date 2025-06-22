@@ -21,7 +21,7 @@ export const particlesLinks = {
       enable: true,
       distance: 450,
       color: typedColours[COLOUR],
-      opacity: 0.4,
+      opacity: 1,
       width: 1,
     },
     move: {
@@ -30,7 +30,7 @@ export const particlesLinks = {
       direction: "none",
       random: false,
       straight: false,
-      outModes: { default: "bounce" },
+      outModes: "destroy",
     },
     bounce: {
       horizontal: {
@@ -43,6 +43,6 @@ export const particlesLinks = {
   },
   retina_detect: true,
   autoPlay: true,
-  detectRetina: true,
+  detectRetina: false,
   fpsLimit: 24,
 } as unknown as IOptions;
