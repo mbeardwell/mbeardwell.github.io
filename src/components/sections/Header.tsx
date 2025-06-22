@@ -17,7 +17,7 @@ export default function Header(): JSX.Element {
 
                 {/* Navigation */}
                 <nav
-                    className="absolute left-1/2 -translate-x-1/2 hidden md:flex gap-6 text-xl text-content"
+                    className="ml-auto hidden md:flex gap-6 text-xl text-content px-4"
                     aria-label="Main navigation"
                 >
                     <a href="/#home" className="hover:text-surface">Home</a>
@@ -28,7 +28,6 @@ export default function Header(): JSX.Element {
                 {/* Hamburger (Mobile) */}
                 {/*<button
                     className="absolute right-0 md:hidden"
-                    data-dropdown-toggle="hamburger-dropdown"
                     aria-label="Open menu"
                 >
                     <Icon Svg={IconHamburger} paintClass="text-content hover:text-surface !w-8 !h-8" />
