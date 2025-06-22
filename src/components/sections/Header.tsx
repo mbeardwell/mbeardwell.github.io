@@ -20,9 +20,9 @@ export default function Header(): JSX.Element {
                     className="absolute left-1/2 -translate-x-1/2 hidden md:flex gap-6 text-xl text-content"
                     aria-label="Main navigation"
                 >
-                    <a href="/#home">Home</a>
-                    <a href="/#about">About</a>
-                    <a href="/#contact">Contact</a>
+                    <a href="/#home" className="hover:text-surface">Home</a>
+                    <a href="/#about" className="hover:text-surface">About</a>
+                    <a href="/#contact" className="hover:text-surface">Contact</a>
                 </nav>
 
                 {/* Hamburger (Mobile) */}

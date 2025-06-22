@@ -20,7 +20,7 @@ export default function Button({ href, text, Svg, paintClass }: ButtonProps): JS
         bg-accent border-accent border-[2px] rounded-lg
         ${BTN_PAD_Y} ${text ? BTN_PAD_X_ICON_WITH_TEXT : BTN_PAD_X_ICON_ONLY}
         text-content visited:text-content font-bold text-md md:text-md
-        hover:bg-surface hover:text-accent
+        hover:bg-surface hover:stroke-accent hover:fill-accent hover:text-accent
     `;
 
     return (
