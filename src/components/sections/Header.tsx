@@ -12,7 +12,7 @@ export default function Header(): JSX.Element {
             <div className="w-full max-w-6xl flex items-center relative">
                 {/* Logo */}
                 <a href="/#home" className="shrink-0">
-                    <Icon Svg={IconPersonal} paintClass="text-content !w-8 !h-8" />
+                    <Icon Svg={IconPersonal} paintClass="text-content hover:text-surface !w-8 !h-8" />
                 </a>
 
                 {/* Navigation */}
@@ -28,9 +28,10 @@ export default function Header(): JSX.Element {
                 {/* Hamburger (Mobile) */}
                 {/*<button
                     className="absolute right-0 md:hidden"
+                    data-dropdown-toggle="hamburger-dropdown"
                     aria-label="Open menu"
                 >
-                    <Icon Svg={IconHamburger} paintClass="text-content !w-8 !h-8" />
+                    <Icon Svg={IconHamburger} paintClass="text-content hover:text-surface !w-8 !h-8" />
                 </button>*/}
             </div>
         </header>
