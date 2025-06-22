@@ -30,7 +30,7 @@ export const particlesLinks = {
       direction: "none",
       random: false,
       straight: false,
-      outModes: "destroy",
+      outModes: { default: "bounce" },
     },
     bounce: {
       horizontal: {
