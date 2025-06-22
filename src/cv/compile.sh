@@ -6,7 +6,7 @@ cd "$(dirname "$0")" || exit 1
 ROOT_DIR="../.."
 INPUT_TEX_FILE="cv.tex"
 OUTPUT_TEX_FILE="cv-replaced.tex"
-PDF_FILE="${ROOT_DIR}/public/docs/cv.pdf"
+PDF_FILE="${ROOT_DIR}/public/docs/Matthew_Beardwell_CV.pdf"
 ENDPOINT="https://tryhackme.com/api/v2/public-profile?username=mbeardwell"
 COLORS_FILE="${ROOT_DIR}/src/styles/colors.json"
 
