@@ -16,7 +16,7 @@ export const particlesLinks = {
     },
     color: { value: typedColours[COLOUR] },
     opacity: { value: 0.5 },
-    size: { value: 3 },
+    size: { value: 6 },
     links: {
       enable: true,
       distance: 300,

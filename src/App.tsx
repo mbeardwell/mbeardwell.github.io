@@ -10,12 +10,13 @@ export default function App() {
         <div id="home" className="min-h-screen w-screen relative flex flex-col">
             <Background />
             <Header />
-            <main className="z-10 flex-1 flex-col items-center space-y-8 mt-8 w-full">
-                {/* <Construction /> */}
+            <div className="h-8 w-full bg-surface" />
+            <main className="z-10 flex-1 flex-col items-center w-full">
                 <Hero />
+                <div className="h-8 w-full bg-surface" />
                 <About />
+                <div className="h-8 w-full bg-surface" />
                 <Contact />
-                {/* <Projects /> */}
             </main>
             <Footer />
         </div>
