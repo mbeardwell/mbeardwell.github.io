@@ -3,7 +3,7 @@ import { initParticlesEngine, Particles } from "@tsparticles/react";
 import { useEffect, useState } from "react";
 import { loadFull } from "tsparticles";
 import { particlesLinks } from "@styles/particles-links";
-import { particlesTris } from "@styles/particles-triangles";
+// import { particlesTris } from "@styles/particles-triangles";
 
 
 export default function Background() {

@@ -19,14 +19,14 @@ export const particlesLinks = {
     size: { value: 3 },
     links: {
       enable: true,
-      distance: 500,
+      distance: 450,
       color: typedColours[COLOUR],
-      opacity: 0.35,
+      opacity: 0.4,
       width: 1,
     },
     move: {
       enable: true,
-      speed: 0.5,
+      speed: 0.6,
       direction: "none",
       random: false,
       straight: false,
@@ -44,5 +44,5 @@ export const particlesLinks = {
   retina_detect: true,
   autoPlay: true,
   detectRetina: true,
-  fpsLimit: 60,
+  fpsLimit: 24,
 } as unknown as IOptions;
