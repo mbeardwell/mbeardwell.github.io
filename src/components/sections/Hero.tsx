@@ -44,7 +44,7 @@ function Buttons(): JSX.Element {
         <div className="flex flex-row justify-center gap-4">
             {/* CV button*/}
             <Button
-                href="/docs/cv.pdf"
+                href="/docs/Matthew_Beardwell_CV.pdf"
                 text="CV"
                 Svg={IconFile}
                 paintClass="stroke-content"
