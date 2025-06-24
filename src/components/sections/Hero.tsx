@@ -47,19 +47,19 @@ function Buttons(): JSX.Element {
                 href="/docs/Matthew_Beardwell_CV.pdf"
                 text="CV"
                 Svg={IconFile}
-                paintClass="stroke-content"
+                paintTypes={["stroke"]}
             />
             {/* GitHub button*/}
             <Button
                 href="https://github.com/mbeardwell"
                 Svg={IconGitHub}
-                paintClass="stroke-content fill-content text-content"
+                paintTypes={["fill", "stroke", "text"]}
             />
             {/* LinkedIn button*/}
             <Button
                 href="https://linkedin.com/in/mbeardwell"
                 Svg={IconLinkedIn}
-                paintClass="stroke-content fill-content"
+                paintTypes={["fill", "stroke"]}
             />
             {/* TryHackMe button*/}
             {/*
@@ -73,7 +73,7 @@ function Buttons(): JSX.Element {
             <Button
                 href="https://discord.gg/2HUhFy6QrB"
                 Svg={IconDiscord}
-                paintClass="fill-content"
+                paintTypes={["fill"]}
             />
         </div>
     );

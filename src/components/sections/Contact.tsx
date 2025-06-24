@@ -10,7 +10,7 @@ function Buttons(): JSX.Element {
                 href="mailto:contact@mbeardwell.com"
                 text="contact@mbeardwell.com"
                 Svg={IconMail}
-                paintClass="stroke-content"
+                paintTypes={["stroke"]}
             />
         </div>
     );

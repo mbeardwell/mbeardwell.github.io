@@ -10,22 +10,27 @@ interface ButtonProps {
     href: string;
     text?: string;
     Svg?: SVG;
-    paintClass?: string;
+    paintTypes?: string[];
 }
 
-export default function Button({ href, text, Svg, paintClass }: ButtonProps): JSX.Element {
+export default function Button({ href, text, Svg, paintTypes }: ButtonProps): JSX.Element {
+    const iconClassName = paintTypes?.map((str) => str+"-content").join(" ");
+    const iconHoverClassName = paintTypes?.map((str) => "hover:"+str+"-accent").join(" ");
+    
     const aClass: string = `
         inline-flex items-center w-fit
         transition duration-250 ease-(--button-ease)
         bg-accent border-accent border-[2px] rounded-lg
         ${BTN_PAD_Y} ${text ? BTN_PAD_X_ICON_WITH_TEXT : BTN_PAD_X_ICON_ONLY}
-        text-content visited:text-content font-bold text-md md:text-md
-        hover:bg-surface hover:stroke-accent hover:fill-accent hover:text-accent
+        font-bold text-md md:text-md
+        hover:bg-surface hover:text-accent
+        ${iconClassName}
+        ${iconHoverClassName}
     `;
 
     return (
         <a href={href} className={aClass} target="_blank">
-            {Icon && <Icon Svg={Svg as SVG} paintClass={paintClass as string} />}
+            {Icon && <Icon Svg={Svg as SVG} paintClassName="" />}
             {text && <span className="ml-2 whitespace-nowrap">{text}</span>}
         </a>
     );

@@ -12,7 +12,7 @@ export default function Header(): JSX.Element {
             <div className="w-full max-w-6xl flex items-center relative">
                 {/* Logo */}
                 <a href="/#home" className="lg:px-4 shrink-0">
-                    <Icon Svg={IconPersonal} paintClass="text-content hover:text-surface !w-8 !h-8" />
+                    <Icon Svg={IconPersonal} paintClassName="text-content hover:text-surface !w-8 !h-8" />
                 </a>
 
                 {/* Navigation */}
