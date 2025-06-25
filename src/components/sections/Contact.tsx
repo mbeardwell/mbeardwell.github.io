@@ -19,7 +19,7 @@ function Buttons(): JSX.Element {
 export default function Contact(): JSX.Element {
     return (
         <Section id="contact">
-            <div className="flex flex-col gap-6">
+            <div className="flex flex-col gap-6 text-center">
                 <h2 className="text-3xl font-bold text-accent">
                     Contact
                 </h2>

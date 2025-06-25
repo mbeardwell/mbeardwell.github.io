@@ -3,10 +3,8 @@ import Section from "@components/Section";
 import IconDiscord from "@icons/brand-discord.svg?react";
 import IconGitHub from "@icons/brand-github.svg?react";
 import IconLinkedIn from "@icons/brand-linkedin.svg?react";
-import IconTHM from "@icons/brand-tryhackme.svg?react";
 import IconFile from "@icons/file-text.svg?react";
-import { JSX, useEffect, useRef } from "react";
-import { getStats } from "src/stats";
+import { JSX } from "react";
 
 const PROFILE_HEIGHT: number = 200;
 const PROFILE_WIDTH: number = 200;
@@ -41,7 +39,7 @@ function ImageBlock(): JSX.Element {
 
 function Buttons(): JSX.Element {
     return (
-        <div className="flex flex-row justify-center gap-4">
+        <div className="flex flex-row gap-4 justify-center md:justify-start">
             {/* CV button*/}
             <Button
                 href="/docs/Matthew_Beardwell_CV.pdf"
@@ -79,17 +77,16 @@ function Buttons(): JSX.Element {
     );
 }
 
-function TextBlock({ topPercentageRef }: { topPercentageRef: React.RefObject<HTMLSpanElement | null> }): JSX.Element {
+function TextBlock(): JSX.Element {
     return (
-        <div className="md:max-w-[40vw] flex flex-col gap-6">
+        <div className="md:max-w-[40vw] flex flex-col gap-6 text-center md:text-left">
             <h1 className="text-accent text-4xl font-bold">Matthew Beardwell</h1>
             <div className="flex flex-col gap-4">
                 <h2 className="text-content text-2xl">SOC Analyst Trainee</h2>
                 <span
-                    ref={topPercentageRef}
                     className="text-content text-lg italic flex flex-col justify-start items-center gap-1"
                 >
-                    BSc Computer Science &middot; Top-ranked on TryHackMe &middot; Security+ in progress
+                    BSc Computer Science &middot; Security+ in progress
                 </span>
                 <Buttons />
             </div>
@@ -98,20 +95,6 @@ function TextBlock({ topPercentageRef }: { topPercentageRef: React.RefObject<HTM
 }
 
 export default function Hero(): JSX.Element {
-    const topPercentageRef = useRef<HTMLSpanElement | null>(null);
-
-    useEffect(() => {
-        (async () => {
-            const stats = await getStats();
-            const interval = setInterval(() => {
-                if (topPercentageRef.current) {
-                    topPercentageRef.current.innerHTML = `BSc Computer Science &middot; Top ${stats["topPercentage"]}% on TryHackMe &middot; Security+ in progress`;
-                    clearInterval(interval);
-                }
-            }, 100);
-            return;
-        })();
-    }, []);
 
     return (
         <Section id="hero">
@@ -119,7 +102,7 @@ export default function Hero(): JSX.Element {
                 className="w-full flex flex-col md:flex-row flex-wrap justify-center items-center gap-[8vw] box-border"
             >
                 <ImageBlock />
-                <TextBlock topPercentageRef={topPercentageRef} />
+                <TextBlock />
             </div>
         </Section >
     );
