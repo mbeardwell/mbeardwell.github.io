@@ -31,31 +31,35 @@ export default function About(): JSX.Element {
                     <p>
                         Open to <span className="font-semibold">volunteering</span>, <span className="font-semibold">peer projects</span>, or <span className="font-semibold">technical collaboration</span>. Not seeking paid roles — currently focused on <span className="font-semibold">Security+</span> and <span className="font-semibold">health recovery</span>.
                     </p>
-                    <div className="flex flex-col md:flex-row max-w-3xl mx-auto items-center justify-start">
-                        <div className="flex flex-col">
-                            <p>
-                                Training for a SOC Analyst role through <span className="font-semibold">hands-on labs</span>. Completed <span className="font-semibold">100+ TryHackMe labs</span> covering:
-                            </p>
-                            <ul className="list-disc list-inside pl-6">
-                                <li>SIEM</li>
-                                <li>log analysis</li>
-                                <li>packet capture</li>
-                                <li>shell scripting</li>
-                                <li>network monitoring</li>
-                            </ul>
+                    <div className="flex flex-col-reverse md:flex-row max-w-3xl mx-auto justify-center align-center">
+                        <div className="flex flex-col gap-4">
+                            <div>
+                                <p>
+                                    Training for a SOC Analyst role through <span className="font-semibold">hands-on labs</span>. Completed <span className="font-semibold">100+ TryHackMe labs</span> covering:
+                                </p>
+                                <ul className="list-disc list-inside pl-6">
+                                    <li>SIEM</li>
+                                    <li>log analysis</li>
+                                    <li>packet capture</li>
+                                    <li>shell scripting</li>
+                                    <li>network monitoring</li>
+                                </ul>
+                            </div>
+                            <p>Also self-studying <span className="font-semibold">OSINT</span> (HUMINT-style profiling).</p>
                         </div>
                         {/*TryHackMe Stats*/}
-                        <div className="flex flex-col w-[329px] h-full my-6 gap-1 text-center">
-                            <iframe
-                                className="w-[329px] h-[88px]"
-                                src="https://tryhackme.com/api/v2/badges/public-profile?userPublicId=43470"
-                            />
+                        <div className="flex flex-col justify-center my-6 md:my-0 gap-3 text-center">
+                            <div className="w-fit h-fit bg-content border-content border-2 self-center">
+                                <iframe
+                                    className="translate-x-[2px] translate-y-[2px] w-[331px] h-[88px]"
+                                    src="https://tryhackme.com/api/v2/badges/public-profile?userPublicId=43470"
+                                />
+                            </div>
                             <span ref={topPercentageRef}>
                                 <span className="font-semibold">Top-ranked</span> on TryHackMe!
                             </span>
                         </div>
                     </div>
-                    <p>Also self-studying <span className="font-semibold">OSINT</span> (HUMINT-style profiling).</p>
                 </div>
             </div>
         </Section>
