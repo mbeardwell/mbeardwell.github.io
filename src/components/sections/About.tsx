@@ -13,7 +13,7 @@ export default function About(): JSX.Element {
                     <span class="font-semibold">
                         Top ${stats["topPercentage"]}%
                     </span> 
-                    on TryHackMe!`;
+                    on TryHackMe`;
                     clearInterval(interval);
                 }
             }, 100);
