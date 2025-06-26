@@ -20,8 +20,8 @@
 \newcommand{\marginx}{1.27cm}
 \newcommand{\marginy}{1.27cm}
 \newcommand{\linespacing}{1.00}
-\newcommand{\paragap}{0.3em}
-\newcommand{\bigparagap}{0.3em}
+\newcommand{\paragap}{0.4em}
+\newcommand{\headergap}{0.15em}
 
 % Margins
 \usepackage[top=\marginy, bottom=\marginy, left=\marginx, right=\marginx]{geometry}
@@ -78,9 +78,9 @@
   ]
     \textcolorbf{#1}
   \end{tcolorbox}
-  \vspace{\paragap}
+  \vspace{\headergap}
 }
-{\vspace{\paragap}}
+{\vspace{\headergap}}
 
 % Table entries
 \newcommand{\entry}[3]{
@@ -157,7 +157,7 @@
     \textcolorbf{A-Levels} · \textit{King's Maths School} & 4 A*s & \metadatafmt{2016--2018} \\
     \textcolorbf{GCSEs} · \textit{John Lyon School} & 9 A*s, 1 B & \metadatafmt{2014--2016} \\
   \end{tabular*}
-  \\[\bigparagap]
+  \\[\paragap]
   \textcolorbf{Certifications}\\[\paragap]
   \begin{tabular*}{\textwidth}{@{}p{3.5cm} p{8cm} @{\extracolsep{\fill}} p{3.5cm}@{}}
     CompTIA & Security+ & \metadatafmt{(In Progress)} \\
