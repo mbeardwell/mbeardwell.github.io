@@ -86,7 +86,7 @@ function TextBlock(): JSX.Element {
                 <span
                     className="text-content text-lg italic flex flex-col justify-start items-center gap-1"
                 >
-                    BSc Computer Science &middot; Security+ in progress
+                    1st Class BSc CS &middot; Security+ in progress
                 </span>
                 <Buttons />
             </div>
