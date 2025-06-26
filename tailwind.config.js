@@ -11,6 +11,7 @@ module.exports = {
         extend: {
             fontFamily: {
                 sans: ["Geist", "sans-serif"],
+                serif: ["IBMPlexSans", "serif"],
             },
             colors,
             backgroundImage: {

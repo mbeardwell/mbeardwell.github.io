@@ -25,7 +25,7 @@ export default function Contact(): JSX.Element {
                 </h2>
                 <div className="flex flex-col flex-nowrap gap-4">
                     <p className="text-lg text-content">
-                        Drop me an email!
+                        Drop me an email
                     </p>
                     <Buttons />
                 </div>

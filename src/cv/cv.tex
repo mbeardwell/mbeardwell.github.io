@@ -20,8 +20,8 @@
 \newcommand{\marginx}{1.27cm}
 \newcommand{\marginy}{1.27cm}
 \newcommand{\linespacing}{1.00}
-\newcommand{\paragap}{0.4em}
-\newcommand{\headergap}{0.15em}
+\newcommand{\paragap}{0.20em}
+\newcommand{\headermargin}{0.15em}
 
 % Margins
 \usepackage[top=\marginy, bottom=\marginy, left=\marginx, right=\marginx]{geometry}
@@ -44,12 +44,13 @@
 
 % Font
 \usepackage{fontspec}
-\setmainfont{Geist}[Path=./fonts/, Extension=.ttf,
+\setmainfont{IBMPlexSerif}[Path=../../public/fonts/ibm-plex-serif/, Extension=.ttf,
   UprightFont     = *-Regular,
   BoldFont        = *-SemiBold,  
-  ItalicFont      = *-Light,        % Geist has no italic
-  BoldItalicFont  = *-Medium       % or bold italic
+  ItalicFont      = *-Italic,
+  BoldItalicFont  = *-SemiBoldItalic
 ]
+
 \newcommand{\setfontsize}[2]{\fontsize{#1}{#1}\selectfont{}#2}
 \newcommand{\textcolorbf}[1]{\textbf{\textcolor{surface}{#1}}}
 \usepackage{hyperref}
@@ -78,9 +79,9 @@
   ]
     \textcolorbf{#1}
   \end{tcolorbox}
-  \vspace{\headergap}
+  \vspace{\headermargin}
 }
-{\vspace{\headergap}}
+{\vspace{\headermargin}}
 
 % Table entries
 \newcommand{\entry}[3]{
@@ -93,7 +94,7 @@
 \begin{document}
 
 \begin{center}
-  {\setfontsize{26pt}{\textcolorbf{MATTHEW BEARDWELL}}} \\
+  {\setfontsize{26pt}{\textcolorbf{Matthew Beardwell}}} \\
   [1.2em]
   Watford, Hertfordshire ·\
   \cvlink{https://mbeardwell.com}{mbeardwell.com} ·\
@@ -133,7 +134,7 @@
     instructions at runtime, demonstrating low-level reverse engineering and malware analysis
     applications. \\
     \metadatafmt{Technologies: C, ARM Assembly, Dynamic Binary Instrumentation}\\
-    \\cvlink{https://github.com/mbeardwell/arm-fp-emu}{github.com/mbeardwell/arm-fp-emu}
+    \cvlink{https://github.com/mbeardwell/arm-fp-emu}{github.com/mbeardwell/arm-fp-emu}
   }
 \end{cvsection}
 

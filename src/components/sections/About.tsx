@@ -49,14 +49,16 @@ export default function About(): JSX.Element {
                         </div>
                         {/*TryHackMe Stats*/}
                         <div className="flex flex-col justify-center my-6 md:my-0 gap-3 text-center">
-                            <div className="w-fit h-fit bg-content border-content border-2 self-center scale-[0.8] md:scale-[1]">
+                            <div className="relative w-[331px] h-[88px] self-center scale-[0.8] md:scale-[1]">
+                                <div className="absolute w-full h-full bg-content"/>
                                 <iframe
-                                    className="translate-x-[2px] translate-y-[2px] w-[331px] h-[88px]"
+                                    className="absolute translate-x-[2px] translate-y-[2px] w-[331px] h-[88px]"
                                     src="https://tryhackme.com/api/v2/badges/public-profile?userPublicId=43470"
                                 />
+                                <div className="absolute w-full h-full border-content border-4"/>
                             </div>
                             <span ref={topPercentageRef}>
-                                <span className="font-semibold">Top-ranked</span> on TryHackMe!
+                                <span className="font-semibold">Top-ranked</span> on TryHackMe
                             </span>
                         </div>
                     </div>

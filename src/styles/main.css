@@ -13,9 +13,25 @@
   }
 }
 
+@layer utilities {
+  .font-geist {
+    font-family: "Geist";
+  }
+  .font-plex-serif {
+    font-family: "IBMPlexSerif";
+  }
+}
+
 @font-face {
   font-family: "Geist";
   src: url("/fonts/geist/Geist-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "IBMPlexSerif";
+  src: url("/fonts/ibm-plex-serif/IBMPlexSerif-Regular.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
 }
