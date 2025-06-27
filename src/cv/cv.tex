@@ -61,6 +61,7 @@
   citecolor=surface
 }
 \newcommand{\cvlink}[2]{\uline{\href{#1}{\textcolor{surface}{\textbf{#2}}}}}
+\newcommand{\cvlinksmall}[2]{{\small\cvlink{#1}{#2}}}
 
 \newcommand{\metadatafmt}[1]{{\small\textcolor{gray}{#1}}}
 
@@ -126,15 +127,15 @@
     Scanned 65k ports in 5s (vs Nmap's 5m). It validates user input, grabs banners, and writes results to a file.
     Demonstrates automation, socket programming, and parallel scanning.\\
     \metadatafmt{Technologies: Python, Multiprocessing, Network Scanning}\\
-    \cvlink{https://github.com/mbeardwell/active-recon-lite}{github.com/mbeardwell/active-recon-lite}
+    \cvlinksmall{https://github.com/mbeardwell/active-recon-lite}{github.com/mbeardwell/active-recon-lite}
   }
-
+  \vspace{\paragap} %to double the existing gap
   \entry{\textcolorbf{`Faster Dynamically Instrumented Programs'} · \textit{Bachelor's Thesis}}{Oct 2022 -- May 2023}{
     Designed and implemented a dynamic code modification technique that intercepts processor
     instructions at runtime, demonstrating low-level reverse engineering and malware analysis
     applications. \\
     \metadatafmt{Technologies: C, ARM Assembly, Dynamic Binary Instrumentation}\\
-    \cvlink{https://github.com/mbeardwell/arm-fp-emu}{github.com/mbeardwell/arm-fp-emu}
+    \cvlinksmall{https://github.com/mbeardwell/arm-fp-emu}{github.com/mbeardwell/arm-fp-emu}
   }
 \end{cvsection}
 
