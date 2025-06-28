@@ -19,9 +19,9 @@
 % Spacing constants
 \newcommand{\marginx}{1.27cm}
 \newcommand{\marginy}{1.27cm}
-\newcommand{\linespacing}{1.03}
-\newcommand{\paragap}{0.28em}
-\newcommand{\headermargin}{0.15em}
+\newcommand{\linespacing}{1.00}
+\newcommand{\paragap}{0.16em}
+\newcommand{\headermargin}{0.05em}
 
 % Margins
 \usepackage[top=\marginy, bottom=\marginy, left=\marginx, right=\marginx]{geometry}
@@ -122,13 +122,19 @@
 \end{cvsection}
 
 \begin{cvsection}{Cybersecurity Projects}
-  \entry{\textcolorbf{`ActiveReconLite': A Python Port Scanner}}{Feb 2025 -- Mar 2025}{
+  \entry{\textcolorbf{`ActiveReconLite'} · \textit{Python Port Scanner}}{Feb 2025 -- Mar 2025}{
     Built a Python-based TCP connect port scanner using multiprocessing.
     Scanned 65k ports in 5s (vs Nmap's 5m). It validates user input, grabs banners, and writes results to a file.
     Demonstrates automation, socket programming, and parallel scanning.\\
     \cvlinksmall{https://github.com/mbeardwell/active-recon-lite}{github.com/mbeardwell/active-recon-lite}
   }
-  \vspace{\paragap} %to double the existing gap
+  \vspace{\paragap} % to double the existing gap
+  \entry{\textcolorbf{`Location and Identity Resolution from Minimal Public Signals'} · \textit{OSINT Case Study}}{Apr 2025}{
+    Tracked real-world identity from anonymised YouTube uploads using public data. 
+    Shows attacker thinking, threat profiling, and privacy risk awareness.\\
+    \cvlinksmall{https://github.com/mbeardwell/osint-i3-case-study}{github.com/mbeardwell/osint-i3-case-study}
+  }
+  \vspace{\paragap} % to double the existing gap
   \entry{\textcolorbf{`Faster Dynamically Instrumented Programs'} · \textit{Bachelor's Thesis}}{Oct 2022 -- May 2023}{
     Built a runtime patching tool on ARM Linux to redirect processor instructions in memory. 
     Mirrors techniques used in evasive malware — useful for SOC detection and threat hunting.\\
@@ -162,8 +168,7 @@
     TryHackMe & Intro to Cyber Security & \metadatafmt{Feb 2024} \\
     TryHackMe & Pre-Security & \metadatafmt{Apr 2022} \\
     Security Blue Team & Intro to OSINT & \metadatafmt{Jun 2025} \\
-    Prince's Trust & TEAM (12-week programme incl. First Aid) & \metadatafmt{Jan 2024 -- Apr 2024} \\
+    Prince's Trust & TEAM (12-week programme incl. First Aid) & \metadatafmt{Jan 2024 -- Apr 2024}
   \end{tabular*}
 \end{cvsection}
-
 \end{document}
