@@ -63,7 +63,8 @@
 \newcommand{\cvlink}[2]{\uline{\href{#1}{\textcolor{surface}{\textbf{#2}}}}}
 \newcommand{\cvlinksmall}[2]{{\small\cvlink{#1}{#2}}}
 
-\newcommand{\metadatafmt}[1]{{\small\textcolor{gray}{#1}}}
+\newcommand{\fakecaps}[1]{{\addfontfeatures{LetterSpace=1.5}\scalebox{0.85}[0.85]{\MakeUppercase{#1}}}} % From chatgpt.com
+\newcommand{\metadatafmt}[1]{{\textcolor{gray}{\fakecaps{#1}}}}
 
 % CV Sections
 \newenvironment{cvsection}[1]{
@@ -87,7 +88,7 @@
 % Table entries
 \newcommand{\entry}[3]{
   \par\vspace{\paragap}
-  #1 \hfill \metadatafmt{\textit{#2}} \\
+  #1 \hfill \metadatafmt{#2} \\
   #3
 }
 
@@ -95,7 +96,7 @@
 \begin{document}
 
 \begin{center}
-  {\setfontsize{26pt}{\textcolorbf{Matthew Beardwell}}} \\
+  {{\addfontfeatures{LetterSpace=2.0}\setfontsize{26pt}{\textcolorbf{Matthew Beardwell}}}} \\
   [1.2em]
   Watford, Hertfordshire ·\
   \cvlink{https://mbeardwell.com}{mbeardwell.com} ·\
@@ -143,7 +144,7 @@
 \end{cvsection}
 
 \begin{cvsection}{Professional Experience}
-  \metadatafmt{Building expertise during ongoing health recovery. Not currently available for roles. Open to future opportunities.}
+  \textit{Building expertise during ongoing health recovery. Not currently available for roles. Open to future opportunities.}
 
   \entry{\textcolorbf{SOC Training and Labs} · \textit{TryHackMe (Self-Led Learning)}}{Feb 2022 -- Present}{Developed hands-on expertise in SIEM, threat hunting, and security automation through __ROOMS__ cybersecurity labs (Top __PERCENTAGE__\% globally). Applied log analysis, detection logic, and SOC tooling in simulation labs.}
 
