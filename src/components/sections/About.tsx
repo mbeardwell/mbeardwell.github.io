@@ -45,7 +45,7 @@ export default function About(): JSX.Element {
                                     <li>network monitoring</li>
                                 </ul>
                             </div>
-                            <p>Also self-studying <span className="font-semibold">OSINT</span> (HUMINT-style profiling).</p>
+                            <p>Also applying <span className="font-semibold">OSINT</span> to threat actor profiling, infrastructure mapping, and digital exposure tracking.</p>
                         </div>
                         {/*TryHackMe Stats*/}
                         <div className="flex flex-col justify-center my-6 md:my-0 gap-3 text-center">
