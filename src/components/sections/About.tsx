@@ -78,7 +78,7 @@ export default function About(): JSX.Element {
                             <li>Handle correlation and social network tracing</li>
                             <li>Background research using public records (probate, Companies House, metadata, electoral traces)</li>
                             <li>Image geolocation and facial linkage</li>
-                            <li>Toolkit authoring (UK HUMINT OSINT Toolkit)</li>
+                            <li>Toolkit authoring (UK Person-centric OSINT Toolkit)</li>
                         </List>
                     </div>
                 </div>
