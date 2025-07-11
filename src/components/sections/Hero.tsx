@@ -82,9 +82,9 @@ function TextBlock(): JSX.Element {
         <div className="md:max-w-[40vw] flex flex-col gap-6 text-center md:text-left">
             <h1 className="text-accent text-4xl font-bold tracking-wide">Matthew Beardwell</h1>
             <div className="flex flex-col gap-4">
-                <h2 className="text-content text-2xl">Simulated SOC Analyst</h2>
+                <h2 className="text-content text-2xl">Security Analyst (RE, Forensics, OSINT)</h2>
                 <span
-                    className="text-content text-lg italic flex flex-col justify-start items-center gap-1"
+                    className="text-content text-lg italic"
                 >
                     1st Class BSc CS &middot; Security+ in progress
                 </span>
