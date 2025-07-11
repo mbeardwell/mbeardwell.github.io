@@ -83,11 +83,7 @@ function TextBlock(): JSX.Element {
             <h1 className="text-accent text-4xl font-bold tracking-wide">Matthew Beardwell</h1>
             <div className="flex flex-col gap-4">
                 <h2 className="text-content text-2xl">Security Analyst (RE, Forensics, OSINT)</h2>
-                <span
-                    className="text-content text-lg italic"
-                >
-                    1st Class BSc CS &middot; Security+ in progress
-                </span>
+                <span className="text-content text-lg italic">1st Class BSc CS &middot; Security+ in progress</span>
                 <Buttons />
             </div>
         </div>
