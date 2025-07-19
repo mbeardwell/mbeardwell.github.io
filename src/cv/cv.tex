@@ -11,6 +11,7 @@
 \usepackage{array}
 \usepackage{tabularx}
 \usepackage[normalem]{ulem}
+\usepackage{multido}
 
 % Colour constants
 \definecolor{surface}{HTML}{013964}
@@ -171,7 +172,7 @@
 \begin{cvsection}{Education and Certifications}
   \begin{tabular*}{\textwidth}{@{}p{6.5cm} p{4cm} @{\extracolsep{\fill}} p{3.5cm}@{}}
     \textcolorbf{BSc (Hons) CS} · \textit{King's College London} & First-Class & \hfill\metadatafmt{Sep 2018 -- Jul 2023} \\
-    \textcolorbf{A-Levels} · \textit{King's Maths School} & A* A* A* A* & \hfill\metadatafmt{Sep 2016 -- Jul 2018} \\
+    \textcolorbf{A-Levels} · \textit{King's Maths School} & \multido{}{4}{A{\textbf{*}} }& \hfill\metadatafmt{Sep 2016 -- Jul 2018} \\
   \end{tabular*}
   \\[\paragap]
   \textcolorbf{Certifications}\\[\paragap]
