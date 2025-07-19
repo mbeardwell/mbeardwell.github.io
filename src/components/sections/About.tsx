@@ -38,13 +38,10 @@ export default function About(): JSX.Element {
           <div className="flex flex-col-reverse md:flex-row justify-between align-between w-full">
             <div className="flex flex-col gap-4 text-justify">
               <p>
-                Security analyst with a focus on reverse engineering, digital
-                forensics, and OSINT. Strong interest in low-level code, binary
-                structure, and real-world identity resolution.
+                Security analyst with a focus on digital forensics and OSINT. 
+                Strong interest in artefact extraction and real-world identity resolution.
               </p>
-                       <p>
-                Experience includes ARM runtime patching,
-                GDB debugging, and tooling exposure (IDA, Ghidra, radare2).
+              <p>
                 Forensics background spans lab-based and real-world recovery
                 using Autopsy, dd, foremost, and photorec.
               </p>
@@ -67,7 +64,7 @@ export default function About(): JSX.Element {
           </div>
           <div className="flex flex-col gap-4 text-justify">
               <p>
-                OSINT work includes identity/location resolution, social link mapping, and client requests to trace long-lost family or contacts.
+                OSINT work includes identity/location resolution, social link mapping, and client requests to trace long-lost family or friends.
               </p>
             </div>
         </div>
