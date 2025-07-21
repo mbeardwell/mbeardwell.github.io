@@ -43,7 +43,7 @@ export default function Projects() {
         <Project
           title="UK Person-centric OSINT Toolkit"
           description="Curation of UK-only, legal person-focused OSINT resources for investigative use. 
-            Featured on OSINTTech (Substack); 100+ LinkedIn/Substack clicks in 1 week"
+            Featured on OSINTTech (Substack); 100+ LinkedIn/Substack clicks in 1 week."
           link="https://github.com/mbeardwell/uk-personal-osint-toolkit"
         />
 
