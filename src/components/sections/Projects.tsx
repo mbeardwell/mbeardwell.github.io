@@ -51,7 +51,7 @@ export default function Projects() {
           title="Bachelor's Thesis: Faster Dynamically Instrumented Programs"
           description="Built a runtime patching tool on ARM Linux to redirect processor instructions in memory. 
     Mirrors techniques used in evasive malware."
-          link="https://github.com/mbeardwell/uk-personal-osint-toolkit"
+          link="https://github.com/mbeardwell/arm-fp-emu"
         />
       </div>
     </Section>
