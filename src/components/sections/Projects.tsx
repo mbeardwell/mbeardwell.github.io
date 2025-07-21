@@ -11,7 +11,7 @@ function Project({ title, description, link }: ProjectProps) {
     <div className="project">
       <h3 className="text-xl font-bold text-content">{title}</h3>
       <p>{description}</p>
-      <a className="text-accent hover:text-accent" href={link} target="_blank">
+      <a className="!text-accent hover:text-accent" href={link} target="_blank">
         View on GitHub
       </a>
     </div>
