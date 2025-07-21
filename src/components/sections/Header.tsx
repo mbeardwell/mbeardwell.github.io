@@ -22,6 +22,7 @@ export default function Header(): JSX.Element {
                 >
                     <a href="/#home" className="hover:text-surface">Home</a>
                     <a href="/#about" className="hover:text-surface">About</a>
+                    <a href="/#projects" className="hover:text-surface">Projects</a>
                     <a href="/#contact" className="hover:text-surface">Contact</a>
                 </nav>
 
