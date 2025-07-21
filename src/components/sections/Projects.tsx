@@ -25,7 +25,7 @@ export default function Projects() {
         <h2 className="text-3xl font-bold text-accent text-center">Projects</h2>
 
         <Project
-          title="ActiveReconLite"
+          title="Python Port Scanner: ActiveReconLite"
           description="Built a Python-based TCP connect port scanner using multiprocessing.
             Outperforms Nmap in some cases by 60x; scanned 65k ports in 5s (vs Nmap's 5m). It validates user input, grabs banners, and writes results to a file.
             Demonstrates automation, socket programming, and parallel scanning."
