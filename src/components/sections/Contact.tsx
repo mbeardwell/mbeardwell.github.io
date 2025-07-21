@@ -30,10 +30,9 @@ export default function Contact(): JSX.Element {
                 <h2 className="text-3xl font-bold text-accent">
                     Contact
                 </h2>
-                <div className="flex flex-col flex-nowrap gap-4">
-                    <p className="text-lg text-content">
-                        Drop me a message:
-                    </p>
+                <div className="flex flex-col flex-nowrap gap-4 text-lg text-content">
+                    <p>Looking to contribute to real-world cybersecurity work in a volunteer capacity.</p>
+                    <p>Drop me a message:</p>
                     <Buttons />
                 </div>
             </div>

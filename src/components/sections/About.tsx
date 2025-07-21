@@ -31,8 +31,7 @@ export default function About(): JSX.Element {
         <h2 className="text-3xl font-bold text-accent text-center">About</h2>
         <div className="flex flex-col gap-4 text-content max-w-4xl mx-auto">
           <p>
-            Open to volunteering, peer projects, or technical collaboration. Not
-            seeking paid roles — currently focused on Security+ and health
+            <span className="font-bold">Open to volunteer cybersecurity projects, peer collaboration, and skill-building work.</span> Not seeking paid roles — currently focused on Security+ and health
             recovery.
           </p>
           <div className="flex flex-col-reverse md:flex-row justify-between align-between w-full">
