@@ -21,7 +21,7 @@
 \newcommand{\marginx}{2.54cm}
 \newcommand{\marginy}{2.54cm}
 \newcommand{\linespacing}{1.00}
-\newcommand{\paragap}{0.50em}
+\newcommand{\paragap}{0.20em}
 \newcommand{\headermargin}{0.00em}
 
 % Margins
@@ -67,6 +67,32 @@
 \newcommand{\fakecaps}[1]{{\addfontfeatures{LetterSpace=1.5}\scalebox{0.85}[0.85]{\MakeUppercase{#1}}}} % From chatgpt.com
 \newcommand{\metadatafmt}[1]{{\textcolor{gray}{\fakecaps{#1}}}}
 
+% CV Sections
+\newenvironment{cvsection}[1]{
+  \begin{tcolorbox}[
+    colback=accent!25,
+    boxrule=0pt,
+    colframe=white,
+    left=4pt,
+    right=4pt,
+    top=2pt,
+    bottom=2pt,
+    sharp corners=all,
+    coltext=surface
+  ]
+    \textcolorbf{#1}
+  \end{tcolorbox}
+  \vspace{\headermargin}
+}
+{\vspace{\headermargin}}
+
+% Table entries
+\newcommand{\entry}[3]{
+  \par\vspace{\paragap}
+  #1 \hfill \metadatafmt{#2} \\
+  #3
+}
+
 %%%%%%%%%%%%%%%%
 \begin{document}
 
@@ -81,43 +107,27 @@
   \cvlink{https://tryhackme.com/p/mbeardwell}{TryHackMe}
 \end{flushleft}
 
-\vspace{\paragap}
-
-\begin{center}
-  COVER LETTER
-  \rule{\textwidth}{0.4pt}
-\end{center}
-
-\vspace{\paragap}
-
+\begin{cvsection}{Cover Letter}
+{\renewcommand{\paragap}{0.50em}\setlength{\parskip}{\paragap}
 Dear Hiring Manager,
-
-\vspace{\paragap}
 
 I’m writing to apply for the [Job Title] position at [Company Name]. With hands-on experience in digital forensics, OSINT, and reverse engineering — 
 alongside a First-Class BSc in Computer Science from King’s College London — I bring a focused, practical skill set to cybersecurity analysis and 
 threat intelligence.
-
-\vspace{\paragap}
 
 Over the past three years, I’ve completed over 100 hours of hands-on labs (Top 2\% globally on TryHackMe), conducted real-world identity tracing 
 from anonymised public data, and authored tooling for TCP port scanning and OSINT investigations. My technical stack includes Python, Wireshark, 
 Ghidra, IDA Free, and memory patching on ARM Linux. Each project — whether reverse engineering evasive instruction flows or correlating open 
 metadata for attribution — has refined my ability to think like an attacker and act like a defender.
 
-\vspace{\paragap} 
-
 I’m particularly drawn to [Company Name] for its [insert brief alignment: e.g., emphasis on threat research, focus on privacy-forward tooling, 
 reputation in OSINT tooling, etc.]. This role would let me apply my strengths — signal extraction, toolchain precision, and forensic analysis — in a 
 real-world context that matters.
 
-\vspace{\paragap}
-
 CV attached. I’m open to a conversation at your convenience.
-
-\vspace{\paragap}
 
 Best regards,\\
 Matthew Beardwell
-
+}
+\end{cvsection}
 \end{document}
