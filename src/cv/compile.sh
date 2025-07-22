@@ -4,9 +4,13 @@ cd "$(dirname "$0")" || exit 1
 
 # Constants
 ROOT_DIR="../.."
-INPUT_TEX_FILE="cv.tex"
-OUTPUT_TEX_FILE="cv-replaced.tex"
-PDF_FILE="${ROOT_DIR}/public/docs/Matthew_Beardwell_CV.pdf"
+INPUT_CV_TEX_FILE="cv.tex"
+INPUT_CL_TEX_FILE="cover-letter.tex"
+OUPUT_CV_TEX_FILE="cv-replaced.tex"
+OUPUT_CL_TEX_FILE="cover-letter-replaced.tex"
+CV_PDF_FILE="${ROOT_DIR}/public/docs/Matthew_Beardwell_CV.pdf"
+CL_PDF_FILE="${ROOT_DIR}/public/docs/Matthew_Beardwell_Cover_Letter.pdf"
+
 ENDPOINT="https://tryhackme.com/api/v2/public-profile?username=mbeardwell"
 COLORS_FILE="${ROOT_DIR}/src/styles/colors.json"
 
@@ -27,9 +31,11 @@ cleanup() {
         ./*.out \
         ./*.fdb_latexmk \
         ./*.fls \
-        "${OUTPUT_TEX_FILE}"
+        "${OUPUT_CV_TEX_FILE}" \
+        "${OUPUT_CL_TEX_FILE}"
 
-    rm "${OUTPUT_TEX_FILE%.*}.pdf" 2>/dev/null
+    rm "${OUPUT_CV_TEX_FILE%.*}.pdf" 2>/dev/null
+    rm "${OUPUT_CL_TEX_FILE%.*}.pdf" 2>/dev/null
 }
 
 trap cleanup EXIT
@@ -50,20 +56,31 @@ color_surface=$(jq -r ".surface" "${COLORS_FILE}" | sed "s/^#//")
 color_accent=$(jq -r ".accent" "${COLORS_FILE}" | sed "s/^#//")
 
 # Inject stats and colours into .tex
-sed -e "s|__PERCENTAGE__|${percentage}|" \
+injectVars() {
+    sed -e "s|__PERCENTAGE__|${percentage}|" \
     -e "s|__BADGES__|${badges}|" \
     -e "s|__ROOMS__|${rooms}|" \
     -e "s|__HOURS__|${hours}|" \
     -e "s|__UPDATED__|${today}|" \
     -e "s|__SURFACE__|${color_surface}|" \
     -e "s|__ACCENT__|${color_accent}|" \
-    "${INPUT_TEX_FILE}" >"${OUTPUT_TEX_FILE}"
+    $1 > $2
+}
+
+injectVars "${INPUT_CV_TEX_FILE}" "${OUPUT_CV_TEX_FILE}"
+injectVars "${INPUT_CL_TEX_FILE}" "${OUPUT_CL_TEX_FILE}"
+
 
 # Output pdf
-(xelatex -interaction=nonstopmode "${OUTPUT_TEX_FILE}") || {
-    echo "Error: xelatex failed to compile LaTeX"
+compile() {
+    (xelatex -interaction=nonstopmode $1) || {
+    echo "Error: xelatex failed to compile LaTeX on $1"
     exit 1
+}    
 }
-convert -density 300 "${PDF_FILE}" -background white -alpha remove -alpha off "${PDF_FILE%.*}.png"
+compile "${OUPUT_CV_TEX_FILE}"
+compile "${OUPUT_CL_TEX_FILE}"
+convert -density 300 "${CV_PDF_FILE}" -background white -alpha remove -alpha off "${CV_PDF_FILE%.*}.png"
 
-mv "${OUTPUT_TEX_FILE%.*}.pdf" "${PDF_FILE}"
+mv "${OUPUT_CV_TEX_FILE%.*}.pdf" "${CV_PDF_FILE}"
+mv "${OUPUT_CL_TEX_FILE%.*}.pdf" "${CL_PDF_FILE}"

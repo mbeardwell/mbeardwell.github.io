@@ -1,0 +1,123 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{color,xcolor}
+\usepackage{hyperref}
+\usepackage{multicol}
+\usepackage{tcolorbox}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage[normalem]{ulem}
+\usepackage{multido}
+
+% Colour constants
+\definecolor{surface}{HTML}{013964}
+\definecolor{accent}{HTML}{__ACCENT__}
+
+% Spacing constants
+\newcommand{\marginx}{2.54cm}
+\newcommand{\marginy}{2.54cm}
+\newcommand{\linespacing}{1.00}
+\newcommand{\paragap}{0.50em}
+\newcommand{\headermargin}{0.00em}
+
+% Margins
+\usepackage[top=\marginy, bottom=\marginy, left=\marginx, right=\marginx]{geometry}
+
+% Header and footer
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot[L]{}
+\renewcommand{\headrulewidth}{0pt}
+\setlength{\footskip}{12pt}
+
+% Line spacing
+\usepackage{setspace}
+\setstretch{\linespacing}
+\setlist[itemize]{itemsep=0pt, topsep=0pt, parsep=0pt, partopsep=0pt} % makes bullet points have same line height as lines in paragraphs
+
+% Turn off paragraph indent
+\setlength{\parindent}{0pt}
+
+% Font
+\usepackage{fontspec}
+\setmainfont{IBMPlexSerif}[Path=../../public/fonts/ibm-plex-serif/, Extension=.ttf,
+  UprightFont     = *-Regular,
+  BoldFont        = *-SemiBold,  
+  ItalicFont      = *-Italic,
+  BoldItalicFont  = *-SemiBoldItalic
+]
+
+\newcommand{\setfontsize}[2]{\fontsize{#1}{#1}\selectfont{}#2}
+\newcommand{\textcolorbf}[1]{\textbf{\textcolor{surface}{#1}}}
+\usepackage{hyperref}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=surface,
+  urlcolor=surface,
+  citecolor=surface
+}
+\newcommand{\cvlink}[2]{\uline{\href{#1}{\textcolor{surface}{\textbf{#2}}}}}
+\newcommand{\cvlinksmall}[2]{{\small\cvlink{#1}{#2}\hspace{-0.3em}}}
+
+\newcommand{\fakecaps}[1]{{\addfontfeatures{LetterSpace=1.5}\scalebox{0.85}[0.85]{\MakeUppercase{#1}}}} % From chatgpt.com
+\newcommand{\metadatafmt}[1]{{\textcolor{gray}{\fakecaps{#1}}}}
+
+%%%%%%%%%%%%%%%%
+\begin{document}
+
+\begin{flushleft}
+  {{\addfontfeatures{LetterSpace=2.0}\setfontsize{26pt}{\textcolorbf{Matthew Beardwell}}}} \\[1.1em]
+  Watford, Hertfordshire ·\
+  \cvlink{mailto:contact@mbeardwell.com}{contact@mbeardwell.com} ·\
+  \cvlink{https://mbeardwell.com}{mbeardwell.com} \\
+  \vspace{\paragap}
+  \cvlink{https://linkedin.com/in/mbeardwell}{LinkedIn} ·\
+  \cvlink{https://github.com/mbeardwell}{GitHub} ·\
+  \cvlink{https://tryhackme.com/p/mbeardwell}{TryHackMe}
+\end{flushleft}
+
+\vspace{\paragap}
+
+\begin{center}
+  COVER LETTER
+  \rule{\textwidth}{0.4pt}
+\end{center}
+
+\vspace{\paragap}
+
+Dear Hiring Manager,
+
+\vspace{\paragap}
+
+I’m writing to apply for the [Job Title] position at [Company Name]. With hands-on experience in digital forensics, OSINT, and reverse engineering — 
+alongside a First-Class BSc in Computer Science from King’s College London — I bring a focused, practical skill set to cybersecurity analysis and 
+threat intelligence.
+
+\vspace{\paragap}
+
+Over the past three years, I’ve completed over 100 hours of hands-on labs (Top 2\% globally on TryHackMe), conducted real-world identity tracing 
+from anonymised public data, and authored tooling for TCP port scanning and OSINT investigations. My technical stack includes Python, Wireshark, 
+Ghidra, IDA Free, and memory patching on ARM Linux. Each project — whether reverse engineering evasive instruction flows or correlating open 
+metadata for attribution — has refined my ability to think like an attacker and act like a defender.
+
+\vspace{\paragap} 
+
+I’m particularly drawn to [Company Name] for its [insert brief alignment: e.g., emphasis on threat research, focus on privacy-forward tooling, 
+reputation in OSINT tooling, etc.]. This role would let me apply my strengths — signal extraction, toolchain precision, and forensic analysis — in a 
+real-world context that matters.
+
+\vspace{\paragap}
+
+CV attached. I’m open to a conversation at your convenience.
+
+\vspace{\paragap}
+
+Best regards,\\
+Matthew Beardwell
+
+\end{document}
