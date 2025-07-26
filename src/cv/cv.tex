@@ -12,6 +12,7 @@
 \usepackage{tabularx}
 \usepackage[normalem]{ulem}
 \usepackage{multido}
+\usepackage{ragged2e}
 
 % Colour constants
 \definecolor{surface}{HTML}{013964}
@@ -20,8 +21,8 @@
 % Spacing constants
 \newcommand{\marginx}{1.27cm}
 \newcommand{\marginy}{1.27cm}
-\newcommand{\linespacing}{1.15}
-\newcommand{\paragap}{0.50em}
+\newcommand{\linespacing}{1.00}
+\newcommand{\paragap}{0.30em}
 \newcommand{\headermargin}{0.00em}
 
 % Margins
@@ -145,26 +146,33 @@
   }
 
   \entry{\textcolorbf{Faster Dynamically Instrumented Programs} · \textit{Bachelor's Thesis}}{Oct 2022 -- May 2023}{
-    Developed PoC mimicking evasive malware behaviour by changing programs in memory at the lowest level.
-    \hfill\cvlinksmall{https://github.com/mbeardwell/arm-fp-emu}{github.com/mbeardwell/arm-fp-emu}
+    Developed PoC mimicking evasive malware behaviour by changing programs in memory at the lowest level.\\
+    \phantom{.}\hfill\cvlinksmall{https://github.com/mbeardwell/arm-fp-emu}{github.com/mbeardwell/arm-fp-emu}
   }
 \end{cvsection}
 
 \begin{cvsection}{Professional Experience}
-  \entry{\textcolorbf{Security Training and Labs} · \textit{TryHackMe (Self-Led Learning)}}{Feb 2022 -- Present}{
-    Completed __ROOMS__ hands-on labs (\~{}100 hrs) that included digital forensics, OSINT, and reverse engineering.
-    Ranked in the Top __PERCENTAGE__\% globally.
+    \entry{\textcolorbf{OSINT Investigations} · \textit{Freelance \& Self-Led}}{2024 -- 2025}{
+    Conducted multiple open-ended OSINT investigations, including one extensively documented client case and several self-led identity/location tracing projects.
   }
 
-  \entry{\textcolorbf{OSINT Investigations} · \textit{Freelance \& Self-Led}}{2024 -- 2025}{
-    Conducted multiple open-ended OSINT investigations, including one extensively documented client case and several self-led identity/location tracing projects.
+  \entry{\textcolorbf{Tutor} · \textit{Freelance}}{Sep 2016 -- Nov 2019}{
+    Tutored pre-GCSE students in maths; adapted methods to suit varied learning needs in informal settings.
+  }
+
+  \entry{\textcolorbf{Research and Documentation Intern} · \textit{Indo UK Institute of Health}}{Jun 2017 -- Aug 2017}{
+    Researched benefits/partnerships and edited exec-level strategy docs for a billion-pound healthcare initiative.
   }
 \end{cvsection}
 
 \begin{cvsection}{Education and Certifications}
+  \textcolorbf{Security Training} · \textit{TryHackMe}\hfill\metadatafmt{Feb 2022 -- Present}\\
+  Completed __ROOMS__ hands-on labs (\~{}100 hrs) that included digital forensics, OSINT, and reverse engineering.
+  Ranked in the Top __PERCENTAGE__\% globally.
+  \\[\paragap]
   \begin{tabular*}{\textwidth}{@{}p{6.5cm} p{4cm} @{\extracolsep{\fill}} p{3.5cm}@{}}
     \textcolorbf{BSc (Hons) CS} · \textit{King's College London} & First-Class & \hfill\metadatafmt{Sep 2018 -- Jul 2023} \\
-    \textcolorbf{A-Levels} · \textit{King's Maths School} & \multido{}{4}{A{\textbf{*}} }& \hfill\metadatafmt{Sep 2016 -- Jul 2018} \\
+    \textcolorbf{A-Levels} · \textit{King's Maths School} & \multido{}{4}{A{\textbf{*}} }& \hfill\metadatafmt{Sep 2016 -- Jul 2018}
   \end{tabular*}
   \\[\paragap]
   \begin{tabular*}{\textwidth}{@{}p{3.5cm} p{8cm} @{\extracolsep{\fill}} p{3.5cm}@{}}
