@@ -70,7 +70,6 @@ injectVars() {
 injectVars "${INPUT_CV_TEX_FILE}" "${OUPUT_CV_TEX_FILE}"
 injectVars "${INPUT_CL_TEX_FILE}" "${OUPUT_CL_TEX_FILE}"
 
-
 # Output pdf
 compile() {
     (xelatex -interaction=nonstopmode $1) || {
@@ -78,8 +77,11 @@ compile() {
     exit 1
 }    
 }
+
 compile "${OUPUT_CV_TEX_FILE}"
 compile "${OUPUT_CL_TEX_FILE}"
+
+sudo sed -i '/disable ghostscript format types/,+6d' /etc/ImageMagick-6/policy.xml # enable pdf -> png conversion | from https://stackoverflow.com/a/69535567
 convert -density 300 "${CV_PDF_FILE}" -background white -alpha remove -alpha off "${CV_PDF_FILE%.*}.png"
 
 mv "${OUPUT_CV_TEX_FILE%.*}.pdf" "${CV_PDF_FILE}"
