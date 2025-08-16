@@ -1,6 +1,7 @@
 import { JSX, useState } from "react";
 import IconPersonal from "@icons/personal-logo.svg?react";
 import IconHamburger from "@icons/hamburger.svg?react";
+import IconCross from "@icons/cross.svg?react";
 import Icon from "@components/Icon";
 
 interface NavigationProps {
@@ -57,7 +58,7 @@ export default function Header(): JSX.Element {
             onClick={() => burgerMenuSetOpen((o) => !o)}
           >
             <Icon
-              Svg={IconHamburger}
+              Svg={burgerMenuOpen ? IconCross : IconHamburger}
               paintClassName="text-content hover:text-surface !w-8 !h-8"
             />
           </button>
