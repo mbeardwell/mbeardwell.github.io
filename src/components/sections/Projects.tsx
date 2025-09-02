@@ -8,9 +8,9 @@ interface ProjectProps {
 
 function Project({ title, description, link }: ProjectProps) {
   return (
-    <div className="project">
+    <div>
       <h3 className="text-xl font-bold text-content">{title}</h3>
-      <p>{description}</p>
+      <p className="text-justify">{description}</p>
       <a className="!text-accent hover:text-accent" href={link} target="_blank">
         View on GitHub
       </a>

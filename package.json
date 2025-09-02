@@ -12,6 +12,7 @@
     "generate-cv": "./src/cv/compile.sh"
   },
   "dependencies": {
+    "@tailwindcss/aspect-ratio": "^0.4.2",
     "@tailwindcss/vite": "^4.1.5",
     "@tsparticles/engine": "^3.8.1",
     "@tsparticles/react": "^3.0.0",

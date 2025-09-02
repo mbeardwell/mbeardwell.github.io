@@ -5,6 +5,7 @@ import IconGitHub from "@icons/brand-github.svg?react";
 import IconLinkedIn from "@icons/brand-linkedin.svg?react";
 import IconFile from "@icons/file-text.svg?react";
 import { JSX } from "react";
+import THM from "./THM";
 
 const PROFILE_HEIGHT: number = 200;
 const PROFILE_WIDTH: number = 200;
@@ -85,6 +86,7 @@ function TextBlock(): JSX.Element {
                 <h2 className="text-content text-2xl">Security Analyst (Forensics, OSINT)</h2>
                 <span className="text-content text-lg italic">1st Class BSc CS &middot; Security+ in progress</span>
                 <Buttons />
+                <THM/>
             </div>
         </div>
     );

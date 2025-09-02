@@ -30,7 +30,7 @@ export default function Button({ href, text, Svg, paintTypes }: ButtonProps): JS
 
     return (
         <a href={href} className={aClass} target="_blank">
-            {Icon && <Icon Svg={Svg as SVG} paintClassName="" />}
+            {Icon && <Icon Svg={Svg as SVG} paintClassName="w-6 h-6" />}
             {text && <span className="ml-2 whitespace-nowrap">{text}</span>}
         </a>
     );

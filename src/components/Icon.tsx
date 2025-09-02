@@ -7,8 +7,8 @@ interface IconProps {
 
 export default function Icon({ Svg, paintClassName: paintClass }: IconProps) {
     return (
-        <div className={`w-6 h-6 p-[0.1rem] align-middle ${paintClass}`}>
-            <Svg />
+        <div className={`p-[0.1rem] inline-block ${paintClass}`}>
+            <Svg className="w-full h-full"/>
         </div>
     );
 }
