@@ -32,7 +32,7 @@ export default function THM(): JSX.Element {
             <div>
               Rooms:{" "}
               <span className="font-semibold">
-                {stats.completedRoomsNumber} (~{(stats.completedRoomsNumber * 0.841810344828).toFixed(0)} hrs)
+                {stats.completedRoomsNumber} (~{(stats.completedRoomsNumber * 0.841810344828).toFixed(0)}h total)
               </span>
             </div>
           </div>
