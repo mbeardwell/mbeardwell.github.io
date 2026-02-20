@@ -42,7 +42,7 @@ function Buttons(): JSX.Element {
       <div>
         {/* CV button*/}
         <Button
-          href="/docs/Matthew_Beardwell_CV.pdf"
+          href="/docs/cv/Matthew_Beardwell_CV.pdf"
           text="Download CV"
           Svg={IconFile}
           paintTypes={["stroke"]}
@@ -88,7 +88,7 @@ function TextBlock(): JSX.Element {
       </h1>
       <div className="flex flex-col gap-4">
         <h2 className="text-content text-2xl">
-          Security Analyst (Forensics, OSINT)
+          Digital Forensics & OSINT Practitioner
         </h2>
         <span className="text-content text-lg italic">
           1st Class BSc CS &middot; Security+ in progress

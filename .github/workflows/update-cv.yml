@@ -18,7 +18,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Build
+      - name: Build 
         run: |
           npm install
           npm run generate-cv
@@ -26,21 +26,21 @@ jobs:
             git config user.email cv-bot@users.noreply.github.com
             git config user.name cv-bot
             git add --all
-            git commit -m "CV-Bot — Updated CV"
+            git commit -m "CV-Bot — Updated CVs, cover letters, and their screenshots"
             git push
           )
 
-      - name: Copy CV files
+      - name: Copy CVs, cover letters, and screenshot of them
         run: |
-            mkdir -p dist/docs/
-            cp public/docs/Matthew_Beardwell_CV.pdf dist/docs/
-            cp public/docs/Matthew_Beardwell_CV.png dist/docs/ || true
+            mkdir -p dist/docs/cv
+            cp public/docs/cv/Matthew_Beardwell_*.pdf dist/docs/cv
+            cp public/docs/cv/Matthew_Beardwell_*.png dist/docs/cv || true
 
       - name: Deploy CV
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist/docs/
+          publish_dir: ./dist/docs/cv/
           publish_branch: gh-pages
           destination_dir: .
           keep_files: true

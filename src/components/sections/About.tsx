@@ -26,8 +26,7 @@ export default function About(): JSX.Element {
           <div className="flex flex-col-reverse md:flex-row justify-between align-between w-full">
             <div className="flex flex-col gap-4 text-justify">
               <p>
-                Security analyst with a focus on digital forensics and OSINT.
-                Strong interest in artefact extraction and real-world identity
+                Specialising in digital forensics and open-source intelligence. Strong interest in artefact extraction and real-world identity
                 resolution.
               </p>
               <p>

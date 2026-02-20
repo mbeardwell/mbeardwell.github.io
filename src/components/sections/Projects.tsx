@@ -26,9 +26,8 @@ export default function Projects() {
 
         <Project
           title="Python Port Scanner: ActiveReconLite"
-          description="Built a Python-based TCP connect port scanner using multiprocessing.
-            Outperforms Nmap in some cases by 60x; scanned 65k ports in 5s (vs Nmap's 5m). It validates user input, grabs banners, and writes results to a file.
-            Demonstrates automation, socket programming, and parallel scanning."
+          description="Built a Python-based TCP connect port scanner using multiprocessing. Validates user input, grabs banners, and writes results to a file.
+    Demonstrates socket programming, argparse, regex, and parallel scanning."
           link="https://github.com/mbeardwell/active-recon-lite"
         />
 

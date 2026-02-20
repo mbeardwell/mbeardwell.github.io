@@ -12,6 +12,7 @@
 \usepackage{tabularx}
 \usepackage[normalem]{ulem}
 \usepackage{multido}
+\usepackage{ragged2e}
 
 % Colour constants
 \definecolor{surface}{HTML}{013964}
@@ -20,8 +21,8 @@
 % Spacing constants
 \newcommand{\marginx}{1.27cm}
 \newcommand{\marginy}{1.27cm}
-\newcommand{\linespacing}{1.15}
-\newcommand{\paragap}{0.50em}
+\newcommand{\linespacing}{1.00}
+\newcommand{\paragap}{0.30em}
 \newcommand{\headermargin}{0.00em}
 
 % Margins
@@ -99,80 +100,66 @@
 \begin{flushleft}
   {{\addfontfeatures{LetterSpace=2.0}\setfontsize{26pt}{\textcolorbf{Matthew Beardwell}}}} \\[1.1em]
   Watford, Hertfordshire ·\
-  \cvlink{mailto:contact@mbeardwell.com}{contact@mbeardwell.com} ·\
-  \cvlink{https://mbeardwell.com}{mbeardwell.com} \\
-  \vspace{\paragap}
-  \cvlink{https://linkedin.com/in/mbeardwell}{LinkedIn} ·\
-  \cvlink{https://github.com/mbeardwell}{GitHub} ·\
-  \cvlink{https://tryhackme.com/p/mbeardwell}{TryHackMe}
+  \cvlink{mailto:contact@mbeardwell.com}{contact@mbeardwell.com} \\
 \end{flushleft}
 
 \begin{cvsection}{Professional Summary}
-  Security Analyst with strengths in digital forensics and OSINT.
-  Experience includes ARM instruction patching and binary analysis. Recovered deleted data and artefacts in both lab-based and real-world contexts.
-  Completed __ROOMS__ hands-on labs (\~{}100 hrs, Top __PERCENTAGE__\% TryHackMe) and earned a First-Class BSc in Computer Science from King’s College London. Currently preparing for CompTIA Security+.
+  Technical graduate with a First-Class BSc in Computer Science from King's College London.
+  Degree-level foundations in operating systems, networking, cryptography, and information security.
+  Experienced in Python and Bash automation and Windows and Linux administration.
+  Completed __ROOMS__ hands-on technical labs (Top __PERCENTAGE__\% globally on TryHackMe) covering network protocols, log analysis, and diagnostics.
 \end{cvsection}
 
 \begin{cvsection}{Technical Skills}
   \begin{itemize}[leftmargin=*]
-    \item \textcolorbf{Scripting and Programming}: Python, Bash, PowerShell, C, ARM Assembly
-    \item \textcolorbf{Networking}: Wireshark, TCP/IP analysis, PCAP inspection
-    \item \textcolorbf{Forensics}: Autopsy, dd, foremost, photorec, scalpel; disk image recovery and file carving
-    \item \textcolorbf{OSINT}: Identity/location tracing, metadata correlation, client investigations, toolkit authoring
-    \item \textcolorbf{Reverse Engineering}: GDB, IDA Free, Ghidra, radare2, ARM runtime patching
+    \item \textcolorbf{Operating Systems}: Windows administration, Linux administration, command-line tooling
+    \item \textcolorbf{Networking}: TCP/IP, DNS, HTTP, SMTP, IMAP, POP3, FTP, Wireshark
+    \item \textcolorbf{Scripting}: Python, Bash
+    \item \textcolorbf{Diagnostics}: Log analysis, disk imaging, file recovery
   \end{itemize}
 \end{cvsection}
 
-\begin{cvsection}{Cybersecurity Projects}
-  \entry{\textcolorbf{ActiveReconLite} · \textit{Python Port Scanner}}{Feb 2025 -- Mar 2025}{
-    Built a Python-based TCP connect port scanner using multiprocessing.
-    Outperforms Nmap in some cases by 60x; scanned 65k ports in 5s (vs Nmap's 5m). It validates user input, grabs banners, and writes results to a file.
-    Demonstrates automation, socket programming, and parallel scanning.
-    \hfill\cvlinksmall{https://github.com/mbeardwell/active-recon-lite}{github.com/mbeardwell/active-recon-lite}
+\begin{cvsection}{Technical Projects}
+  \entry{\textcolorbf{ActiveReconLite} · \textit{Python Networking Tool}}{Feb 2025 – Mar 2025}{
+    Built a Python-based TCP connect port scanner using multiprocessing. Validates user input, grabs banners, and writes results to a file.
+    Demonstrates socket programming, argparse, regex, and parallel scanning.\\
+    \phantom{.}\hfill\cvlinksmall{https://github.com/mbeardwell/active-recon-lite}{github.com/mbeardwell/active-recon-lite}
   }
 
-  \entry{\textcolorbf{Location and Identity Resolution from Minimal Public Signals} · \textit{OSINT Case Study}}{Apr 2025}{
-    Tracked real-world identity from anonymised YouTube uploads using public data. 
-    Shows attacker thinking, threat profiling, and privacy risk awareness. 
-    Demonstrates threat intelligence process fundamentals: collection, enrichment, analysis, and attribution based on minimal public indicators.
-    \hfill\cvlinksmall{https://github.com/mbeardwell/osint-i3-case-study}{github.com/mbeardwell/osint-i3-case-study}
-  }
-
-  \entry{\textcolorbf{UK Person-centric OSINT Toolkit}}{Jun 2025}{
-    Curation of UK-only, legal person-focused OSINT resources for investigative use.
-    Featured on OSINTTech (Substack); 100+ LinkedIn/Substack clicks in 1 week.
-    \hfill\cvlinksmall{https://github.com/mbeardwell/uk-personal-osint-toolkit}{github.com/mbeardwell/uk-personal-osint-toolkit}
-  }
-
-  \entry{\textcolorbf{Faster Dynamically Instrumented Programs} · \textit{Bachelor's Thesis}}{Oct 2022 -- May 2023}{
-    Built a runtime patching tool on ARM Linux to redirect processor instructions in memory. 
-    Mirrors techniques used in evasive malware.\hfill\cvlinksmall{https://github.com/mbeardwell/arm-fp-emu}{github.com/mbeardwell/arm-fp-emu}
+  \entry{\textcolorbf{Faster Dynamically Instrumented Programs} · \textit{Bachelor's Thesis}}{Oct 2022 – May 2023}{
+    Developed a proof-of-concept tool that modifies running programs in memory at the instruction level using ARM assembly.
+    Demonstrates low-level systems programming, runtime process management, and binary analysis. \\
+    \phantom{.}\hfill\cvlinksmall{https://github.com/mbeardwell/arm-fp-emu}{github.com/mbeardwell/arm-fp-emu}
   }
 \end{cvsection}
 
 \begin{cvsection}{Professional Experience}
-  \entry{\textcolorbf{Security Training and Labs} · \textit{TryHackMe (Self-Led Learning)}}{Feb 2022 -- Present}{
-    Completed __ROOMS__ hands-on labs (\~{}100 hrs) that included digital forensics, OSINT, and reverse engineering.
-    Ranked in the Top __PERCENTAGE__\% globally.
+  \entry{\textcolorbf{Research Analyst} · \textit{Freelance \& Self-Led}}{May 2023 – Apr 2025}{
+    Delivered technical analysis and reporting for clients on open-ended investigative briefs.
+    Managed projects independently from scoping through to documented output. Strong written and verbal communication of technical findings to non-technical stakeholders.
   }
 
-  \entry{\textcolorbf{OSINT Investigations} · \textit{Freelance \& Self-Led}}{2024 -- 2025}{
-    Conducted multiple open-ended OSINT investigations, including one extensively documented client case and several self-led identity/location tracing projects.
+  \entry{\textcolorbf{Maths Tutor} · \textit{Freelance}}{Sep 2016 – Nov 2019}{
+    Tutored students aged 9–13 in maths (11+ and GCSE prep).
+  }
+
+  \entry{\textcolorbf{Research and Documentation Intern} · \textit{Indo UK Institute of Health}}{Jun 2017 – Aug 2017}{
+    Researched benefits/partnerships and edited exec-level strategy docs for a billion-pound healthcare initiative.
   }
 \end{cvsection}
 
 \begin{cvsection}{Education and Certifications}
+  \textcolorbf{Technical Training} · \textit{TryHackMe}\hfill\metadatafmt{Feb 2022 – Present}\\
+  Completed __ROOMS__ hands-on labs (\~{}__HOURS__ hrs) covering Windows and Linux OS administration, PowerShell, DNS, network protocols, network troubleshooting, log analysis, disk imaging and file recovery.
+  Ranked in the Top __PERCENTAGE__\% globally.
+  \\[\paragap]
   \begin{tabular*}{\textwidth}{@{}p{6.5cm} p{4cm} @{\extracolsep{\fill}} p{3.5cm}@{}}
-    \textcolorbf{BSc (Hons) CS} · \textit{King's College London} & First-Class & \hfill\metadatafmt{Sep 2018 -- Jul 2023} \\
-    \textcolorbf{A-Levels} · \textit{King's Maths School} & \multido{}{4}{A{\textbf{*}} }& \hfill\metadatafmt{Sep 2016 -- Jul 2018} \\
+    \textcolorbf{BSc (Hons) CS} · \textit{King's College London} & First-Class & \hfill\metadatafmt{Sep 2018 – Aug 2023} \\
+    \textcolorbf{A-Levels} · \textit{King's Maths School} & \multido{}{4}{A{\textbf{*}} }& \hfill\metadatafmt{Sep 2016 – Aug 2018}
   \end{tabular*}
   \\[\paragap]
   \begin{tabular*}{\textwidth}{@{}p{3.5cm} p{8cm} @{\extracolsep{\fill}} p{3.5cm}@{}}
-    CompTIA & Security+ & \hfill\metadatafmt{(In Progress)} \\
-    TryHackMe & Intro to Cyber Security & \hfill\metadatafmt{Feb 2024} \\
-    Security Blue Team & Intro to OSINT & \hfill\metadatafmt{Jun 2025} \\
-    TryHackMe & Pre-Security & \hfill\metadatafmt{Apr 2022} \\
-    Prince's Trust & TEAM (12-week programme incl. First Aid) & \hfill\metadatafmt{Jan 2024 -- Apr 2024}
+    Prince's Trust & TEAM (12-week programme incl. First Aid) & \hfill\metadatafmt{Jan 2024 – Apr 2024}
   \end{tabular*}
 \end{cvsection}
 \end{document}

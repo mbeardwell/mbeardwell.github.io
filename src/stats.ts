@@ -1,4 +1,5 @@
-const ENDPOINT = "https://corsproxy.io/?https://tryhackme.com/api/v2/public-profile?username=mbeardwell";
+// Proxy for https://tryhackme.com/api/v2/public-profile?username=mbeardwell
+const ENDPOINT = "https://thm-mbeardwell.matthewbeardwell.workers.dev";
 
 /*
 Example data:
@@ -12,7 +13,7 @@ Example data:
     "username": "mbeardwell",
     "level": 12,
     "country": "gb",
-    "about": "Security Analyst · Forensics, OSINT",
+    "about": "Cybersecurity · Digital Forensics · OSINT",
     "linkedInUsername": "",
     "githubUsername": "",
     "twitterUsername": "",
@@ -32,19 +33,18 @@ Example data:
 }
 */
 
-
 // https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
 export async function getStats(): Promise<any> {
-    let json: any = null;
+  let json: any = null;
 
     try {
         const response = await fetch(ENDPOINT);
-        if (!response.ok) throw new Error(`Error: ${response.status}`);
+        if (!response.ok) throw new Error("HTTP response = " + response.type + ": not ok");
         json = await response.json();
-        if (json["status"] !== "success") throw new Error(`Error: status is ${json["status"]}`);
+        if (json?.status !== "success") throw new Error("HTTP response = " + response.type + ": not success");
     } catch (error: any) {
         console.error(error.message);
     }
-    
-    return json["data"];
+
+  return json?.data;
 }
