@@ -2,6 +2,7 @@ import { JSX, useEffect, useState } from "react";
 import { getStats } from "src/stats";
 import IconTHM from "@icons/brand-tryhackme.svg?react";
 import Icon from "@components/Icon";
+import BorderedCard from "@components/BorderedCard";
 
 type Stats = {
   username: string;
@@ -19,7 +20,7 @@ export default function THM(): JSX.Element {
   }, []);
 
   return (
-    <div className="self-center md:self-start border-content border-4 bg-accent/80 flex items-center justify-center leading-tight">
+    <BorderedCard className="self-center md:self-start flex items-center justify-center leading-tight">
       {stats ? (
         <div className="flex flex-row gap-4 p-3 text-content text-md h-22 aspect-[3/1]">
           {/* Text block */}
@@ -47,6 +48,6 @@ export default function THM(): JSX.Element {
       ) : (
         <div className="text-content p-3">Loading…</div>
       )}
-    </div>
+    </BorderedCard>
   );
 }

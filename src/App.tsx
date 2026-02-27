@@ -1,5 +1,6 @@
 import Background from "@components/Background";
 import About from "@components/sections/About";
+import Certs from "@components/sections/Certs";
 import Contact from "@components/sections/Contact";
 import Footer from "@components/sections/Footer";
 import Header from "@components/sections/Header";
@@ -19,6 +20,8 @@ export default function App() {
                 <Hero />
                 {SECTION_SPACER}
                 <About />
+                {SECTION_SPACER}
+                <Certs />
                 {SECTION_SPACER}
                 <Projects />
                 {SECTION_SPACER}
