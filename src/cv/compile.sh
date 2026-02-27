@@ -43,7 +43,7 @@ fi
 percentage=$(echo "${stats_json}" | jq ".data.topPercentage")
 badges=$(echo "${stats_json}" | jq ".data.badgesNumber")
 rooms=$(echo "${stats_json}" | jq ".data.completedRoomsNumber")
-hours=$(python3 -c "print(int(${rooms} * 0.906725146199))")
+hours=$(python3 -c "print(int(${rooms} * 0.81391076115))")
 today=$(date +"%d/%m/%Y")
 
 # Fetch colours
