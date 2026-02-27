@@ -3,23 +3,22 @@ set -uo pipefail
 cd "$(dirname "$0")" || exit 1
 
 # Constants
-ROOT_DIR="../.."
+ROOT_DIR="."
+CERTS_PATH="${ROOT_DIR}/public/docs/certs"
+ENDPOINT="https://thm-mbeardwell.matthewbeardwell.workers.dev" # proxy for tryhackme.com/api/v2/public-profile?username=mbeardwell
+COLORS_FILE="${ROOT_DIR}/src/styles/colors.json"
+TEX_PATH="${ROOT_DIR}/src/cv"
 INPUT=(cv cv-alt cover-letter cover-letter-alt) # e.g. a for a.tex input TeX file
 PDF_FILENAME_ENDINGS=(CV CV_Alt Cover_Letter Cover_Letter_Alt) # e.g. CV for ".../...CV.pdf" filepath
 
-INPUT_TEX=($(for e in ${INPUT[@]}; do echo ${e}.tex; done))
-OUTPUT_TEX=($(for e in ${INPUT[@]}; do echo ${e}-replaced.tex; done))
-OUTPUT_PDF=($(for e in ${INPUT[@]}; do echo ${e}-replaced.pdf; done))
-PDF_FILEPATHS=($(for e in ${PDF_FILENAME_ENDINGS[@]}; do echo "${ROOT_DIR}/public/docs/cv/Matthew_Beardwell_${e}.pdf"; done))
-
-# proxy for tryhackme.com/api/v2/public-profile?username=mbeardwell
-ENDPOINT="https://thm-mbeardwell.matthewbeardwell.workers.dev" 
-
-COLORS_FILE="${ROOT_DIR}/src/styles/colors.json"
+INPUT_TEX=($(for e in ${INPUT[@]}; do echo "${TEX_PATH}/${e}.tex"; done))
+OUTPUT_TEX=($(for e in ${INPUT[@]}; do echo "${TEX_PATH}/${e}-replaced.tex"; done))
+OUTPUT_PDF=($(for e in ${INPUT[@]}; do echo "${TEX_PATH}/${e}-replaced.pdf"; done))
+PDF_OUTPUT_PATHS=($(for e in ${PDF_FILENAME_ENDINGS[@]}; do echo "${ROOT_DIR}/public/docs/cv/Matthew_Beardwell_${e}.pdf"; done))
 
 # Post-run cleanup
 cleanup() {
-    rm -f ./*.aux ./*.log ./*.out ./*.fdb_latexmk ./*.fls 
+    rm -f "${TEX_PATH}"/*.aux "${TEX_PATH}"/*.log "${TEX_PATH}"/*.out "${TEX_PATH}"/*.fdb_latexmk "${TEX_PATH}"/*.fls
     
     for i in "${!INPUT[@]}"; do
         rm -f "${OUTPUT_TEX[$i]}" 2>/dev/null
@@ -63,17 +62,30 @@ injectVars() { # Inject stats and colours into .tex
 }
 
 compile() { # TeX -> PDF
-    (xelatex -interaction=nonstopmode "$1") || 
+    (cd "$(dirname "$1")" && xelatex -interaction=nonstopmode "$(basename "$1")") ||
     {
         echo "Error: xelatex failed to compile LaTeX on $1"
         exit 1
-    }    
+    }
 }
 
 # Compile TeX files and screenshot them
+
+screenshotPDF() {
+    local dpi="$1"
+    local path="$2"
+    convert -density "${dpi}" "${path}[0]" -background white -alpha remove -alpha off "${path%.*}.png"
+}
+
 for i in "${!INPUT[@]}"; do
     injectVars "${INPUT_TEX[$i]}" "${OUTPUT_TEX[$i]}"
     compile "${OUTPUT_TEX[$i]}"
-    mv "${OUTPUT_TEX[$i]%.*}.pdf" "${PDF_FILEPATHS[$i]}"
-    convert -density 300 "${PDF_FILEPATHS[$i]}" -background white -alpha remove -alpha off "${PDF_FILEPATHS[$i]%.*}.png"
+    mv "${OUTPUT_TEX[$i]%.*}.pdf" "${PDF_OUTPUT_PATHS[$i]}"
+    screenshotPDF 300 "${PDF_OUTPUT_PATHS[$i]}"
+done
+
+# Screenshot certifications
+cert_paths=($(ls "${CERTS_PATH}"))
+for i in "${!cert_paths[@]}"; do
+    screenshotPDF 20 "${CERTS_PATH}/${cert_paths[$i]}"
 done

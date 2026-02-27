@@ -9,9 +9,9 @@ interface ProjectProps {
 function Project({ title, description, link }: ProjectProps) {
   return (
     <div>
-      <h3 className="text-xl font-bold text-content">{title}</h3>
+      <h3>{title}</h3>
       <p className="text-justify">{description}</p>
-      <a className="!text-accent hover:text-accent" href={link} target="_blank">
+      <a className="!text-accent !hover:text-accent" href={link} target="_blank">
         View on GitHub
       </a>
     </div>
@@ -22,7 +22,7 @@ export default function Projects() {
   return (
     <Section id="projects">
       <div className="flex flex-col gap-6 text-content max-w-4xl mx-auto">
-        <h2 className="text-3xl font-bold text-accent text-center">Projects</h2>
+        <h2>Projects</h2>
 
         <Project
           title="Python Port Scanner: ActiveReconLite"

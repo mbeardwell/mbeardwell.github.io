@@ -13,7 +13,7 @@ export default function About(): JSX.Element {
   return (
     <Section id="about">
       <div className="flex flex-col gap-6">
-        <h2 className="text-3xl font-bold text-accent text-center">About</h2>
+        <h2>About</h2>
         <div className="flex flex-col gap-4 text-content max-w-4xl mx-auto">
           <p>
             <span className="font-bold">

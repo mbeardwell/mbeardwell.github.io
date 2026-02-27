@@ -7,6 +7,17 @@
     @apply font-bold text-content hover:text-content visited:text-content;
   }
 
+  p {
+    @apply text-content;
+  }
+
+  h2 {
+    @apply text-3xl font-bold text-accent text-center;
+  }
+  h3 {
+    @apply text-xl font-bold text-content;
+  }
+
   :root {
     --button-ease: cubic-bezier(0.08, 0.59, 0.29, 0.99);
     @apply scroll-smooth;
