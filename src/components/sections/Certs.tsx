@@ -18,7 +18,7 @@ function Cert({ issuer, name, dateIssued, certFile }: CertProps): JSX.Element {
           <span className="text-content">{name}</span>
           <span className="text-content text-sm">{dateIssued}</span>
         </div>
-        {certFile ? <img className="max-h-20" src={`./public/docs/certs/${certFile}`}/> : ""} 
+        {certFile ? <img className="max-h-20" src={`./docs/certs/${certFile}`}/> : ""} 
       </div>
     </BorderedCard>
   );
