@@ -87,5 +87,5 @@ done
 # Screenshot certifications
 cert_paths=($(ls "${CERTS_PATH}"))
 for i in "${!cert_paths[@]}"; do
-    screenshotPDF 50 "${CERTS_PATH}/${cert_paths[$i]}"
+    screenshotPDF 20 "${CERTS_PATH}/${cert_paths[$i]}"
 done
