@@ -19,7 +19,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Install dependencies
-        run: sudo apt-get install -y --no-install-recommends imagemagick texlive-xetex
+        run: sudo apt-get install -y --no-install-recommends imagemagick texlive-xetex lmodern
 
       - name: Build 
         run: |
