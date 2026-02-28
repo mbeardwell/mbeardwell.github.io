@@ -34,9 +34,18 @@ if ! command -v convert &>/dev/null; then sudo apt install -y imagemagick; fi
 sudo sed -i '/disable ghostscript format types/,+6d' /etc/ImageMagick-6/policy.xml # enable pdf -> png conversion | from https://stackoverflow.com/a/69535567
 
 # Fetch stats
-if ! stats_json=$(curl -sf "${ENDPOINT}"); then
-    echo "Error: failed to fetch TryHackMe stats"
-    exit 0 # hack to prevent deployment failure on CV compilation failure
+stats_json=""
+for i in $(seq 1 10); do
+    if stats_json=$(curl -sf "${ENDPOINT}"); then
+        break
+    fi
+    echo "Warn: Attempt $i failed to fetch TryHackMe stats, retrying in 5s..."
+    sleep 5
+done
+
+if [ -z "$stats_json" ]; then
+    echo "Error: failed to fetch TryHackMe stats after 10 attempts"
+    exit 1
 fi
 
 percentage=$(echo "${stats_json}" | jq ".data.topPercentage")
