@@ -12,7 +12,7 @@ interface CertProps {
 function Cert({ issuer, name, dateIssued, certFile }: CertProps): JSX.Element {
   return (
     <BorderedCard className="flex flex-row gap-4 p-3 items-center">
-      <div className="flex flex-row w-full justify-between">
+      <div className="flex flex-row w-full gap-1 justify-between">
         <div className="flex flex-col gap-1">
           <span className="font-semibold text-lg text-content">{issuer}</span>
           <span className="text-content">{name}</span>
