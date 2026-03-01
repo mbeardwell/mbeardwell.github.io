@@ -13,12 +13,12 @@ function Buttons(): JSX.Element {
                 Svg={IconMail}
                 paintTypes={["stroke"]}
             />
-            <Button
+{/*             <Button
                 href="https://discord.gg/2HUhFy6QrB"
                 text="Discord (follow instructions)"
                 Svg={IconDiscord}
                 paintTypes={["fill"]}
-            />
+            /> */}
         </div>
     );
 }
@@ -31,8 +31,8 @@ export default function Contact(): JSX.Element {
                     Contact
                 </h2>
                 <div className="flex flex-col flex-nowrap gap-4 text-lg text-content">
-                    <p>Looking to contribute to real-world cybersecurity work in a volunteer capacity.</p>
-                    <p>Drop me a message:</p>
+                    {/* <p>Looking to contribute to real-world cybersecurity work in a volunteer capacity.</p> */}
+                    <p>Drop me an e-mail:</p>
                     <Buttons />
                 </div>
             </div>
