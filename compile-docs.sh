@@ -51,7 +51,6 @@ fi
 percentage=$(echo "${stats_json}" | jq ".data.topPercentage")
 badges=$(echo "${stats_json}" | jq ".data.badgesNumber")
 rooms=$(echo "${stats_json}" | jq ".data.completedRoomsNumber")
-hours=$(python3 -c "print(int(${rooms} * 0.81391076115))")
 today=$(date +"%d/%m/%Y")
 
 # Fetch colours
@@ -63,7 +62,6 @@ injectVars() { # Inject stats and colours into .tex
     sed -e "s|__PERCENTAGE__|${percentage}|" \
     -e "s|__BADGES__|${badges}|" \
     -e "s|__ROOMS__|${rooms}|" \
-    -e "s|__HOURS__|${hours}|" \
     -e "s|__UPDATED__|${today}|" \
     -e "s|__SURFACE__|${color_surface}|" \
     -e "s|__ACCENT__|${color_accent}|" \
