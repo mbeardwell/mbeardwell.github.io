@@ -4,9 +4,6 @@ permissions:
   pages: write
 
 on:
-  push:
-    branches:
-      - main
   workflow_dispatch:
   schedule:
     - cron: "0 0 * * *" # Every midnight UTC
@@ -26,7 +23,7 @@ jobs:
       - name: Build 
         run: |
           npm install
-          npm run generate-docs
+          npm run compile-docs
           git diff --quiet && echo "No changes to commit" || (
             git config user.email cv-bot@users.noreply.github.com
             git config user.name cv-bot
