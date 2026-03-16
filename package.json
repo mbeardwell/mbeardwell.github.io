@@ -4,7 +4,7 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "vite",
-    "build": "vite build && npm run generate-docs",
+    "build": "vite build && npm run compile-docs",
     "preview": "vite preview",
     "clean-install": "rm -rf node_modules/ dist/ package-lock.json && npm install",
     "deploy": "git pull && npm run build && git add --all && (git commit -m 'Updates' || true) && git push && gh-pages -d dist",
