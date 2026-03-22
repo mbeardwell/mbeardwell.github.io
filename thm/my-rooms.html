@@ -1,0 +1,51 @@
+<!-- Largely written by claude.ai -->
+<html>
+  <body>
+    <pre id="output"></pre>
+    <script>
+      const rooms = fetch("./my-rooms.json")
+        .then((r) => r.json())
+        .then((data) =>
+          data.rooms
+            .filter((r) => r.success === true && r.userCompleted === true)
+            .map(
+              ({
+                roomCode,
+                title,
+                description,
+                type,
+                difficulty,
+                timeToComplete,
+              }) => ({
+                roomCode,
+                title,
+                description,
+                type,
+                difficulty,
+                timeToComplete,
+              }),
+            ),
+        )
+        .then((data) => {
+          const nonZero = data
+            .filter((r) => r.timeToComplete > 0)
+            .map((r) => r.timeToComplete);
+          const mean = Math.round(
+            nonZero.reduce((a, b) => a + b, 0) / nonZero.length,
+          );
+          return data.map((r) => ({
+            ...r,
+            timeToComplete: r.timeToComplete || mean,
+          }));
+        })
+        .then((data) => {
+          const total = data.length;
+          const totalMins = data.reduce((a, r) => a + r.timeToComplete, 0);
+          const avg = Math.round(totalMins / total);
+          document.getElementById("output").textContent =
+            `Rooms: ${total} | Total time: ${totalMins} min (${Math.round(totalMins / 60)}h) | Avg: ${avg} min\n\n` +
+            JSON.stringify(data, null, 2);
+        });
+    </script>
+  </body>
+</html>
