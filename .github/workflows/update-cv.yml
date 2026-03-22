@@ -44,5 +44,5 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist/docs/cv/
           publish_branch: gh-pages
-          destination_dir: .
+          destination_dir: docs/cv
           keep_files: true
