@@ -15,8 +15,8 @@ export default function App() {
             <main className="z-10 flex-1 flex-col items-center w-full">
                 <Hero />
                 <About />
-                <Certs />
-                <Projects />
+                <Projects /> 
+		<Certs />
                 <Contact />
             </main>
             <Footer />
