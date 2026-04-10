@@ -20,7 +20,7 @@ export default function Button({ href, text, Svg, paintTypes }: ButtonProps): JS
     const aClass: string = `
         inline-flex items-center w-fit
         transition duration-250 ease-(--button-ease)
-        bg-accent border-accent hover:border-content border-[2px] rounded-lg
+        bg-accent border-content border-[2px] rounded-lg
         ${BTN_PAD_Y} ${text ? BTN_PAD_X_ICON_WITH_TEXT : BTN_PAD_X_ICON_ONLY}
         font-bold text-md md:text-md
         hover:bg-surface hover:text-accent
