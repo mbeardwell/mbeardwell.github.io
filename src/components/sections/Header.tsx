@@ -5,27 +5,20 @@ import IconCross from "@icons/cross.svg?react";
 import Icon from "@components/Icon";
 
 interface NavigationProps {
-  className ?: string
+  className?: string;
+  onLinkClick?: () => void;
 }
 
-function Navigation({className = ""}: NavigationProps): JSX.Element {
+function Navigation({className = "", onLinkClick}: NavigationProps): JSX.Element {
   return (
     <nav
       className={`ml-auto gap-6 text-xl text-content px-4 ${className}`}
       aria-label="Main navigation"
     >
-      <a href="/#home" className="hover:text-surface">
-        Home
-      </a>
-      <a href="/#about" className="hover:text-surface">
-        About
-      </a>
-      <a href="/#projects" className="hover:text-surface">
-        Projects
-      </a>
-      <a href="/#certs" className="hover:text-surface">
-        Certifications
-      </a>
+      <a href="/#home" className="hover:text-surface" onClick={onLinkClick}>Home</a>
+      <a href="/#about" className="hover:text-surface" onClick={onLinkClick}>About</a>
+      <a href="/#projects" className="hover:text-surface" onClick={onLinkClick}>Projects</a>
+      <a href="/#certs" className="hover:text-surface" onClick={onLinkClick}>Certifications</a>
     </nav>
   );
 }
@@ -66,8 +59,8 @@ export default function Header(): JSX.Element {
       </header>
       {burgerMenuOpen && (
         <div className="fixed top-[48px] z-[1000] w-full h-full flex flex-row">
-          <div className="min-w-[60vw] bg-surface bg-opacity-80" onClick={() => burgerMenuSetOpen((o) => !o)}/>
-          <Navigation className="w-full h-full flex flex-col bg-accent p-2 shadow-xl"/>
+          <div className="min-w-[40vw] bg-surface bg-opacity-80" onClick={() => burgerMenuSetOpen((o) => !o)}/>
+		  <Navigation className="w-full h-full flex flex-col bg-accent p-2 shadow-xl" onLinkClick={() => burgerMenuSetOpen(false)}/>
         </div>
       )}
     </>

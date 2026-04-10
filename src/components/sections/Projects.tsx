@@ -13,7 +13,7 @@ function Project({ title, description, link }: ProjectProps) {
   return (
     <BorderedCard className="p-3">
       <div className="flex flex-col gap-2">
-        <div className="flex justify-between items-start">
+        <div className="flex flex-col gap-2 items-center md:flex-row md:justify-between md:items-start">
           <h3>{title}</h3>
 		  <Button
 		    href={link}
