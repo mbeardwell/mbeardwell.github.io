@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,400;12..96,500;12..96,600;12..96,700&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -21,28 +22,10 @@
   :root {
     --button-ease: cubic-bezier(0.08, 0.59, 0.29, 0.99);
     @apply scroll-smooth;
+    letter-spacing: 0.01em;
   }
 }
 
-@layer utilities {
-  .font-geist {
-    font-family: "Geist";
-  }
-  .font-plex-serif {
-    font-family: "IBMPlexSerif";
-  }
-}
-
-@font-face {
-  font-family: "Geist";
-  src: url("/fonts/geist/Geist-Regular.woff2") format("woff2");
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "IBMPlexSerif";
-  src: url("/fonts/ibm-plex-serif/IBMPlexSerif-Regular.woff2") format("woff2");
-  font-weight: 400;
-  font-style: normal;
+.font-bricolage {
+  font-family: "Bricolage Grotesque", sans-serif;
 }

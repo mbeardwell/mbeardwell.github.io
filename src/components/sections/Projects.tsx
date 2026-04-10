@@ -1,3 +1,4 @@
+import BorderedCard from "@components/BorderedCard";
 import Section from "@components/Section";
 
 interface ProjectProps {
@@ -8,13 +9,13 @@ interface ProjectProps {
 
 function Project({ title, description, link }: ProjectProps) {
   return (
-    <div>
+    <BorderedCard className="flex flex-col gap-2 p-3">
       <h3>{title}</h3>
       <p className="text-justify">{description}</p>
-      <a className="!text-accent !hover:text-accent" href={link} target="_blank">
+      <a className="!text-surface !hover:text-surface" href={link} target="_blank">
         View on GitHub
       </a>
-    </div>
+    </BorderedCard>
   );
 }
 

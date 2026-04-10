@@ -34,7 +34,6 @@ export default function About(): JSX.Element {
                 using Autopsy, dd, foremost, and photorec.
               </p>
             </div>
-            
           </div>
           <div className="flex flex-col gap-4 text-justify">
             <p>
