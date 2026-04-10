@@ -1,5 +1,7 @@
 import BorderedCard from "@components/BorderedCard";
 import Section from "@components/Section";
+import IconGitHub from "@icons/brand-github.svg?react";
+import Button from "@components/Button";
 
 interface ProjectProps {
   title: string;
@@ -13,9 +15,12 @@ function Project({ title, description, link }: ProjectProps) {
       <div className="flex flex-col gap-2">
         <div className="flex justify-between items-start">
           <h3>{title}</h3>
-          <a className="!text-surface text-sm whitespace-nowrap ml-4" href={link} target="_blank">
-            View on GitHub
-          </a>
+		  <Button
+		    href={link}
+		    text="View on GitHub"
+		    Svg={IconGitHub}
+		    paintTypes={["fill", "stroke", "text"]}
+		  />
         </div>
         <p className="text-justify">{description}</p>
       </div>
