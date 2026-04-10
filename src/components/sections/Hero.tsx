@@ -4,6 +4,7 @@ import IconDiscord from "@icons/brand-discord.svg?react";
 import IconGitHub from "@icons/brand-github.svg?react";
 import IconLinkedIn from "@icons/brand-linkedin.svg?react";
 import IconFile from "@icons/file-text.svg?react";
+import IconMail from "@icons/mail.svg?react";
 import { JSX } from "react";
 
 const PROFILE_HEIGHT: number = 200;
@@ -35,32 +36,34 @@ function ImageBlock(): JSX.Element {
 
 function Buttons(): JSX.Element {
   return (
-    <div className="flex flex-col md:flex-row gap-4 justify-center md:justify-end">
-      <div className="flex justify-center md:justify-end">
-        <Button
-          href="/docs/cv/Matthew_Beardwell_CV.pdf"
-          text="Download CV"
-          Svg={IconFile}
-          paintTypes={["stroke"]}
-        />
-      </div>
-      <div className="flex flex-row gap-4 justify-center md:justify-end">
-        <Button
-          href="https://github.com/mbeardwell"
-          Svg={IconGitHub}
-          paintTypes={["fill", "stroke", "text"]}
-        />
-        <Button
-          href="https://linkedin.com/in/mbeardwell"
-          Svg={IconLinkedIn}
-          paintTypes={["fill", "stroke"]}
-        />
-        <Button
-          href="https://discord.gg/2HUhFy6QrB"
-          Svg={IconDiscord}
-          paintTypes={["fill"]}
-        />
-      </div>
+    <div className="flex flex-row gap-4 justify-center md:justify-end flex-wrap">
+      <Button
+        href="https://github.com/mbeardwell"
+        Svg={IconGitHub}
+        paintTypes={["fill", "stroke", "text"]}
+      />
+      <Button
+        href="https://linkedin.com/in/mbeardwell"
+        Svg={IconLinkedIn}
+        paintTypes={["fill", "stroke"]}
+      />
+      <Button
+        href="https://discord.gg/2HUhFy6QrB"
+        Svg={IconDiscord}
+        paintTypes={["fill"]}
+      />
+      <Button
+        href="/docs/cv/Matthew_Beardwell_CV.pdf"
+        text="Download CV"
+        Svg={IconFile}
+        paintTypes={["stroke"]}
+      />
+      <Button
+        href="mailto:contact@mbeardwell.com"
+        text="contact@mbeardwell.com"
+        Svg={IconMail}
+        paintTypes={["stroke"]}
+      />
     </div>
   );
 }

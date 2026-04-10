@@ -9,12 +9,16 @@ interface ProjectProps {
 
 function Project({ title, description, link }: ProjectProps) {
   return (
-    <BorderedCard className="flex flex-col gap-2 p-3">
-      <h3>{title}</h3>
-      <p className="text-justify">{description}</p>
-      <a className="!text-surface !hover:text-surface flex flex-row self-end" href={link} target="_blank">
-        View on GitHub
-      </a>
+    <BorderedCard className="p-3">
+      <div className="flex flex-col gap-2">
+        <div className="flex justify-between items-start">
+          <h3>{title}</h3>
+          <a className="!text-surface text-sm whitespace-nowrap ml-4" href={link} target="_blank">
+            View on GitHub
+          </a>
+        </div>
+        <p className="text-justify">{description}</p>
+      </div>
     </BorderedCard>
   );
 }
