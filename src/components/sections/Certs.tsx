@@ -20,7 +20,7 @@ function Cert({ issuer, name, dateIssued, certFile }: CertProps): JSX.Element {
         </div>
         {certFile ? (
           <a href={`./docs/certs/${certFile}.pdf`} className="flex items-center shrink-0">
-            <img className="max-h-20 w-auto" src={`./docs/certs/${certFile}.png`}/>
+            <img className="max-h-20 w-auto border-content border-[3px] hover:brightness-75" src={`./docs/certs/${certFile}.png`}/>
           </a>
         ) : ""}
       </div>
@@ -37,7 +37,6 @@ export default function Certs(): JSX.Element {
           <Cert issuer="CompTIA" name="Security+ (SY0-701)" dateIssued="In Progress"/>
           <Cert issuer="Security Blue Team" name="Intro to OSINT" dateIssued="20th June 2025" certFile="sec-blue-team-intro-osint" />
           <Cert issuer="The King's Trust" name="TEAM (12-week employability programme including First Aid)" dateIssued="3rd April 2024" certFile="team-programme" />
-          <Cert issuer="TryHackMe" name="Intro to Cyber Security" dateIssued="19th February 2024" />
           <Cert issuer="TryHackMe" name="Pre-Security" dateIssued="17th April 2022" certFile="thm-pre-security" />
         </div>
       </div>
