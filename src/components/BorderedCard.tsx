@@ -7,7 +7,7 @@ interface BorderedCardProps {
 
 export default function BorderedCard({ className, children } : BorderedCardProps): JSX.Element {
     return (
-        <div className={`border-content border-2 bg-accent ${className}`}>
+        <div className={`border-content border-[3px] rounded-lg bg-accent ${className}`}>
             {children}
         </div>
     );

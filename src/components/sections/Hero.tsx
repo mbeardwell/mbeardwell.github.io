@@ -29,7 +29,7 @@ function ImageBlock(): JSX.Element {
         loading="lazy"
         decoding="async"
       />
-      <div className="absolute inset-0 w-full h-full rounded-full border-solid border-4 border-content pointer-events-none"></div>
+      <div className="absolute inset-0 w-full h-full rounded-full border-solid border-[3px] border-content pointer-events-none"></div>
     </div>
   );
 }

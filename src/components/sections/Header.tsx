@@ -20,14 +20,11 @@ function Navigation({className = ""}: NavigationProps): JSX.Element {
       <a href="/#about" className="hover:text-surface">
         About
       </a>
-      <a href="/#certs" className="hover:text-surface">
-        Certs
-      </a>
       <a href="/#projects" className="hover:text-surface">
         Projects
       </a>
-      <a href="/#contact" className="hover:text-surface">
-        Contact
+      <a href="/#certs" className="hover:text-surface">
+        Certs
       </a>
     </nav>
   );
