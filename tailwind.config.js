@@ -10,8 +10,7 @@ module.exports = {
     theme: {
         extend: {
             fontFamily: {
-                sans: ["Bricolage Grotesque", "sans-serif"],
-                serif: ["IBMPlexSans", "serif"],
+                sans: ["IBM Plex Serif", "serif"],
             },
             colors,
             backgroundImage: {
