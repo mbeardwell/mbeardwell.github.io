@@ -24,7 +24,7 @@ function Navigation({className = ""}: NavigationProps): JSX.Element {
         Projects
       </a>
       <a href="/#certs" className="hover:text-surface">
-        Certs
+        Certifications
       </a>
     </nav>
   );
