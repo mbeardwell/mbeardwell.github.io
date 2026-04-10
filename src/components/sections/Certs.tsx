@@ -31,9 +31,9 @@ function Cert({ issuer, name, dateIssued, certFile }: CertProps): JSX.Element {
 export default function Certs(): JSX.Element {
   return (
     <Section id="certs">
-      <div className="flex flex-col gap-6 max-w-4xl mx-auto">
+      <div className="flex flex-col gap-6">
         <h2>Certifications</h2>
-        <div className="flex flex-col gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           <Cert issuer="CompTIA" name="Security+ (SY0-701)" dateIssued="In Progress"/>
           <Cert issuer="Security Blue Team" name="Intro to OSINT" dateIssued="20th June 2025" certFile="sec-blue-team-intro-osint" />
           <Cert issuer="The King's Trust" name="TEAM (12-week employability programme including First Aid)" dateIssued="3rd April 2024" certFile="team-programme" />

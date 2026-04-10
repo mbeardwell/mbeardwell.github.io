@@ -9,7 +9,7 @@ import Projects from "@components/sections/Projects";
 
 export default function App() {
     return (
-        <div id="home" className="min-h-screen w-screen relative flex flex-col">
+        <div id="home" className="min-h-screen w-full relative flex flex-col">
             <Background />
             <Header />
             <main className="z-10 flex-1 flex-col items-center w-full">

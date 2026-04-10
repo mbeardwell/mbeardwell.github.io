@@ -83,7 +83,7 @@ function Buttons(): JSX.Element {
 function TextBlock(): JSX.Element {
   return (
     <div className="md:max-w-[40vw] flex flex-col gap-6 text-center md:text-left">
-      <h1 className="text-accent text-6xl font-bold tracking-wide">
+      <h1 className="text-content text-6xl font-bold tracking-wide">
         Matthew Beardwell
       </h1>
       <div className="flex flex-col gap-4">
@@ -94,7 +94,6 @@ function TextBlock(): JSX.Element {
           1st Class BSc CS &middot; Security+ in progress
         </span>
         <Buttons />
-        <THM />
       </div>
     </div>
   );
