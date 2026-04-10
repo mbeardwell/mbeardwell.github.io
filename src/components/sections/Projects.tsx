@@ -12,7 +12,7 @@ function Project({ title, description, link }: ProjectProps) {
     <BorderedCard className="flex flex-col gap-2 p-3">
       <h3>{title}</h3>
       <p className="text-justify">{description}</p>
-      <a className="!text-surface !hover:text-surface" href={link} target="_blank">
+      <a className="!text-surface !hover:text-surface flex flex-row self-end" href={link} target="_blank">
         View on GitHub
       </a>
     </BorderedCard>

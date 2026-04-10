@@ -5,7 +5,6 @@ import IconGitHub from "@icons/brand-github.svg?react";
 import IconLinkedIn from "@icons/brand-linkedin.svg?react";
 import IconFile from "@icons/file-text.svg?react";
 import { JSX } from "react";
-import THM from "./THM";
 
 const PROFILE_HEIGHT: number = 200;
 const PROFILE_WIDTH: number = 200;
@@ -16,7 +15,6 @@ function ImageBlock(): JSX.Element {
       style={{ width: `${PROFILE_WIDTH}px`, height: `${PROFILE_HEIGHT}px` }}
       className="relative rounded-full overflow-hidden flex-shrink-0"
     >
-      {/* Profile image */}
       <img
         className="absolute inset-0 w-full h-full object-cover motion-safe:hover:scale-105 transition duration-250 ease-(--button-ease)"
         src="/images/profile/profile--128.png"
@@ -30,7 +28,6 @@ function ImageBlock(): JSX.Element {
         loading="lazy"
         decoding="async"
       />
-      {/* Profile image border */}
       <div className="absolute inset-0 w-full h-full rounded-full border-solid border-4 border-content pointer-events-none"></div>
     </div>
   );
@@ -38,9 +35,8 @@ function ImageBlock(): JSX.Element {
 
 function Buttons(): JSX.Element {
   return (
-    <div className="flex flex-col md:flex-row gap-4 justify-center md:justify-start">
-      <div>
-        {/* CV button*/}
+    <div className="flex flex-col md:flex-row gap-4 justify-center md:justify-end">
+      <div className="flex justify-center md:justify-end">
         <Button
           href="/docs/cv/Matthew_Beardwell_CV.pdf"
           text="Download CV"
@@ -48,28 +44,17 @@ function Buttons(): JSX.Element {
           paintTypes={["stroke"]}
         />
       </div>
-      <div className="flex flex-row gap-4 justify-center md:justify-start">
-        {/* GitHub button*/}
+      <div className="flex flex-row gap-4 justify-center md:justify-end">
         <Button
           href="https://github.com/mbeardwell"
           Svg={IconGitHub}
           paintTypes={["fill", "stroke", "text"]}
         />
-        {/* LinkedIn button*/}
         <Button
           href="https://linkedin.com/in/mbeardwell"
           Svg={IconLinkedIn}
           paintTypes={["fill", "stroke"]}
         />
-        {/* TryHackMe button*/}
-        {/*
-                <Button
-                    href="https://tryhackme.com/p/mbeardwell"
-                    Svg={IconTHM}
-                    paintClass="fill-content"
-                />
-            */}
-        {/* Discord button*/}
         <Button
           href="https://discord.gg/2HUhFy6QrB"
           Svg={IconDiscord}
@@ -82,7 +67,7 @@ function Buttons(): JSX.Element {
 
 function TextBlock(): JSX.Element {
   return (
-    <div className="md:max-w-[40vw] flex flex-col gap-6 text-center md:text-left">
+    <div className="md:max-w-[40vw] flex flex-col gap-6 text-center md:text-right">
       <h1 className="text-content text-6xl font-bold tracking-wide">
         Matthew Beardwell
       </h1>
