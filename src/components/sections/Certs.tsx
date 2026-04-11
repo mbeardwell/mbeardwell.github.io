@@ -20,7 +20,7 @@ function Cert({ issuer, name, dateIssued, certFile }: CertProps): JSX.Element {
         </div>
         {certFile ? (
           <a href={`./docs/certs/${certFile}.pdf`} className="flex items-center shrink-0">
-            <img className="max-h-20 w-auto border-content border-[3px] hover:brightness-75" src={`./docs/certs/${certFile}.png`}/>
+            <img className="max-h-20 w-auto border-content rounded-md border-[3px] hover:brightness-75" src={`./docs/certs/${certFile}.png`}/>
           </a>
         ) : ""}
       </div>
