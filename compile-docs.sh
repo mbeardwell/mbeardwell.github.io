@@ -19,7 +19,7 @@ PDF_OUTPUT_PATHS=($(for e in ${PDF_FILENAME_ENDINGS[@]}; do echo "${ROOT_DIR}/pu
 # Post-run cleanup
 cleanup() {
     rm -f "${TEX_PATH}"/*.aux "${TEX_PATH}"/*.log "${TEX_PATH}"/*.out "${TEX_PATH}"/*.fdb_latexmk "${TEX_PATH}"/*.fls
-    
+
     for i in "${!INPUT[@]}"; do
         rm -f "${OUTPUT_TEX[$i]}" 2>/dev/null
         rm -f "${OUTPUT_PDF[$i]}" 2>/dev/null
@@ -31,7 +31,11 @@ trap cleanup EXIT
 # Install dependencies
 if ! command -v xelatex &>/dev/null; then sudo apt install -y texlive-xetex; fi
 if ! command -v convert &>/dev/null; then sudo apt install -y imagemagick; fi
-sudo sed -i '/disable ghostscript format types/,+6d' /etc/ImageMagick-6/policy.xml # enable pdf -> png conversion | from https://stackoverflow.com/a/69535567
+
+# enable pdf -> png conversion | from https://stackoverflow.com/a/6953556
+if grep -q 'disable ghostscript format types' /etc/ImageMagick-6/policy.xml 2>/dev/null; then
+	sudo sed -i '/disable ghostscript format types/,+6d' /etc/ImageMagick-6/policy.xml7
+fi
 
 # Fetch stats
 stats_json=""
