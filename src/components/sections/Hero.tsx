@@ -12,24 +12,25 @@ const PROFILE_WIDTH: number = 200;
 
 function ImageBlock(): JSX.Element {
   return (
-    <div
+    <div className="mx-auto md:mx-0 relative flex-shrink-0 group transition duration-300 ease-(--button-ease) hover:scale-105"
       style={{ width: `${PROFILE_WIDTH}px`, height: `${PROFILE_HEIGHT}px` }}
-      className="relative rounded-full overflow-hidden flex-shrink-0"
     >
-      <img
-        className="absolute inset-0 w-full h-full object-cover motion-safe:hover:scale-105 transition duration-250 ease-(--button-ease)"
-        src="/images/profile/profile--128.png"
-        srcSet={`
-                    /images/profile/profile--128.png 128w,
-                    /images/profile/profile--256.png 256w,
-                    /images/profile/profile--512.png 512w
-                `}
-        sizes="(max-width: 640px) 128px, (max-width: 768px) 160px, (max-width: 1024px) 200px, 256px"
-        alt="Matthew Beardwell profile image"
-        loading="lazy"
-        decoding="async"
-      />
-      <div className="absolute inset-0 w-full h-full rounded-full border-solid border-[3px] border-content pointer-events-none"></div>
+      <div className="absolute inset-0 rounded-full overflow-hidden">
+        <img
+          className="absolute inset-0 w-full h-full object-cover"
+          src="/images/profile/profile--128.png"
+          srcSet={`
+            /images/profile/profile--128.png 128w,
+            /images/profile/profile--256.png 256w,
+            /images/profile/profile--512.png 512w
+          `}
+          sizes="(max-width: 640px) 128px, (max-width: 768px) 160px, (max-width: 1024px) 200px, 256px"
+          alt="Matthew Beardwell profile image"
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
+      <div className="absolute inset-0 rounded-full border-[3px] border-content pointer-events-none transition duration-300 ease-(--button-ease) group-hover:border-accent"></div>
     </div>
   );
 }
