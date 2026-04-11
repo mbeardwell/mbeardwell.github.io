@@ -70,7 +70,7 @@ function Buttons(): JSX.Element {
 
 function TextBlock(): JSX.Element {
   return (
-    <div className="md:max-w-[40vw] flex flex-col gap-6 text-center md:text-right">
+    <div className="flex flex-col gap-6 text-center md:text-right">
       <h1 className="text-accent text-6xl font-bold tracking-wide">
         Matthew Beardwell
       </h1>
@@ -90,7 +90,7 @@ function TextBlock(): JSX.Element {
 export default function Hero(): JSX.Element {
   return (
     <Section id="hero">
-      <div className="w-full flex flex-col md:flex-row flex-wrap justify-center items-center gap-[8vw] box-border">
+      <div className="flex flex-col md:flex-row items-center md:justify-center gap-[8vw]">
         <ImageBlock />
         <TextBlock />
       </div>
