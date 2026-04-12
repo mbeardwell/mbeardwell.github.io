@@ -91,7 +91,7 @@ function TextBlock(): JSX.Element {
 export default function Hero(): JSX.Element {
   return (
     <Section id="hero">
-      <div className="flex flex-col md:flex-row items-center md:justify-center gap-[8vw]">
+      <div className="flex flex-col md:flex-row items-center md:justify-between gap-[8vw]">
         <ImageBlock />
         <TextBlock />
       </div>
