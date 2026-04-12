@@ -12,7 +12,7 @@ const PROFILE_WIDTH: number = 200;
 
 function ImageBlock(): JSX.Element {
   return (
-    <div className="mx-auto md:mx-0 relative flex-shrink-0 group transition duration-300 ease-(--button-ease) hover:scale-105"
+    <div className="relative flex-shrink-0 group transition duration-250 ease-(--button-ease) hover:scale-105"
       style={{ width: `${PROFILE_WIDTH}px`, height: `${PROFILE_HEIGHT}px` }}
     >
       <div className="absolute inset-0 rounded-full overflow-hidden">
@@ -30,7 +30,7 @@ function ImageBlock(): JSX.Element {
           decoding="async"
         />
       </div>
-      <div className="absolute inset-0 rounded-full border-[3px] border-content pointer-events-none transition duration-300 ease-(--button-ease) group-hover:border-accent"></div>
+      <div className="absolute inset-0 rounded-full border-[3px] border-content pointer-events-none transition duration-250 ease-(--button-ease) group-hover:border-accent"></div>
     </div>
   );
 }

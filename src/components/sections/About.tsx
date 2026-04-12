@@ -15,7 +15,7 @@ export default function About(): JSX.Element {
     <Section id="about">
       <div className="flex flex-col gap-6">
         <h2>About</h2>
-        <div className="text-content max-w-4xl mx-auto w-full">
+        <div className="text-content">
           {/* Desktop: float layout */}
           <div className="hidden md:block overflow-hidden">
             <p className="mb-4">

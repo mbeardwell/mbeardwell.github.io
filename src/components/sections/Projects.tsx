@@ -31,7 +31,7 @@ function Project({ title, description, link }: ProjectProps) {
 export default function Projects() {
   return (
     <Section id="projects">
-      <div className="flex flex-col gap-6 text-content max-w-4xl mx-auto">
+      <div className="flex flex-col gap-6 text-content">
         <h2>Projects</h2>
 
         <Project

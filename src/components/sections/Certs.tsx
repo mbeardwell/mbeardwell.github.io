@@ -12,7 +12,7 @@ interface CertProps {
 function Cert({ issuer, name, dateIssued, certFile }: CertProps): JSX.Element {
   return (
     <BorderedCard className="flex flex-row gap-4 p-3 items-center">
-      <div className="flex flex-row w-full gap-1 justify-between">
+      <div className="flex flex-row w-full gap-10 justify-between">
         <div className="flex flex-col gap-1">
           <span className="font-semibold text-lg text-content">{issuer}</span>
           <span className="text-content">{name}</span>
@@ -33,7 +33,7 @@ export default function Certs(): JSX.Element {
     <Section id="certs">
       <div className="flex flex-col gap-6">
         <h2>Certifications</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 md:grid-cols-2 gap-4">
           <Cert issuer="CompTIA" name="Security+ (SY0-701)" dateIssued="In Progress"/>
           <Cert issuer="Security Blue Team" name="Intro to OSINT" dateIssued="20th June 2025" certFile="sec-blue-team-intro-osint" />
           <Cert issuer="The King's Trust" name="TEAM (12-week employability programme including First Aid)" dateIssued="3rd April 2024" certFile="team-programme" />
