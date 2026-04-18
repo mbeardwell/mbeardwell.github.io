@@ -59,7 +59,7 @@ export default function Header(): JSX.Element {
       </header>
       {burgerMenuOpen && (
         <div className="fixed top-[48px] z-[1000] w-full h-full flex flex-row">
-          <div className="min-w-[40vw] bg-surface bg-opacity-80" onClick={() => burgerMenuSetOpen((o) => !o)}/>
+          <div className="min-w-[40vw] bg-surface/80" onClick={() => burgerMenuSetOpen((o) => !o)}/>
 		  <Navigation className="w-full h-full flex flex-col bg-accent p-2 shadow-xl" onLinkClick={() => burgerMenuSetOpen(false)}/>
         </div>
       )}

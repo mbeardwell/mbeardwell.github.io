@@ -22,7 +22,7 @@ function Project({ title, description, link }: ProjectProps) {
 		    paintTypes={["fill", "stroke", "text"]}
 		  />
         </div>
-        <p className="text-justify">{description}</p>
+        <p className="text-center md:text-left">{description}</p>
       </div>
     </BorderedCard>
   );
