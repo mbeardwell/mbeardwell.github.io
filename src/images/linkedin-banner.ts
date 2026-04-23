@@ -1,42 +1,42 @@
 import puppeteer, { Browser, Page } from "puppeteer";
 import sharp from "sharp";
 import path from "path";
+import { readFileSync } from "fs";
 import colors from "@styles/colors.json";
 
 const [W, H]: [number, number] = [1584, 396];
-
 const ROOT_DIR: string = "../..";
 const OUT_DIR: string = `${ROOT_DIR}/public/images`;
-const BG_PATH = `${ROOT_DIR}/public/images/banner-bg.png`;
 const HTML_PATH: string = path.join(process.cwd(), "linkedin-banner.html");
 const CSS_PATH: string = path.join(process.cwd(), `${ROOT_DIR}/dist/temp.css`);
+const LOGO_PATH: string = path.join(process.cwd(), `${ROOT_DIR}/public/images/icons/personal-logo.svg`);
 
-// Background
-const bgImage: Buffer<ArrayBufferLike> = await sharp(BG_PATH)
-  .resize(W, H)
-  .blur(6)
-  .toBuffer();
+function buildHtml(): string {
+  const logo = readFileSync(LOGO_PATH, "utf-8");
+  const template = readFileSync(HTML_PATH, "utf-8");
+  return template
+    .replace(/\{\{LOGO\}\}/g, logo)
+    .replace(/\{\{COLOR:(\w+)\}\}/g, (_, key) => colors[key as keyof typeof colors] ?? "");
+}
 
-const bgSurface: Buffer<ArrayBufferLike> = await sharp({
+const bg: Buffer = await sharp({
   create: {
     width: W,
     height: H,
     channels: 4,
-    background: colors["surface"] + "BB",
+    background: colors["surface"],
   },
 })
   .png()
   .toBuffer();
 
 // Overlay
-const browser: Browser = await puppeteer.launch({
-  headless: true,
-  dumpio: true,
-});
+const browser: Browser = await puppeteer.launch({ headless: true, dumpio: true });
 const page: Page = await browser.newPage();
 await page.setViewport({ width: W, height: H });
-await page.goto(`file://${HTML_PATH}`, { waitUntil: "load", timeout: 5000 });
+await page.setContent(buildHtml(), { waitUntil: "load" });
 await page.addStyleTag({ path: CSS_PATH });
+
 const textContent: Buffer = Buffer.from(
   await page.screenshot({
     omitBackground: true,
@@ -44,12 +44,8 @@ const textContent: Buffer = Buffer.from(
   })
 );
 
-// Output combined layers
-await sharp(bgImage)
-  .composite([
-    { input: bgSurface, blend: "over" },
-    { input: textContent, blend: "over" },
-  ])
+await sharp(bg)
+  .composite([{ input: textContent, blend: "over" }])
   .toFile(`${OUT_DIR}/linkedin-banner.png`);
 
 await browser.close();
