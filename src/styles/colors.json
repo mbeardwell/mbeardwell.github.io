@@ -1,7 +1,13 @@
 {
-    "surface":	"#0A0E1A",
-    "accent":	"#4D84F5",
-    "content":	"#F5F8FE",
-	"green":	"#47C28A",
-	"amber":	"#D4944A"
+	"surface": "#0A0E1A",
+	"accent": "#4D84F5",
+	"content": "#F5F8FE",
+	"green": "#47C28A",
+	"amber": "#D4944A",
+	"surface-light": "#F4F6FF",
+	"accent-light": "#3A6FE0",
+	"content-light": "#0A0E1A",
+	"surface-dark": "#0A0E1A",
+	"accent-dark": "#4D84F5",
+	"content-dark": "#F5F8FE"
 }

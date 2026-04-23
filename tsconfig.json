@@ -1,43 +1,32 @@
 {
-  "compilerOptions": {
-    "jsx": "react-jsx",
-    "module": "ESNext",
-    "moduleResolution": "Node",
-    "target": "ES2021",
-    "baseUrl": "./",
-    "paths": {
-      "@components/*": [
-        "src/components/*"
-      ],
-      "@styles/*": [
-        "src/styles/*"
-      ],
-      "@icons/*": [
-        "public/images/icons/*"
-      ],
-    },
-    "resolveJsonModule": true,
-    "esModuleInterop": true,
-    "strict": true,
-    "noImplicitAny": true,
-    "noImplicitThis": true,
-    "alwaysStrict": true,
-    "strictNullChecks": true,
-    "strictFunctionTypes": true,
-    "strictBindCallApply": true,
-    "noUncheckedIndexedAccess": true,
-    "exactOptionalPropertyTypes": true,
-    "noImplicitReturns": true,
-    "noFallthroughCasesInSwitch": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "allowSyntheticDefaultImports": true
-  },
-  "include": [
-    "src/**/*"
-  ],
-  "exclude": [
-    "node_modules",
-    "dist"
-  ]
+	"compilerOptions": {
+		"jsx": "react-jsx",
+		"module": "ESNext",
+		"moduleResolution": "Node",
+		"target": "ES2021",
+		"baseUrl": "./",
+		"paths": {
+			"@components/*": ["src/components/*"],
+			"@styles/*": ["src/styles/*"],
+			"@icons/*": ["public/images/icons/*"]
+		},
+		"resolveJsonModule": true,
+		"esModuleInterop": true,
+		"strict": true,
+		"noImplicitAny": true,
+		"noImplicitThis": true,
+		"alwaysStrict": true,
+		"strictNullChecks": true,
+		"strictFunctionTypes": true,
+		"strictBindCallApply": true,
+		"noUncheckedIndexedAccess": true,
+		"exactOptionalPropertyTypes": true,
+		"noImplicitReturns": true,
+		"noFallthroughCasesInSwitch": true,
+		"noUnusedLocals": true,
+		"noUnusedParameters": true,
+		"allowSyntheticDefaultImports": true
+	},
+	"include": ["src/**/*"],
+	"exclude": ["node_modules", "dist"]
 }

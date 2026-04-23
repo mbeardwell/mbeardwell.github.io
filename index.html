@@ -1,53 +1,59 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
+	<head>
+		<meta name="author" content="Matthew Beardwell" />
+		<!-- JSON-LD Adapted from Generation by: https://hallanalysis.com/json-ld-generator/ -->
+		<script type="application/ld+json">
+			{
+			  "@context": "https://schema.org"
+			  "@type": "Person",
+			  "@id": "https://mbeardwell.com",
+			  "name": "Matthew Beardwell",
+			  "jobTitle": "Cybersecurity Graduate",
+			  "url": "https://mbeardwell.com",
+			  "mainEntityOfPage": {
+			    "@type": "WebPage",
+			    "@id": "https://mbeardwell.com"
+			  },
+			  "alumniOf": {
+			    "@type": "CollegeOrUniversity",
+			    "name": "King's College London",
+			    "@id": "https://www.kcl.ac.uk"
+			  },
+			  "hasCredential": {
+			    "@type": "EducationalOccupationalCredential",
+			    "credentialCategory": "BachelorDegree",
+			    "educationalLevel": "Undergraduate",
+			    "name": "BSc Computer Science"
+			  },
+			  "description": "Cybersecurity-focused computer science graduate with interest in digital forensics and OSINT.",
+			  "address": {
+			    "@type": "PostalAddress",
+			    "addressLocality": "Watford",
+			    "addressRegion": "Hertfordshire",
+			    "addressCountry": "United Kingdom"
+			  },
+			  "sameAs": [
+			    "https://linkedin.com/in/mbeardwell",
+			    "https://tryhackme.com/p/mbeardwell",
+			    "https://github.com/mbeardwell"
+			  ],
+			  "email": "contact@mbeardwell.com"
+			}
+		</script>
+		<script>
+			const saved = localStorage.getItem("theme");
+			const prefersDark = window.matchMedia(
+				"(prefers-color-scheme: dark)",
+			).matches;
+			const theme = saved ?? (prefersDark ? "dark" : "light");
+			document.documentElement.setAttribute("data-theme", theme);
+		</script>
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+	</head>
 
-<head>
-  <meta name="author" content="Matthew Beardwell">
-  <!-- JSON-LD Adapted from Generation by: https://hallanalysis.com/json-ld-generator/ -->
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org"
-      "@type": "Person",
-      "@id": "https://mbeardwell.com",
-      "name": "Matthew Beardwell",
-      "jobTitle": "Cybersecurity Graduate",
-      "url": "https://mbeardwell.com",
-      "mainEntityOfPage": {
-        "@type": "WebPage",
-        "@id": "https://mbeardwell.com"
-      },
-      "alumniOf": {
-        "@type": "CollegeOrUniversity",
-        "name": "King's College London",
-        "@id": "https://www.kcl.ac.uk"
-      },
-      "hasCredential": {
-        "@type": "EducationalOccupationalCredential",
-        "credentialCategory": "BachelorDegree",
-        "educationalLevel": "Undergraduate",
-        "name": "BSc Computer Science"
-      },
-      "description": "Cybersecurity-focused computer science graduate with interest in digital forensics and OSINT.",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Watford",
-        "addressRegion": "Hertfordshire",
-        "addressCountry": "United Kingdom"
-      },
-      "sameAs": [
-        "https://linkedin.com/in/mbeardwell",
-        "https://tryhackme.com/p/mbeardwell",
-        "https://github.com/mbeardwell"
-      ],
-      "email": "contact@mbeardwell.com"
-    }
-  </script>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-</head>
-
-<body>
-  <div id="root"></div>
-  <script type="module" src="./src/main.tsx"></script>
-</body>
-
+	<body>
+		<div id="root"></div>
+		<script type="module" src="./src/main.tsx"></script>
+	</body>
 </html>

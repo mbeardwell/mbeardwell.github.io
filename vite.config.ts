@@ -4,13 +4,13 @@ import svgr from "vite-plugin-svgr";
 import tsConfigPaths from "vite-tsconfig-paths";
 
 export default defineConfig({
-  plugins: [react(), tsConfigPaths(), svgr()],
-  resolve: {
-    alias: {
-      "@hooks": "/src/hooks",
-      "@components": "/src/components",
-      "@styles": "/src/styles",
-      "@icons": "/public/images/icons",
-    },
-  },
+	plugins: [react(), tsConfigPaths(), svgr()],
+	resolve: {
+		alias: {
+			"@hooks": "/src/hooks",
+			"@components": "/src/components",
+			"@styles": "/src/styles",
+			"@icons": "/public/images/icons",
+		},
+	},
 });

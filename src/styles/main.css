@@ -1,45 +1,53 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
-:root {
-  --button-ease: cubic-bezier(0.08, 0.59, 0.29, 0.99);
-  --ac:    theme('colors.accent');
-  --green: theme('colors.green');
-  --amber: theme('colors.amber');
-  --bd:    color-mix(in srgb, var(--ac) 16%, transparent);
-  --bdH:   color-mix(in srgb, var(--ac) 45%, transparent);
-  --bgAlt: color-mix(in srgb, var(--ac)  4%, theme('colors.surface'));
-  --mu:    rgba(245,248,254,0.44);
-  @apply scroll-smooth;
-  letter-spacing: 0.01em;
+	:root {
+		--surface: theme("colors.surface-light");
+		--content: theme("colors.content-light");
+		--ac: theme("colors.accent-light");
+		--green: theme("colors.green");
+		--amber: theme("colors.amber");
+		--mu: color-mix(in srgb, var(--content) 44%, transparent);
+		--bd: color-mix(in srgb, var(--ac) 20%, transparent);
+		--bdH: color-mix(in srgb, var(--ac) 45%, transparent);
+		--bgAlt: color-mix(in srgb, var(--ac) 6%, var(--surface));
+		--button-ease: cubic-bezier(0.08, 0.59, 0.29, 0.99);
+		@apply scroll-smooth;
+		letter-spacing: 0.01em;
+	}
+
+	[data-theme="dark"] {
+		--surface: theme("colors.surface-dark");
+		--content: theme("colors.content-dark");
+		--ac: theme("colors.accent-dark");
+		--bd: color-mix(in srgb, var(--ac) 16%, transparent);
+	}
+
+	body {
+		@apply bg-surface text-content;
+		-webkit-font-smoothing: antialiased;
+	}
+
+	a {
+		@apply font-medium text-content hover:text-content visited:text-content;
+	}
+
+	p {
+		@apply text-content;
+	}
+
+	h1 {
+		@apply font-serif font-normal text-content;
+	}
+
+	h2 {
+		@apply font-serif font-normal text-3xl text-content text-center;
+	}
+
+	h3 {
+		@apply text-lg font-semibold text-content;
+	}
 }
-
-  body {
-    @apply bg-surface text-content;
-    -webkit-font-smoothing: antialiased;
-  }
-
-  a {
-    @apply font-medium text-content hover:text-content visited:text-content;
-  }
-
-  p {
-    @apply text-content;
-  }
-
-  h1 {
-    @apply font-serif font-normal text-content;
-  }
-
-  h2 {
-    @apply font-serif font-normal text-3xl text-content text-center;
-  }
-
-  h3 {
-    @apply text-lg font-semibold text-content;
-  }
-}
-

@@ -1,40 +1,42 @@
 {
-  "name": "temp",
-  "type": "module",
-  "version": "0.0.1",
-  "scripts": {
-    "dev": "vite",
-    "build": "vite build && npm run compile-docs",
-    "preview": "vite preview",
-    "clean-install": "rm -rf node_modules/ dist/ package-lock.json && npm install",
-    "deploy": "git pull && npm run build && git add --all && (git commit -m 'Updates' || true) && git push && gh-pages -d dist",
-    "generate-images": "./src/images/generate-pdf-previews.sh && ./src/images/generate-profile.sh && ./src/images/generate-banner.sh",
-    "compile-docs": "./compile-docs.sh"
-  },
-  "dependencies": {
-    "@tailwindcss/aspect-ratio": "^0.4.2",
-    "@tailwindcss/vite": "^4.1.5",
-    "@tsparticles/engine": "^3.8.1",
-    "@tsparticles/react": "^3.0.0",
-    "react": "^19.1.0",
-    "react-dom": "^19.1.0",
-    "tsparticles": "^3.8.1"
-  },
-  "devDependencies": {
-    "@tailwindcss/postcss": "^4.1.5",
-    "@types/node": "^22.15.24",
-    "@types/react": "^19.1.4",
-    "@types/react-dom": "^19.1.4",
-    "@vitejs/plugin-react": "^4.4.1",
-    "autoprefixer": "^10.4.21",
-    "gh-pages": "^6.3.0",
-    "postcss": "^8.5.3",
-    "puppeteer": "^24.9.0",
-    "sharp": "^0.34.2",
-    "tailwindcss": "^3.4.3",
-    "typescript": "^5.8.3",
-    "vite": "^6.3.5",
-    "vite-plugin-svgr": "^4.3.0",
-    "vite-tsconfig-paths": "^5.1.4"
-  }
+	"name": "temp",
+	"type": "module",
+	"version": "0.0.1",
+	"scripts": {
+		"dev": "vite",
+		"format": "prettier --write --use-tabs '**/*.{ts,tsx,css,json,html,md,js,cjs}'",
+		"build": "npm run format && vite build && npm run compile-docs",
+		"preview": "vite preview",
+		"clean-install": "rm -rf node_modules/ dist/ package-lock.json && npm install",
+		"deploy": "git pull && npm run build && git add --all && (git commit -m 'Updates' || true) && git push && gh-pages -d dist",
+		"generate-images": "./src/images/generate-pdf-previews.sh && ./src/images/generate-profile.sh && ./src/images/generate-banner.sh",
+		"compile-docs": "./compile-docs.sh"
+	},
+	"dependencies": {
+		"@tailwindcss/aspect-ratio": "^0.4.2",
+		"@tailwindcss/vite": "^4.1.5",
+		"@tsparticles/engine": "^3.8.1",
+		"@tsparticles/react": "^3.0.0",
+		"react": "^19.1.0",
+		"react-dom": "^19.1.0",
+		"tsparticles": "^3.8.1"
+	},
+	"devDependencies": {
+		"@tailwindcss/postcss": "^4.1.5",
+		"@types/node": "^22.15.24",
+		"@types/react": "^19.1.4",
+		"@types/react-dom": "^19.1.4",
+		"@vitejs/plugin-react": "^4.4.1",
+		"autoprefixer": "^10.4.21",
+		"gh-pages": "^6.3.0",
+		"postcss": "^8.5.3",
+		"prettier": "^3.8.3",
+		"puppeteer": "^24.9.0",
+		"sharp": "^0.34.2",
+		"tailwindcss": "^3.4.3",
+		"typescript": "^5.8.3",
+		"vite": "^6.3.5",
+		"vite-plugin-svgr": "^4.3.0",
+		"vite-tsconfig-paths": "^5.1.4"
+	}
 }

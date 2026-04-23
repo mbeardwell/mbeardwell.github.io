@@ -2,22 +2,29 @@ import Icon from "@components/Icon";
 import { JSX } from "react";
 import { SVG } from "src/globals";
 
-const BTN_PAD_X_ICON_ONLY   = "px-[0.1rem]";
+const BTN_PAD_X_ICON_ONLY = "px-[0.1rem]";
 const BTN_PAD_X_ICON_WITH_TEXT = "px-[0.5rem]";
 const BTN_PAD_Y = "py-[0.1rem]";
 
 interface ButtonProps {
-    href: string;
-    text?: string;
-    Svg?: SVG;
-    paintTypes?: string[];
+	href: string;
+	text?: string;
+	Svg?: SVG;
+	paintTypes?: string[];
 }
 
-export default function Button({ href, text, Svg, paintTypes }: ButtonProps): JSX.Element {
-    const iconClassName      = paintTypes?.map((s) => `${s}-content`).join(" ");
-    const iconHoverClassName = paintTypes?.map((s) => `hover:${s}-accent`).join(" ");
+export default function Button({
+	href,
+	text,
+	Svg,
+	paintTypes,
+}: ButtonProps): JSX.Element {
+	const iconClassName = paintTypes?.map((s) => `${s}-content`).join(" ");
+	const iconHoverClassName = paintTypes
+		?.map((s) => `hover:${s}-accent`)
+		.join(" ");
 
-    const aClass = `
+	const aClass = `
         inline-flex items-center w-fit
         relative overflow-hidden
         transition-colors duration-[280ms] ease-[var(--button-ease)]
@@ -33,10 +40,12 @@ export default function Button({ href, text, Svg, paintTypes }: ButtonProps): JS
         hover:before:translate-x-0
     `;
 
-    return (
-        <a href={href} className={aClass} target="_blank">
-            {Svg && <Icon Svg={Svg} paintClassName="w-6 h-6 relative z-[1]" />}
-            {text && <span className="ml-2 whitespace-nowrap relative z-[1]">{text}</span>}
-        </a>
-    );
+	return (
+		<a href={href} className={aClass} target="_blank">
+			{Svg && <Icon Svg={Svg} paintClassName="w-6 h-6 relative z-[1]" />}
+			{text && (
+				<span className="ml-2 whitespace-nowrap relative z-[1]">{text}</span>
+			)}
+		</a>
+	);
 }
