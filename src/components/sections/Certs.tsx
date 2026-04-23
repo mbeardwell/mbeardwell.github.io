@@ -14,10 +14,10 @@ interface CertProps {
 }
 
 const CERTS: CertProps[] = [
+  { issuer: "TryHackMe",          name: "Pre-Security",          dateIssued: "Apr 2022", status: "done",     certFile: "thm-pre-security" },
+  { issuer: "The King's Trust",   name: "TEAM Programme",        dateIssued: "Apr 2024", status: "done",     certFile: "team-programme" },
+  { issuer: "Security Blue Team", name: "Intro to OSINT",        dateIssued: "Jun 2025", status: "done",     certFile: "sec-blue-team-intro-osint" },
   { issuer: "CompTIA",            name: "Security+ (SY0-701)",   dateIssued: "2025",     status: "progress" },
-  { issuer: "Security Blue Team", name: "Intro to OSINT",        dateIssued: "Jun 2025", status: "done",    certFile: "sec-blue-team-intro-osint" },
-  { issuer: "The King's Trust",   name: "TEAM Programme",        dateIssued: "Apr 2024", status: "done",    certFile: "team-programme" },
-  { issuer: "TryHackMe",          name: "Pre-Security",          dateIssued: "Apr 2022", status: "done",    certFile: "thm-pre-security" },
 ];
 
 const TL = [
