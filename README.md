@@ -1,7 +1,5 @@
 # mbeardwell.github.io
 
-Personal website built with React, Vite, TailwindCSS, and TypeScript.
-
-Includes auto-generated CV and TryHackMe stats.
+Personal portfolio website built with AI assistance.
 
 Live: [mbeardwell.com](https://mbeardwell.com)

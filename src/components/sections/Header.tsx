@@ -1,4 +1,4 @@
-import { JSX, useState } from "react";
+import { JSX, useState, useEffect } from "react";
 import IconPersonal from "@icons/personal-logo.svg?react";
 import IconHamburger from "@icons/hamburger.svg?react";
 import IconCross from "@icons/cross.svg?react";
@@ -9,60 +9,87 @@ interface NavigationProps {
   onLinkClick?: () => void;
 }
 
-function Navigation({className = "", onLinkClick}: NavigationProps): JSX.Element {
+function Navigation({ className = "", onLinkClick }: NavigationProps): JSX.Element {
   return (
     <nav
-      className={`ml-auto gap-6 text-xl text-content px-4 ${className}`}
+      className={`ml-auto gap-6 ${className}`}
       aria-label="Main navigation"
     >
-      <a href="/#home" className="hover:text-surface" onClick={onLinkClick}>Home</a>
-      <a href="/#about" className="hover:text-surface" onClick={onLinkClick}>About</a>
-      <a href="/#projects" className="hover:text-surface" onClick={onLinkClick}>Projects</a>
-      <a href="/#certs" className="hover:text-surface" onClick={onLinkClick}>Certifications</a>
+      {[["#about","About"],["#projects","Projects"],["#certs","Certifications"]].map(([href, label]) => (
+		<a        
+          key={label}
+          href={href}
+          onClick={onLinkClick}
+          className="text-[11px] font-medium tracking-[0.1em] uppercase text-[var(--mu)] hover:text-content transition-colors duration-200 no-underline"
+        >
+          {label}
+        </a>
+      ))}
+      <a
+        href="/docs/cv/Matthew_Beardwell_CV.pdf"
+        target="_blank"
+        className="
+          relative overflow-hidden
+          text-[11px] font-medium tracking-[0.08em] uppercase
+          text-content border border-[var(--bdH)] px-[18px] py-[7px]
+          transition-colors duration-[280ms] no-underline
+          hover:text-surface
+          before:content-[''] before:absolute before:inset-0
+          before:bg-accent before:translate-x-[-101%]
+          before:transition-transform before:duration-[300ms] before:ease-[var(--button-ease)]
+          before:z-[-1]
+          hover:before:translate-x-0
+        "
+      >
+        Download CV
+      </a>
     </nav>
   );
 }
 
 export default function Header(): JSX.Element {
-  const [burgerMenuOpen, burgerMenuSetOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  useEffect(() => {
+    const fn = () => setScrolled(window.scrollY > 60);
+    window.addEventListener("scroll", fn, { passive: true });
+    return () => window.removeEventListener("scroll", fn);
+  }, []);
 
   return (
     <>
       <header
         id="navbar"
-        className="sticky top-0 z-50 w-full bg-accent p-2 flex justify-center"
+        className={`fixed top-0 left-0 right-0 z-50 flex justify-between items-center px-16 max-md:px-6 transition-all duration-[350ms] ${
+          scrolled
+            ? "py-[14px] border-b border-[var(--bd)] bg-surface/[0.88] backdrop-blur-[16px]"
+            : "py-[14px] border-b border-transparent bg-transparent"
+        }`}
       >
-        <div className="w-full max-w-6xl flex items-center relative">
-          {/* Logo */}
-          <a href="/#home" className="lg:px-4 shrink-0">
-            <Icon
-              Svg={IconPersonal}
-              paintClassName="text-content hover:text-surface !w-8 !h-8"
-            />
-          </a>
-
-          {/* Navigation */}
-          <Navigation className="hidden sm:flex flex-row"/>
-
-          {/* Hamburger (Mobile) */}
-          <button
-            className="absolute right-0 visible sm:hidden"
-            aria-label="Open menu"
-            onClick={() => burgerMenuSetOpen((o) => !o)}
-          >
-            <Icon
-              Svg={burgerMenuOpen ? IconCross : IconHamburger}
-              paintClassName="text-content hover:text-surface !w-8 !h-8"
-            />
-          </button>
-        </div>
+        <a href="#home" className="block leading-none no-underline shrink-0">
+          <Icon Svg={IconPersonal} paintClassName="text-accent hover:text-content !w-[26px] !h-[26px] transition-colors duration-200" />
+        </a>
+        <Navigation className="hidden sm:flex flex-row items-center" />
+        <button
+          className="sm:hidden text-content hover:text-accent transition-colors"
+          aria-label="Toggle menu"
+          onClick={() => setMenuOpen(o => !o)}
+        >
+          <Icon Svg={menuOpen ? IconCross : IconHamburger} paintClassName="text-content !w-7 !h-7" />
+        </button>
       </header>
-      {burgerMenuOpen && (
-        <div className="fixed top-[48px] z-[1000] w-full h-full flex flex-row">
-          <div className="min-w-[40vw] bg-surface/80" onClick={() => burgerMenuSetOpen((o) => !o)}/>
-		  <Navigation className="w-full h-full flex flex-col bg-accent p-2 shadow-xl" onLinkClick={() => burgerMenuSetOpen(false)}/>
+
+      {menuOpen && (
+        <div className="fixed top-0 inset-0 z-40 flex">
+          <div className="flex-1 bg-surface/80" onClick={() => setMenuOpen(false)} />
+          <Navigation
+            className="flex flex-col items-start justify-center w-[70vw] max-w-xs bg-surface border-l border-[var(--bd)] px-8 py-12"
+            onLinkClick={() => setMenuOpen(false)}
+          />
         </div>
       )}
     </>
   );
 }
+

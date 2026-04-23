@@ -1,5 +1,4 @@
 import colors from "./src/styles/colors.json" assert { type: "json" };
-
 module.exports = {
     content: [
         "./index.html",
@@ -10,7 +9,8 @@ module.exports = {
     theme: {
         extend: {
             fontFamily: {
-                sans: ["IBM Plex Serif", "serif"],
+                sans:  ["DM Sans", "system-ui", "sans-serif"],
+                serif: ["DM Serif Display", "serif"],
             },
             colors,
             backgroundImage: {

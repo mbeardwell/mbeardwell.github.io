@@ -7,6 +7,7 @@ export default defineConfig({
   plugins: [react(), tsConfigPaths(), svgr()],
   resolve: {
     alias: {
+      "@hooks": "/src/hooks",
       "@components": "/src/components",
       "@styles": "/src/styles",
       "@icons": "/public/images/icons",

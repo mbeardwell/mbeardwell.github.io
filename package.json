@@ -8,7 +8,7 @@
     "preview": "vite preview",
     "clean-install": "rm -rf node_modules/ dist/ package-lock.json && npm install",
     "deploy": "git pull && npm run build && git add --all && (git commit -m 'Updates' || true) && git push && gh-pages -d dist",
-    "generate-images": "./src/images/generate-profile.sh && ./src/images/generate-banner.sh",
+    "generate-images": "./src/images/generate-pdf-previews.sh && ./src/images/generate-profile.sh && ./src/images/generate-banner.sh",
     "compile-docs": "./compile-docs.sh"
   },
   "dependencies": {

@@ -1,5 +1,7 @@
 {
-    "surface": "#0A0E1A",
-    "accent": "#4D84F5",
-    "content": "#F5F8FE"
+    "surface":	"#0A0E1A",
+    "accent":	"#4D84F5",
+    "content":	"#F5F8FE",
+	"green":	"#47C28A",
+	"amber":	"#D4944A"
 }

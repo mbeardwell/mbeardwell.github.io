@@ -79,24 +79,3 @@ compile() { # TeX -> PDF
         exit 1
     }
 }
-
-# Compile TeX files and screenshot them
-
-screenshotPDF() {
-    local dpi="$1"
-    local path="$2"
-    convert -density "${dpi}" "${path}[0]" -background white -alpha remove -alpha off "${path%.*}.png"
-}
-
-for i in "${!INPUT[@]}"; do
-    injectVars "${INPUT_TEX[$i]}" "${OUTPUT_TEX[$i]}"
-    compile "${OUTPUT_TEX[$i]}"
-    mv "${OUTPUT_TEX[$i]%.*}.pdf" "${PDF_OUTPUT_PATHS[$i]}"
-    screenshotPDF 300 "${PDF_OUTPUT_PATHS[$i]}"
-done
-
-# Screenshot certifications
-cert_paths=($(ls "${CERTS_PATH}"))
-for i in "${!cert_paths[@]}"; do
-    screenshotPDF 20 "${CERTS_PATH}/${cert_paths[$i]}"
-done

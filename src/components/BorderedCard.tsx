@@ -5,9 +5,9 @@ interface BorderedCardProps {
     children: React.ReactNode;
 }
 
-export default function BorderedCard({ className, children } : BorderedCardProps): JSX.Element {
+export default function BorderedCard({ className, children }: BorderedCardProps): JSX.Element {
     return (
-        <div className={`border-content border-[3px] rounded-md bg-accent ${className}`}>
+        <div className={`border border-[var(--bd)] hover:border-[var(--bdH)] transition-colors duration-[220ms] ${className}`}>
             {children}
         </div>
     );
