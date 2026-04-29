@@ -19,10 +19,10 @@ function Project({ n, title, description, tags, link }: ProjectProps) {
 			href={link}
 			target="_blank"
 			rel="noopener noreferrer"
-			className="block no-underline text-inherit border border-[var(--bd)] p-7 transition-all duration-[220ms] hover:border-[var(--bdH)] hover:-translate-y-[3px] hover:shadow-[0_16px_48px_color-mix(in_srgb,var(--ac)_10%,transparent)]"
+			className="group block no-underline text-inherit border border-[var(--bd)] p-7 transition-all duration-[220ms] hover:border-[var(--bdH)] hover:-translate-y-[3px] hover:shadow-[0_16px_48px_color-mix(in_srgb,var(--ac)_10%,transparent)]"
 		>
 			<div className="flex justify-between items-start gap-3 mb-3">
-				<span className="font-serif text-[54px] leading-none text-accent opacity-[0.17] select-none">
+				<span className="font-serif text-[54px] leading-none text-accent opacity-[0.17] select-none transition-opacity duration-[220ms] group-hover:opacity-50">
 					{n}
 				</span>
 				<div className="flex gap-1.5 flex-wrap justify-end pt-1">
