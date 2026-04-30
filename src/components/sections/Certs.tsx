@@ -38,7 +38,7 @@ const CERTS: CertProps[] = [
 	{
 		issuer: "CompTIA",
 		name: "Security+ (SY0-701)",
-		dateIssued: "2025",
+		dateIssued: "",
 		status: "progress",
 	},
 ];
