@@ -1,0 +1,32 @@
+{
+	"status": "success",
+	"data": {
+		"avatar": "https://tryhackme-images.s3.amazonaws.com/user-avatars/5e91df70f9ccf9046266a9a6-1748646256912",
+		"username": "mbeardwell",
+		"level": 12,
+		"country": "gb",
+		"about": "Digital Forensics & OSINT Practitioner",
+		"shouldShowCrown": false,
+		"linkedInUsername": "mbeardwell",
+		"githubUsername": "mbeardwell",
+		"twitterUsername": "",
+		"instagramUsername": "",
+		"personalWebsite": "mbeardwell.com",
+		"redditUsername": "",
+		"discordUsername": "mbeardwell",
+		"calendlyUrl": "",
+		"totalPoints": 19109,
+		"displayedCertificateTypes": [],
+		"badgesNumber": 17,
+		"completedRoomsNumber": 114,
+		"streak": 0,
+		"rank": 35459,
+		"topPercentage": 2,
+		"isInTopTenPercent": true,
+		"badgeImageURL": "https://tryhackme-badges.s3.amazonaws.com/mbeardwell.png",
+		"userRole": "student",
+		"leagueTier": "bronze",
+		"capabilityScore": { "value": 52.75823360122893, "pov": "green" },
+		"dateSignUp": "2020-04-11T15:17:04.267Z"
+	}
+}
