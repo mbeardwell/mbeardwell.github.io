@@ -1,0 +1,65 @@
+name: Update Stats
+
+permissions:
+  contents: write
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 * * * *"  # Every hour
+
+jobs:
+  update-stats:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Install Playwright
+        run: |
+          npm install playwright
+          npx playwright install chromium --with-deps
+
+      - name: Fetch TryHackMe stats
+        run: |
+          node - <<'EOF'
+          const { chromium } = require('playwright');
+          const fs = require('fs');
+
+          (async () => {
+            const browser = await chromium.launch();
+            const page = await browser.newPage();
+
+            let json = null;
+
+            page.on('response', async response => {
+              if (response.url().includes('/api/v2/public-profile')) {
+                try {
+                  const text = await response.text();
+                  const data = JSON.parse(text);
+                  if (data?.status === 'success') json = data;
+                } catch {}
+              }
+            });
+
+            await page.goto('https://tryhackme.com/p/mbeardwell', { waitUntil: 'networkidle' });
+            await browser.close();
+
+            if (!json) {
+              console.error('Error: failed to capture THM API response');
+              process.exit(1);
+            }
+
+            fs.mkdirSync('public/thm', { recursive: true });
+            fs.writeFileSync('public/thm/thm.json', JSON.stringify(json, null, 2));
+            console.log('Written public/thm/thm.json');
+          })();
+          EOF
+
+      - name: Commit
+        run: |
+          git config user.email stats-bot@users.noreply.github.com
+          git config user.name stats-bot
+          git add public/thm/thm.json
+          git diff --staged --quiet && echo "No changes" || (git commit -m "Stats-Bot — Updated TryHackMe stats" && git push)
+

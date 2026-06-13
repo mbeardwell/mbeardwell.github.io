@@ -5,7 +5,7 @@ cd "$(dirname "$0")" || exit 1
 # Constants
 ROOT_DIR="."
 CERTS_PATH="${ROOT_DIR}/public/docs/certs"
-ENDPOINT="https://thm-mbeardwell.matthewbeardwell.workers.dev" # proxy for tryhackme.com/api/v2/public-profile?username=mbeardwell
+# ENDPOINT="https://thm-mbeardwell.matthewbeardwell.workers.dev" # proxy for tryhackme.com/api/v2/public-profile?username=mbeardwell
 COLORS_FILE="${ROOT_DIR}/src/styles/colors.json"
 TEX_PATH="${ROOT_DIR}/src/cv"
 INPUT=(cv cv-alt cover-letter cover-letter-alt) # e.g. a for a.tex input TeX file
@@ -38,20 +38,7 @@ if grep -q 'disable ghostscript format types' /etc/ImageMagick-6/policy.xml 2>/d
 fi
 
 # Fetch stats
-stats_json=""
-for i in $(seq 1 10); do
-    if stats_json=$(curl -sf "${ENDPOINT}"); then
-        break
-    fi
-    echo "Warn: Attempt $i failed to fetch TryHackMe stats, retrying in 5s..."
-    sleep 5
-done
-
-if [ -z "$stats_json" ]; then
-    echo "Error: failed to fetch TryHackMe stats after 10 attempts"
-    exit 1
-fi
-
+stats_json=$(cat "${ROOT_DIR}/public/thm/thm.json") || { echo "Error: public/thm/thm.json not found"; exit 1; }
 percentage=$(echo "${stats_json}" | jq ".data.topPercentage")
 badges=$(echo "${stats_json}" | jq ".data.badgesNumber")
 rooms=$(echo "${stats_json}" | jq ".data.completedRoomsNumber")
