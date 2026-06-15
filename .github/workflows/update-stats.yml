@@ -6,7 +6,7 @@ permissions:
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 * * * *"  # Every hour
+    - cron: "0 0 * * *"  # Every midnight UTC
 
 jobs:
   update-stats:
